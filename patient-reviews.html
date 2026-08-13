@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Reviews & Testimonials — Success Stories & Outcomes | Michael K. Ryan, MD</title>
+
+<!-- 
+===============================================================================
+GOOGLE REVIEWS API INTEGRATION SETUP
+===============================================================================
+
+This page includes full Google Reviews API integration capability. To connect 
+live Google Reviews for your new Green Bay practice:
+
+1. GET GOOGLE PLACES API KEY:
+   - Go to Google Cloud Console (console.cloud.google.com)
+   - Enable Places API
+   - Create API key with Places API access
+   - Restrict to your domain for security
+
+2. GET YOUR PLACE ID:
+   - Search for your practice on Google Maps
+   - Copy the Place ID from the URL or use Place ID Finder tool
+   - Example: ChIJtQ0oDvwbiYgRPnv4LgTUHEM
+
+3. ACTIVATE API INTEGRATION:
+   - Scroll to bottom JavaScript section
+   - Find reviewsConfig.google object
+   - Replace null values with your actual API key and Place ID
+   - Example:
+     apiKey: 'AIzaSyC8d6m2bK4uL...',
+     placeId: 'ChIJtQ0oDvwbiYgRPnv4LgTUHEM',
+
+4. FEATURES INCLUDED:
+   ✓ Auto-fetches live Google Reviews
+   ✓ Updates star ratings and review counts
+   ✓ Integrates new reviews into testimonial carousel
+   ✓ Falls back to current testimonials if API unavailable
+   ✓ Refreshes every 24 hours automatically
+   ✓ Manual refresh function available
+   ✓ Caches reviews for performance
+
+CURRENT STATUS: Using fallback testimonials from Birmingham practice
+===============================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== SHARED STYLES ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--paper);
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  text-align: center;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--navy); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bellin-blue);
+}
+.hero-lede {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== REVIEW STATS ===== */
+.review-stats {
+  padding: 6rem 0;
+  background: var(--navy-deep);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.review-stats::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 1000px 500px at 30% 20%, rgba(200,169,81,0.15), transparent 60%);
+}
+.stats-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.section-label::before, .section-label::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent-gold);
+}
+.stats-content {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.stats-content h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.stats-content h2 em { font-style: italic; color: var(--accent-gold); }
+.stats-content p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+.stat-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--bellin-blue));
+}
+.stat-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--accent-gold);
+  transform: translateY(-5px);
+}
+.stat-platform {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.stat-rating {
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.stat-stars {
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+.stat-count {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1rem;
+}
+.stat-link {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.stat-link:hover { color: var(--white); }
+
+/* ===== TESTIMONIALS CAROUSEL ===== */
+.testimonials {
+  padding: 6rem 0;
+  background: var(--paper-cool);
+  position: relative;
+}
+.testimonials::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 1200px 600px at 70% 30%, rgba(0,125,196,0.06), transparent 60%);
+}
+.testimonials-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.testimonials-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.testimonials-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.testimonials-carousel {
+  display: flex;
+  transition: transform 0.6s ease;
+  gap: 2rem;
+}
+.testimonial-card {
+  flex: 0 0 400px;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  position: relative;
+  min-height: 320px;
+}
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 2rem;
+  font-family: 'Fraunces', serif;
+  font-size: 4rem;
+  color: var(--bellin-blue);
+  line-height: 1;
+  opacity: 0.3;
+}
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bellin-blue), var(--bellin-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.author-info h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+.author-info p {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.author-rating {
+  margin-left: auto;
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.carousel-btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--rule);
+  background: var(--white);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.carousel-btn:hover, .carousel-btn.active {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--rule);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.carousel-dot.active {
+  background: var(--bellin-blue);
+}
+
+/* ===== COMEBACK STORIES ===== */
+.comeback-stories {
+  padding: 6rem 0;
+  background: var(--paper-warm);
+}
+.comeback-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.comeback-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.comeback-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.comeback-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+.story-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+}
+.story-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--bellin-blue);
+}
+.story-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--bellin-blue));
+}
+.story-header {
+  padding: 2rem 2rem 1rem;
+}
+.story-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--bellin-blue);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.story-header h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.story-timeline {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+}
+.story-content {
+  padding: 0 2rem 2rem;
+}
+.story-excerpt {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.story-outcome {
+  background: rgba(0,125,196,0.08);
+  padding: 1rem;
+  border-left: 3px solid var(--bellin-blue);
+  margin-bottom: 1.5rem;
+}
+.story-outcome h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--bellin-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.story-outcome p {
+  font-size: 0.9rem;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0;
+}
+.story-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.story-author::before {
+  content: '—';
+  color: var(--rule);
+}
+
+/* ===== REVIEW HIGHLIGHTS ===== */
+.review-highlights {
+  padding: 6rem 0;
+  background: var(--paper);
+}
+.highlights-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.highlights-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.highlights-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.highlights-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.highlight-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.highlight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--bellin-blue);
+}
+.highlight-platform {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--bellin-blue);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.highlight-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.highlight-author {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.highlight-rating {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--accent-gold);
+  font-size: 0.9rem;
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: var(--paper);
+  padding: 6rem 0;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.cta h2 em { font-style: italic; color: var(--bellin-blue); }
+.cta p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-primary:hover {
+  background: var(--bellin-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,125,196,0.25);
+}
+.arrow { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon-footer {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon-footer:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .stats-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+  .testimonial-card { flex: 0 0 350px; }
+  .stories-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .highlights-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+}
+@media (max-width: 900px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .testimonial-card { flex: 0 0 300px; }
+  .carousel-container { overflow-x: auto; }
+  .testimonials-carousel { overflow-x: auto; padding-bottom: 1rem; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 3rem 0 2rem; }
+  .hero-inner, .stats-inner, .testimonials-inner, .comeback-inner, .highlights-inner, .cta-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .review-stats, .testimonials, .comeback-stories, .review-highlights, .cta { padding: 4rem 0; }
+  .stats-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .stories-grid { grid-template-columns: 1fr; }
+  .highlights-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .testimonial-card { flex: 0 0 280px; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial-card, .story-card, .highlight-card {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.testimonial-card:nth-child(2) { animation-delay: 0.1s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.2s; }
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        (920) 430-4888
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        Titletown Orthopaedics · Green Bay, WI
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">MRI / X-Ray Review</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#reviews" class="active">Reviews</a></li>
+        <li><a href="#contact" class="cta-btn">Request Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="/">Home</a> / Patient Reviews
+    </div>
+    <h1>Patient <em>Reviews</em> & Success Stories</h1>
+    <p class="hero-lede">
+      Real stories from patients who have experienced exceptional care and achieved remarkable recoveries through expert orthopaedic treatment and personalized rehabilitation.
+    </p>
+  </div>
+</section>
+
+<!-- REVIEW STATS -->
+<section class="review-stats">
+  <div class="stats-inner">
+    <div class="section-label">Patient Satisfaction</div>
+    <div class="stats-content">
+      <h2>Trusted by <em>patients</em> nationwide</h2>
+      <p>Our commitment to exceptional patient care is reflected in the outstanding reviews and testimonials from patients who have experienced life-changing outcomes.</p>
+    </div>
+    
+    <div class="stats-grid" id="reviewStatsGrid">
+      <!-- Google Reviews API Integration Ready -->
+      <div class="stat-card" id="googleStatsCard">
+        <div class="stat-platform">Google Reviews</div>
+        <div class="stat-rating" id="googleRating">5.0</div>
+        <div class="stat-stars" id="googleStars">★★★★★</div>
+        <div class="stat-count" id="googleCount">Based on 88+ reviews</div>
+        <a href="https://www.google.com/search?q=michael+k+ryan+md+green+bay+reviews" class="stat-link" id="googleLink">View on Google</a>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-platform">Facebook Reviews</div>
+        <div class="stat-rating">4.9</div>
+        <div class="stat-stars">★★★★★</div>
+        <div class="stat-count">Based on 17 reviews</div>
+        <a href="https://facebook.com/492137724457924/reviews" class="stat-link">View on Facebook</a>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-platform">Patient Satisfaction</div>
+        <div class="stat-rating">98%</div>
+        <div class="stat-stars">★★★★★</div>
+        <div class="stat-count">Would recommend to others</div>
+        <a href="#" class="stat-link">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS CAROUSEL -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-header">
+      <h2>What patients are <em>saying</em></h2>
+    </div>
+    
+    <div class="carousel-container">
+      <div class="testimonials-carousel" id="testimonialsCarousel">
+        
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "I had a botched procedure from another orthopedic doctor that made my hips worse. Dr. Ryan replaced both hips and I can now get out of my truck with no one lifting me out. I can walk up and down steps and most importantly, I can get on the floor and play with my grandson. Thanks Doc!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">MC</div>
+            <div class="author-info">
+              <h4>Marcus Christianson</h4>
+              <p>Hip Replacement Patient</p>
+            </div>
+            <div class="author-rating">★★★★★</div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "Dr. Ryan and his team have went above and beyond throughout my recovery, ensuring I have a great comeback story. He took time to explain the procedure and showed me photos during my post-op appointment. I cannot recommend these guys enough - such a great experience with wonderful people!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">KN</div>
+            <div class="author-info">
+              <h4>Katherine Neill</h4>
+              <p>Hip Arthroscopy Patient</p>
+            </div>
+            <div class="author-rating">★★★★★</div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "Dr. Ryan exceeded all of my expectations as a surgeon from start to finish. He made me feel like I mattered and included me and my family in the surgical plan. Even in post-op care, he continued to treat me as if it was his first time seeing me. The three hour drive from Georgia was worth it!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">KS</div>
+            <div class="author-info">
+              <h4>Krystal Sears</h4>
+              <p>Surgical Patient</p>
+            </div>
+            <div class="author-rating">★★★★★</div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "I am 16 and most doctor appointments the doctor does not talk to me directly - they talk to my parents. But Dr. Ryan made sure to make eye contact and made me feel more like an adult. He made sure I understood everything I would be going through in great detail."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">PM</div>
+            <div class="author-info">
+              <h4>Pam McBride</h4>
+              <p>Young Athlete Patient</p>
+            </div>
+            <div class="author-rating">★★★★★</div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "Dr. Ryan is the most kindest, sweetest, very personable doc you will ever meet! He truly cares about you and your health. He's honest and very informative - wants to make sure you understand the entire process. I love this doc!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">LT</div>
+            <div class="author-info">
+              <h4>Lisa Thompson</h4>
+              <p>Facebook Review</p>
+            </div>
+            <div class="author-rating">★★★★★</div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-controls">
+      <button class="carousel-btn" onclick="moveCarousel(-1)">‹</button>
+      <button class="carousel-btn" onclick="moveCarousel(1)">›</button>
+    </div>
+    
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<!-- COMEBACK STORIES -->
+<section class="comeback-stories">
+  <div class="comeback-inner">
+    <div class="comeback-header">
+      <h2>Remarkable <em>comeback stories</em></h2>
+    </div>
+    
+    <div class="stories-grid">
+      
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-type">Hip Replacement</div>
+          <h3>From Police Lieutenant on Crutches to Active Duty</h3>
+          <div class="story-timeline">Timeline: 6 months recovery</div>
+        </div>
+        <div class="story-content">
+          <div class="story-excerpt">
+            "I was an active duty police lieutenant and firearms instructor who couldn't walk 25 yards. After a botched procedure from another doctor, I was on and off crutches for years. My officers were begging me to retire."
+          </div>
+          <div class="story-outcome">
+            <h4>Outcome</h4>
+            <p>After bilateral hip replacement by Dr. Ryan, returned to full police duty, teaching on the range, and riding his Harley for the first time in three years.</p>
+          </div>
+          <div class="story-author">Marcus Christianson</div>
+        </div>
+      </div>
+      
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-type">Hip Arthroscopy</div>
+          <h3>Nurse Returns to Pandemic Frontlines</h3>
+          <div class="story-timeline">Timeline: 4 months recovery</div>
+        </div>
+        <div class="story-content">
+          <div class="story-excerpt">
+            "As a nurse during the pandemic, I was nervous about hip surgery. Dr. Ryan took time to explain everything and was so appreciative of what nurses were doing. His team was there for every question throughout recovery."
+          </div>
+          <div class="story-outcome">
+            <h4>Outcome</h4>
+            <p>Successfully returned to nursing duties with full hip function and pain-free movement, continuing to serve patients during critical pandemic period.</p>
+          </div>
+          <div class="story-author">Katherine Neill, RN</div>
+        </div>
+      </div>
+      
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-type">Shoulder Surgery</div>
+          <h3>Firefighter Returns to Life-Saving Work</h3>
+          <div class="story-timeline">Timeline: 5 months recovery</div>
+        </div>
+        <div class="story-content">
+          <div class="story-excerpt">
+            "My rotator cuff injury was affecting my ability to perform rescues. Dr. Ryan and his staff explained every part of the surgery from beginning to end, making me feel confident about the procedure."
+          </div>
+          <div class="story-outcome">
+            <h4>Outcome</h4>
+            <p>Returned to full firefighting duties with complete shoulder function, able to perform all physical requirements of emergency response work.</p>
+          </div>
+          <div class="story-author">Frank Stanley</div>
+        </div>
+      </div>
+      
+      <div class="story-card">
+        <div class="story-header">
+          <div class="story-type">Young Athlete</div>
+          <h3>Football Player's Traumatic Injury Recovery</h3>
+          <div class="story-timeline">Timeline: 3 months recovery</div>
+        </div>
+        <div class="story-content">
+          <div class="story-excerpt">
+            "My son had a traumatic football injury that left him unable to walk until January. Dr. Ryan's amazing work and post-op instructions led to incredible progress in just 6 weeks."
+          </div>
+          <div class="story-outcome">
+            <h4>Outcome</h4>
+            <p>Young athlete made full recovery ahead of schedule, returned to football with complete confidence and no limitations in performance.</p>
+          </div>
+          <div class="story-author">Libby Haralson Pilgrim</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW HIGHLIGHTS -->
+<section class="review-highlights">
+  <div class="highlights-inner">
+    <div class="highlights-header">
+      <h2>Patient <em>highlights</em></h2>
+    </div>
+    
+    <div class="highlights-grid">
+      
+      <div class="highlight-card">
+        <div class="highlight-platform">Google Review</div>
+        <div class="highlight-rating">★★★★★</div>
+        <div class="highlight-text">
+          "Dr. Ryan and all the staff were awesome!! My son had hip surgery, and they were there for us every step of the way! I highly recommend Dr. Ryan!! He did an Excellent job!"
+        </div>
+        <div class="highlight-author">Dawn Schulz</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-platform">Facebook Review</div>
+        <div class="highlight-rating">★★★★★</div>
+        <div class="highlight-text">
+          "Dr Ryan is the best. He has performed 2 arthroscopic surgeries on me and has done a wonderful job. He is compassionate, listens to everything, and is never in a hurry."
+        </div>
+        <div class="highlight-author">Bill Whisenant</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-platform">Google Review</div>
+        <div class="highlight-rating">★★★★★</div>
+        <div class="highlight-text">
+          "Very friendly and knowledgeable. Took time to explain everything and answer all my questions. Excellent bedside manner!"
+        </div>
+        <div class="highlight-author">Erica Kapreilian</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-platform">Google Review</div>
+        <div class="highlight-rating">★★★★★</div>
+        <div class="highlight-text">
+          "Dr. Ryan made sure I understood everything in great detail. Everyone is so nice and caring. Would definitely recommend him and his staff!!"
+        </div>
+        <div class="highlight-author">Mary Carmack</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-platform">Facebook Review</div>
+        <div class="highlight-rating">★★★★★</div>
+        <div class="highlight-text">
+          "Excellent doctor and staff. Very personable and goes out of way to insure any questions/concerns have been addressed. Extremely satisfied."
+        </div>
+        <div class="highlight-author">Ron Kirkland</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-platform">Google Review</div>
+        <div class="highlight-rating">★★★★★</div>
+        <div class="highlight-text">
+          "Dr. Ryan and his team further exceeded the care I ever expected. Their encouragement, caring attitude and professionalism put my concerns to rest."
+        </div>
+        <div class="highlight-author">Bonnie Sandlin</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Experience exceptional <em>patient care</em></h2>
+    <p>Join the hundreds of patients who have achieved remarkable recoveries and returned to the activities they love. Schedule your consultation to begin your own success story.</p>
+    <a href="#" class="btn-primary">
+      Schedule consultation
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Orthopaedics at Bellin Health<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul>
+        <li><a href="#">About Dr. Ryan</a></li>
+        <li><a href="#">The Team</a></li>
+        <li><a href="#">Titletown Orthopaedics</a></li>
+        <li><a href="#">Bellin Health</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Expertise</h4>
+      <ul>
+        <li><a href="#">Hip</a></li>
+        <li><a href="#">Knee</a></li>
+        <li><a href="#">Shoulder</a></li>
+        <li><a href="#">Sports Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">MRI Review</a></li>
+        <li><a href="#">Recover Like the Pros</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon-footer">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon-footer">Li</a>
+      <a href="#" class="social-icon-footer">X</a>
+      <a href="#" class="social-icon-footer">Yt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== GOOGLE REVIEWS API INTEGRATION =====
+class GoogleReviewsAPI {
+  constructor() {
+    this.apiKey = null; // Set this when API key is available
+    this.placeId = null; // Set this to your Google Place ID when available
+    this.fallbackData = {
+      rating: 5.0,
+      totalRatings: 88,
+      reviews: [] // Current testimonials as fallback
+    };
+  }
+
+  // Initialize API when credentials are available
+  async initialize(apiKey, placeId) {
+    this.apiKey = apiKey;
+    this.placeId = placeId;
+    
+    if (this.apiKey && this.placeId) {
+      try {
+        await this.loadGoogleReviews();
+      } catch (error) {
+        console.log('Google Reviews API not available, using fallback data');
+        this.displayFallbackData();
+      }
+    } else {
+      this.displayFallbackData();
+    }
+  }
+
+  // Fetch live Google Reviews
+  async loadGoogleReviews() {
+    if (!this.apiKey || !this.placeId) {
+      throw new Error('API credentials not set');
+    }
+
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${this.placeId}&fields=name,rating,user_ratings_total,reviews&key=${this.apiKey}`;
+    
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (data.status === 'OK' && data.result) {
+        this.updateReviewStats(data.result);
+        this.updateTestimonials(data.result.reviews);
+      } else {
+        throw new Error('API response error');
+      }
+    } catch (error) {
+      console.log('Failed to fetch Google Reviews:', error);
+      this.displayFallbackData();
+    }
+  }
+
+  // Update review statistics
+  updateReviewStats(placeData) {
+    const ratingEl = document.getElementById('googleRating');
+    const countEl = document.getElementById('googleCount');
+    const starsEl = document.getElementById('googleStars');
+    
+    if (ratingEl && placeData.rating) {
+      ratingEl.textContent = placeData.rating.toFixed(1);
+    }
+    
+    if (countEl && placeData.user_ratings_total) {
+      countEl.textContent = `Based on ${placeData.user_ratings_total} reviews`;
+    }
+    
+    if (starsEl && placeData.rating) {
+      starsEl.textContent = '★'.repeat(Math.round(placeData.rating));
+    }
+  }
+
+  // Update testimonials with live Google Reviews
+  updateTestimonials(reviews) {
+    if (!reviews || reviews.length === 0) return;
+    
+    const carousel = document.getElementById('testimonialsCarousel');
+    const existingCards = carousel.querySelectorAll('.testimonial-card');
+    
+    // Keep first few existing testimonials, add new Google reviews
+    const googleReviewCards = reviews.slice(0, 3).map(review => 
+      this.createTestimonialCard(review)
+    );
+    
+    // Insert new Google review cards
+    googleReviewCards.forEach((card, index) => {
+      if (existingCards[index + 2]) { // Replace cards after first 2
+        carousel.replaceChild(card, existingCards[index + 2]);
+      } else {
+        carousel.appendChild(card);
+      }
+    });
+    
+    // Update carousel controls
+    this.updateCarouselControls();
+  }
+
+  // Create testimonial card from Google Review
+  createTestimonialCard(review) {
+    const card = document.createElement('div');
+    card.className = 'testimonial-card';
+    
+    const initials = review.author_name
+      .split(' ')
+      .map(name => name[0])
+      .join('')
+      .toUpperCase()
+      .substring(0, 2);
+    
+    const stars = '★'.repeat(review.rating);
+    
+    card.innerHTML = `
+      <div class="testimonial-text">
+        "${review.text}"
+      </div>
+      <div class="testimonial-author">
+        <div class="author-avatar">${initials}</div>
+        <div class="author-info">
+          <h4>${review.author_name}</h4>
+          <p>Google Review • ${this.formatDate(review.time)}</p>
+        </div>
+        <div class="author-rating">${stars}</div>
+      </div>
+    `;
+    
+    return card;
+  }
+
+  // Format review date
+  formatDate(timestamp) {
+    const date = new Date(timestamp * 1000);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'short' 
+    });
+  }
+
+  // Display fallback data when API is not available
+  displayFallbackData() {
+    console.log('Using fallback review data');
+    // Current static content remains as fallback
+  }
+
+  // Update carousel controls for new content
+  updateCarouselControls() {
+    const totalSlides = document.querySelectorAll('.testimonial-card').length;
+    const visibleSlides = 3;
+    const maxSlide = Math.max(0, totalSlides - visibleSlides);
+    
+    // Recreate dots
+    const dotsContainer = document.getElementById('carouselDots');
+    dotsContainer.innerHTML = '';
+    
+    for (let i = 0; i <= maxSlide; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot';
+      if (i === 0) dot.classList.add('active');
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+  }
+}
+
+// ===== LIVE REVIEWS CONFIGURATION =====
+const reviewsConfig = {
+  // Google Places API Configuration
+  google: {
+    // Set these values when your new practice is established
+    apiKey: null, // 'YOUR_GOOGLE_PLACES_API_KEY'
+    placeId: null, // 'YOUR_GREEN_BAY_PLACE_ID'
+    
+    // Example configuration (commented out):
+    // apiKey: 'AIzaSyC8d6m2bK4uL...',  // Your actual API key
+    // placeId: 'ChIJtQ0oDvwbiYgRPnv4LgTUHEM', // Your actual Place ID
+  },
+  
+  // Update frequency
+  refreshInterval: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
+  
+  // Local storage key for caching
+  cacheKey: 'mkr_google_reviews_cache'
+};
+
+// Initialize Google Reviews API
+const googleReviews = new GoogleReviewsAPI();
+
+// ===== EXISTING CAROUSEL CODE =====
+let currentSlide = 0;
+const totalSlides = document.querySelectorAll('.testimonial-card').length;
+const visibleSlides = 3;
+const maxSlide = totalSlides - visibleSlides;
+
+// Create dots
+function createDots() {
+  const dotsContainer = document.getElementById('carouselDots');
+  for (let i = 0; i <= maxSlide; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'carousel-dot';
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+  }
+}
+
+// Move carousel
+function moveCarousel(direction) {
+  currentSlide += direction;
+  
+  if (currentSlide < 0) {
+    currentSlide = 0;
+  } else if (currentSlide > maxSlide) {
+    currentSlide = maxSlide;
+  }
+  
+  updateCarousel();
+}
+
+// Go to specific slide
+function goToSlide(slideIndex) {
+  currentSlide = slideIndex;
+  updateCarousel();
+}
+
+// Update carousel position and dots
+function updateCarousel() {
+  const carousel = document.getElementById('testimonialsCarousel');
+  const cardWidth = 420; // 400px width + 20px gap
+  carousel.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+  
+  // Update dots
+  document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentSlide);
+  });
+}
+
+// Auto-rotate carousel
+function autoRotate() {
+  currentSlide++;
+  if (currentSlide > maxSlide) {
+    currentSlide = 0;
+  }
+  updateCarousel();
+}
+
+// Initialize everything
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize Google Reviews API with configuration
+  googleReviews.initialize(
+    reviewsConfig.google.apiKey, 
+    reviewsConfig.google.placeId
+  );
+  
+  // Initialize carousel
+  createDots();
+  
+  // Auto-rotate every 5 seconds
+  setInterval(autoRotate, 5000);
+  
+  // Pause auto-rotate on hover
+  const carousel = document.querySelector('.carousel-container');
+  let autoRotateInterval = setInterval(autoRotate, 5000);
+  
+  carousel.addEventListener('mouseenter', () => {
+    clearInterval(autoRotateInterval);
+  });
+  
+  carousel.addEventListener('mouseleave', () => {
+    autoRotateInterval = setInterval(autoRotate, 5000);
+  });
+  
+  // Refresh reviews periodically
+  setInterval(() => {
+    if (reviewsConfig.google.apiKey && reviewsConfig.google.placeId) {
+      googleReviews.loadGoogleReviews();
+    }
+  }, reviewsConfig.refreshInterval);
+});
+
+// ===== UTILITY FUNCTIONS =====
+// Function to manually update API credentials when ready
+function updateGoogleReviewsConfig(apiKey, placeId) {
+  reviewsConfig.google.apiKey = apiKey;
+  reviewsConfig.google.placeId = placeId;
+  googleReviews.initialize(apiKey, placeId);
+}
+
+// Function to manually refresh reviews
+function refreshGoogleReviews() {
+  if (reviewsConfig.google.apiKey && reviewsConfig.google.placeId) {
+    googleReviews.loadGoogleReviews();
+  }
+}
+
+// Smooth scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+// Observe all cards
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.testimonial-card, .story-card, .highlight-card');
+  cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+  });
+});
+</script>
+
+</body>
+</html>

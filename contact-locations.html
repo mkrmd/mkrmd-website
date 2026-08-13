@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Locations — Michael K. Ryan, MD | Green Bay, Wisconsin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== SHARED STYLES ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--paper);
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  text-align: center;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--navy); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bellin-blue);
+}
+.hero-lede {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== CONTACT GRID ===== */
+.contact-grid {
+  padding: 6rem 0;
+  background: var(--paper);
+}
+.contact-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+/* ===== PRIMARY CONTACT ===== */
+.primary-contact {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 3rem;
+  position: relative;
+}
+.primary-contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--bellin-blue), var(--navy));
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--bellin-blue);
+}
+.primary-contact h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+.primary-contact h2 em {
+  font-style: italic;
+  color: var(--bellin-blue);
+}
+.office-info {
+  margin-bottom: 2.5rem;
+}
+.office-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.detail-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-soft));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+.detail-icon svg { width: 20px; height: 20px; }
+.detail-content h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.detail-content p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+.detail-content a {
+  color: var(--bellin-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.detail-content a:hover { color: var(--navy); }
+.hours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.hours-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.hours-day .day {
+  font-weight: 500;
+  color: var(--ink);
+}
+.hours-day .time {
+  color: var(--ink-soft);
+}
+
+/* ===== APPOINTMENT FORM ===== */
+.appointment-form {
+  background: var(--navy-deep);
+  color: var(--white);
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.appointment-form::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(200,169,81,0.12), transparent 60%);
+}
+.form-content {
+  position: relative;
+  z-index: 1;
+}
+.form-header {
+  margin-bottom: 2.5rem;
+}
+.form-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+.form-header h2 em {
+  font-style: italic;
+  color: var(--accent-gold);
+}
+.form-header p {
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 2px;
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  background: rgba(255,255,255,0.08);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.form-submit {
+  margin-top: 1rem;
+}
+.btn-submit {
+  background: var(--accent-gold);
+  color: var(--navy-deep);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  justify-content: center;
+}
+.btn-submit:hover {
+  background: var(--accent-gold-soft);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(200,169,81,0.3);
+}
+.btn-submit svg { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-submit:hover svg { transform: translateX(2px); }
+
+/* ===== LOCATION DETAILS ===== */
+.location-details {
+  padding: 6rem 0;
+  background: var(--paper-warm);
+  border-top: 1px solid var(--rule);
+}
+.location-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.location-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.location-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.location-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.location-header p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.location-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  position: relative;
+}
+.location-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bellin-blue);
+}
+.location-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+.location-info {
+  margin-bottom: 2rem;
+}
+.location-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.location-detail svg {
+  width: 16px;
+  height: 16px;
+  color: var(--bellin-blue);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+.location-detail span {
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bellin-blue);
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+.directions-btn:hover { background: var(--navy); }
+.directions-btn svg { width: 14px; height: 14px; }
+
+/* ===== EMERGENCY CONTACT ===== */
+.emergency-contact {
+  background: var(--navy);
+  color: var(--white);
+  padding: 3rem 0;
+}
+.emergency-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  text-align: center;
+}
+.emergency-inner h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--accent-gold);
+}
+.emergency-inner p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+.emergency-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.emergency-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.emergency-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-gold);
+}
+.emergency-item span {
+  font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .location-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .emergency-info { flex-direction: column; align-items: center; gap: 1rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 3rem 0 2rem; }
+  .hero-inner, .contact-inner, .location-inner, .emergency-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .contact-grid, .location-details, .emergency-contact { padding: 4rem 0; }
+  .hours-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .primary-contact, .appointment-form, .location-card { padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        (920) 430-4888
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        Titletown Orthopaedics · Green Bay, WI
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">MRI / X-Ray Review</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="/">Home</a> / Contact
+    </div>
+    <h1>Contact <em>Dr. Ryan</em></h1>
+    <p class="hero-lede">
+      Schedule your consultation, request an MRI review, or get answers to your questions. We're here to help you get back to the activities you love.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT GRID -->
+<section class="contact-grid">
+  <div class="contact-inner">
+    
+    <!-- PRIMARY CONTACT INFO -->
+    <div class="primary-contact">
+      <div class="section-label">Office Information</div>
+      <h2>Titletown <em>Orthopaedics</em></h2>
+      
+      <div class="office-info">
+        <div class="office-detail">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="detail-content">
+            <h3>Address</h3>
+            <p>1970 S. Ridge Rd<br>Green Bay, WI 54304</p>
+          </div>
+        </div>
+        
+        <div class="office-detail">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="detail-content">
+            <h3>Phone</h3>
+            <p><a href="tel:+19204304888">(920) 430-4888</a></p>
+          </div>
+        </div>
+        
+        <div class="office-detail">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="detail-content">
+            <h3>Email</h3>
+            <p><a href="mailto:hannah.harrity@emplifyhealth.org">hannah.harrity@emplifyhealth.org</a></p>
+          </div>
+        </div>
+        
+        <div class="office-detail">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          <div class="detail-content">
+            <h3>Office Hours</h3>
+            <div class="hours-grid">
+              <div class="hours-day">
+                <span class="day">Monday</span>
+                <span class="time">8:00 AM - 5:00 PM</span>
+              </div>
+              <div class="hours-day">
+                <span class="day">Tuesday</span>
+                <span class="time">8:00 AM - 5:00 PM</span>
+              </div>
+              <div class="hours-day">
+                <span class="day">Wednesday</span>
+                <span class="time">8:00 AM - 5:00 PM</span>
+              </div>
+              <div class="hours-day">
+                <span class="day">Thursday</span>
+                <span class="time">8:00 AM - 5:00 PM</span>
+              </div>
+              <div class="hours-day">
+                <span class="day">Friday</span>
+                <span class="time">8:00 AM - 12:00 PM</span>
+              </div>
+              <div class="hours-day">
+                <span class="day">Weekend</span>
+                <span class="time">Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- APPOINTMENT FORM -->
+    <div class="appointment-form">
+      <div class="form-content">
+        <div class="form-header">
+          <h2>Request <em>Appointment</em></h2>
+          <p>Complete this form and our team will contact you within one business day to schedule your consultation with Dr. Ryan.</p>
+        </div>
+        
+        <form class="contact-form" action="mailto:hannah.harrity@emplifyhealth.org" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Enter your last name" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="(920) 555-0123" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Reason for Visit</label>
+            <select required>
+              <option value="">Select primary concern</option>
+              <option value="hip-pain">Hip Pain</option>
+              <option value="knee-pain">Knee Pain</option>
+              <option value="shoulder-pain">Shoulder Pain</option>
+              <option value="sports-injury">Sports Injury</option>
+              <option value="second-opinion">Second Opinion</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Insurance Provider</label>
+            <input type="text" placeholder="e.g., Blue Cross Blue Shield">
+          </div>
+          
+          <div class="form-group">
+            <label>Additional Information</label>
+            <textarea placeholder="Please describe your symptoms, injury details, or any specific questions for Dr. Ryan..."></textarea>
+          </div>
+          
+          <div class="form-submit">
+            <button type="submit" class="btn-submit">
+              Send Request
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- LOCATION DETAILS -->
+<section class="location-details">
+  <div class="location-inner">
+    <div class="location-header">
+      <h2>Location <em>&</em> Directions</h2>
+      <p>Conveniently located in Green Bay with easy access from throughout Northeast Wisconsin and the Upper Peninsula of Michigan.</p>
+    </div>
+    
+    <div class="location-grid">
+      
+      <div class="location-card">
+        <h3>Titletown Orthopaedics</h3>
+        <div class="location-info">
+          <div class="location-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>1970 S. Ridge Rd<br>Green Bay, WI 54304</span>
+          </div>
+          <div class="location-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12l2 2 4-4"/>
+            </svg>
+            <span>Free parking available on-site</span>
+          </div>
+          <div class="location-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11H5a2 2 0 0 0-2 2v3c0 1.1.9 2 2 2h4"/>
+              <path d="M15 11h4a2 2 0 0 1 2 2v3c0 1.1-.9 2-2 2h-4"/>
+              <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+            </svg>
+            <span>Fully accessible building</span>
+          </div>
+          <div class="location-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            <span>State-of-the-art imaging and surgical facilities</span>
+          </div>
+        </div>
+        <a href="https://maps.google.com" target="_blank" class="directions-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Get Directions
+        </a>
+      </div>
+      
+      <div class="location-card">
+        <h3>Bellin Health System</h3>
+        <div class="location-info">
+          <div class="location-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5Z"/>
+            </svg>
+            <span>Part of Bellin Health, Northeast Wisconsin's leading healthcare system</span>
+          </div>
+          <div class="location-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>Coordinated care with specialists throughout the region</span>
+          </div>
+          <div class="location-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>Seamless electronic medical records</span>
+          </div>
+          <div class="location-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+              <circle cx="12" cy="13" r="3"/>
+            </svg>
+            <span>Advanced imaging and diagnostic services</span>
+          </div>
+        </div>
+        <a href="https://bellin.org" target="_blank" class="directions-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15,3 21,3 21,9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          Learn More
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY CONTACT -->
+<section class="emergency-contact">
+  <div class="emergency-inner">
+    <h3>After-Hours & Emergency Contact</h3>
+    <p>For urgent medical concerns outside of normal business hours, please contact our on-call service or visit the nearest emergency department.</p>
+    
+    <div class="emergency-info">
+      <div class="emergency-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span>On-call: (920) 555-0123</span>
+      </div>
+      <div class="emergency-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 12l2 2 4-4"/>
+          <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+          <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+          <path d="M3 12h6m6 0h6"/>
+        </svg>
+        <span>Emergency: 911</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Orthopaedics at Bellin Health<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul>
+        <li><a href="#">About Dr. Ryan</a></li>
+        <li><a href="#">The Team</a></li>
+        <li><a href="#">Titletown Orthopaedics</a></li>
+        <li><a href="#">Bellin Health</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Expertise</h4>
+      <ul>
+        <li><a href="#">Hip</a></li>
+        <li><a href="#">Knee</a></li>
+        <li><a href="#">Shoulder</a></li>
+        <li><a href="#">Sports Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">MRI Review</a></li>
+        <li><a href="#">Recover Like the Pros</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon">Li</a>
+      <a href="#" class="social-icon">X</a>
+      <a href="#" class="social-icon">Yt</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

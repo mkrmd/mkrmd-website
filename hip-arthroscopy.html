@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hip Arthroscopy - Minimally Invasive Hip Surgery | Michael K. Ryan, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --surgical-blue: #E8F4FF;
+  --surgical-blue-border: #C8E6FF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== SHARED STYLES ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--surgical-blue);
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--surgical-blue-border);
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--navy); }
+.hero-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.hero-text h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
+}
+.hero-text h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bellin-blue);
+}
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.hero-text strong { font-weight: 600; color: var(--navy); }
+.hero-image {
+  background: var(--white);
+  border: 1px solid var(--surgical-blue-border);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+.content-section {
+  padding: 6rem 0;
+}
+.content-section:nth-child(even) {
+  background: var(--paper-warm);
+}
+.content-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.section-label::before, .section-label::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--bellin-blue);
+}
+.section-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.section-header h2 em { font-style: italic; color: var(--bellin-blue); }
+
+.content-text p {
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+.content-text strong {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ===== PROCEDURE BENEFITS ===== */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+.benefit-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.benefit-card:hover {
+  border-color: var(--bellin-blue);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: var(--bellin-blue);
+  border-radius: 0 0 3px 3px;
+}
+.benefit-card h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+.benefit-card p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TREATABLE CONDITIONS ===== */
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+.condition-tag {
+  background: var(--surgical-blue);
+  border: 1px solid var(--surgical-blue-border);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--navy);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.condition-tag:hover {
+  background: var(--white);
+  border-color: var(--bellin-blue);
+  transform: translateY(-2px);
+}
+
+/* ===== SURGICAL PROCEDURES LIST ===== */
+.procedures-list {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+}
+.procedures-list h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.procedures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.procedure-item {
+  background: var(--paper-cool);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--navy);
+  font-weight: 500;
+  border-left: 3px solid var(--bellin-blue);
+  transition: all 0.3s ease;
+}
+.procedure-item:hover {
+  background: var(--surgical-blue);
+  transform: translateX(5px);
+}
+
+/* ===== RECOVERY TIMELINE ===== */
+.recovery-timeline {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+}
+.recovery-timeline h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+.timeline-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--bellin-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+.timeline-content h4 {
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.timeline-content p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: var(--paper-cool);
+  padding: 6rem 0;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.cta h2 em { font-style: italic; color: var(--bellin-blue); }
+.cta p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-primary:hover {
+  background: var(--bellin-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,125,196,0.25);
+}
+.arrow { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon-footer {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon-footer:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 3rem 0 2rem; }
+  .hero-inner, .content-inner, .cta-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .content-section, .cta { padding: 4rem 0; }
+  .footer-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        (920) 430-4888
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        Titletown Sports Medicine · Hip Preservation Specialist
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">Insurance Information</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise" class="active">Expertise</a></li>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact" class="cta-btn">Request Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="/">Home</a> / <a href="/expertise">Expertise</a> / <a href="/hip">Hip Surgeries</a> / Hip Arthroscopy
+    </div>
+    
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Hip <em>Arthroscopy</em></h1>
+        <p>
+          Arthroscopy is a minimally-invasive surgical technique commonly performed on many joints including the shoulder, knee, elbow, hip, ankle and wrist by making small incisions around the joint to allow for insertion of a small camera.
+        </p>
+        <p>
+          <strong>Hip arthroscopy</strong> is performed by distracting the hip joint, separating the ball from the socket to allow for insertion of the camera and tools.
+        </p>
+      </div>
+      
+      <div class="hero-image">
+        <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+          <text x="150" y="20" text-anchor="middle" font-size="14" font-weight="600" fill="#002454">Hip Arthroscopy Portals</text>
+          
+          <!-- Hip joint outline -->
+          <ellipse cx="150" cy="150" rx="80" ry="60" fill="none" stroke="#D9D6CE" stroke-width="2"/>
+          <circle cx="150" cy="150" r="25" fill="#E8F4FF" stroke="#007DC4" stroke-width="2"/>
+          <text x="150" y="155" text-anchor="middle" font-size="10" fill="#002454">Hip Joint</text>
+          
+          <!-- Arthroscope portals -->
+          <circle cx="80" cy="120" r="4" fill="#007DC4"/>
+          <text x="45" y="125" font-size="9" fill="#007DC4">Portal 1</text>
+          <path d="M75 120 L60 125" stroke="#007DC4" stroke-width="1"/>
+          
+          <circle cx="220" cy="120" r="4" fill="#007DC4"/>
+          <text x="240" y="125" font-size="9" fill="#007DC4">Portal 2</text>
+          <path d="M225 120 L240 125" stroke="#007DC4" stroke-width="1"/>
+          
+          <circle cx="150" cy="80" r="4" fill="#007DC4"/>
+          <text x="130" y="70" font-size="9" fill="#007DC4">Portal 3</text>
+          <path d="M150 75 L140 70" stroke="#007DC4" stroke-width="1"/>
+          
+          <!-- Camera visualization -->
+          <rect x="140" y="130" width="20" height="8" fill="#C8A951" opacity="0.7"/>
+          <text x="160" y="145" font-size="8" fill="#C8A951">Camera</text>
+          
+          <!-- Minimally invasive note -->
+          <text x="150" y="350" text-anchor="middle" font-size="12" font-weight="500" fill="#007DC4">Minimally Invasive</text>
+          <text x="150" y="365" text-anchor="middle" font-size="10" fill="#2B3D55">2-3 small incisions</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Minimally Invasive Advantages</div>
+      <h2>Benefits of <em>arthroscopic technique</em></h2>
+    </div>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h4>Less Swelling</h4>
+        <p>Smaller incisions result in reduced post-operative swelling and inflammation</p>
+      </div>
+      <div class="benefit-card">
+        <h4>Minimal Tissue Disruption</h4>
+        <p>Less soft tissue dissection and muscle disruption compared to open surgery</p>
+      </div>
+      <div class="benefit-card">
+        <h4>Excellent Visualization</h4>
+        <p>High-definition camera provides superior view inside the joint</p>
+      </div>
+      <div class="benefit-card">
+        <h4>Effective Treatment</h4>
+        <p>Proven effective for treating most common hip injuries and conditions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATABLE CONDITIONS -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Conditions Treated</div>
+      <h2>Hip injuries treated <em>arthroscopically</em></h2>
+    </div>
+    
+    <div class="conditions-grid">
+      <div class="condition-tag">Hip Impingement (FAI)</div>
+      <div class="condition-tag">Labral Tears</div>
+      <div class="condition-tag">Cartilage Injuries</div>
+      <div class="condition-tag">Loose Bodies</div>
+      <div class="condition-tag">Snapping Hip</div>
+      <div class="condition-tag">Hip Instability</div>
+    </div>
+    
+    <div class="content-text">
+      <p>
+        Using 2-3 common portals in the front aspect of the hip, a variety of common hip injuries can be effectively treated. Hip arthroscopy generally takes <strong>1-2 hours</strong> on average depending on the extent of the hip injury and bony deformity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ARTHROSCOPIC PROCEDURES -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Surgical Procedures</div>
+      <h2>Procedures performed <em>arthroscopically</em></h2>
+    </div>
+    
+    <div class="procedures-list">
+      <h3>Available Arthroscopic Techniques</h3>
+      <div class="procedures-grid">
+        <div class="procedure-item">Labral Repair</div>
+        <div class="procedure-item">Labral Reconstruction</div>
+        <div class="procedure-item">Cam Resection</div>
+        <div class="procedure-item">Pincer Resection</div>
+        <div class="procedure-item">Capsule Closure/Tightening</div>
+        <div class="procedure-item">Hip Flexor Lengthening</div>
+      </div>
+    </div>
+    
+    <div class="content-text">
+      <p>
+        Hip arthroscopy does have technical limitations. When these limitations are present, other open surgeries are needed including <strong>pelvic</strong> and <strong>femoral osteotomies</strong> and <strong>surgical dislocation of the hip</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- RECOVERY -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Recovery Process</div>
+      <h2>Post-operative <em>rehabilitation</em></h2>
+    </div>
+    
+    <div class="recovery-timeline">
+      <h3>Recovery Timeline</h3>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">0</div>
+        <div class="timeline-content">
+          <h4>Surgery Day</h4>
+          <p>Same-day procedure - no hospital stay required. Cold compression device recommended for pain and swelling reduction.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">1</div>
+        <div class="timeline-content">
+          <h4>Next Day</h4>
+          <p>Physical therapy begins the following business day with specialized hip rehabilitation protocol.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">2-6</div>
+        <div class="timeline-content">
+          <h4>2-6 Weeks</h4>
+          <p>Protected weight-bearing period to protect surgical repairs. Hip brace required except during PT and hygiene.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">3</div>
+        <div class="timeline-content">
+          <h4>3 Months</h4>
+          <p>Running program may begin if motion, function, and pain have improved appropriately.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-icon">6</div>
+        <div class="timeline-content">
+          <h4>6 Months</h4>
+          <p>Most athletes feel ready to return to play at or near pre-surgery level, though some may take longer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Expert <em>hip arthroscopy</em></h2>
+    <p>If you have a hip condition that may benefit from minimally invasive arthroscopic treatment, evaluation can determine whether you're a candidate for this advanced surgical technique.</p>
+    <a href="#" class="btn-primary">
+      Schedule consultation
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Sports Medicine<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Hip Surgeries</h4>
+      <ul>
+        <li><a href="#">Hip Arthroscopy</a></li>
+        <li><a href="#">Labral Repair</a></li>
+        <li><a href="#">Labral Reconstruction</a></li>
+        <li><a href="#">PAO Surgery</a></li>
+        <li><a href="#">Total Hip Replacement</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Other Specialties</h4>
+      <ul>
+        <li><a href="#">Knee Surgery</a></li>
+        <li><a href="#">Shoulder Surgery</a></li>
+        <li><a href="#">Elbow Surgery</a></li>
+        <li><a href="#">Sports Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+        <li><a href="#">Recovery Resources</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon-footer">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon-footer">Li</a>
+      <a href="#" class="social-icon-footer">X</a>
+      <a href="#" class="social-icon-footer">Yt</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

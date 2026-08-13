@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pincer Resection - Hip Socket Reshaping for FAI | Michael K. Ryan, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --surgical-blue: #E8F4FF;
+  --surgical-blue-border: #C8E6FF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== SHARED STYLES ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--surgical-blue);
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--surgical-blue-border);
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--navy); }
+.hero-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.hero-text h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
+}
+.hero-text h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bellin-blue);
+}
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.hero-text strong { font-weight: 600; color: var(--navy); }
+.hero-image {
+  background: var(--white);
+  border: 1px solid var(--surgical-blue-border);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+.content-section {
+  padding: 6rem 0;
+}
+.content-section:nth-child(even) {
+  background: var(--paper-warm);
+}
+.content-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.section-label::before, .section-label::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--bellin-blue);
+}
+.section-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.section-header h2 em { font-style: italic; color: var(--bellin-blue); }
+
+.content-text p {
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+.content-text strong {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ===== SOCKET COMPARISON ===== */
+.socket-comparison {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+}
+.socket-comparison h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.socket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+.socket-item {
+  text-align: center;
+  padding: 2rem;
+  background: var(--paper-cool);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.socket-item.normal {
+  border-top: 4px solid #27AE60;
+}
+.socket-item.pincer {
+  border-top: 4px solid #E74C3C;
+}
+.socket-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+.socket-visual {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+.socket-item h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+.socket-item p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== COMBINED PROCEDURE ===== */
+.combined-procedure {
+  background: var(--surgical-blue);
+  border: 1px solid var(--surgical-blue-border);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+  text-align: center;
+}
+.combined-procedure h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.combined-procedure p {
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ===== SURGICAL STEPS ===== */
+.surgical-steps {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+}
+.surgical-steps h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.step-card {
+  text-align: center;
+  position: relative;
+}
+.step-card::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  right: -1rem;
+  width: 2rem;
+  height: 2px;
+  background: var(--accent-gold);
+  opacity: 0.3;
+}
+.step-card:last-child::after {
+  display: none;
+}
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: var(--accent-gold);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 auto 1rem;
+}
+.step-title {
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.step-description {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: var(--paper-cool);
+  padding: 6rem 0;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.cta h2 em { font-style: italic; color: var(--bellin-blue); }
+.cta p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-primary:hover {
+  background: var(--bellin-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,125,196,0.25);
+}
+.arrow { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon-footer {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon-footer:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 3rem 0 2rem; }
+  .hero-inner, .content-inner, .cta-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .content-section, .cta { padding: 4rem 0; }
+  .footer-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        (920) 430-4888
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        Titletown Sports Medicine · Hip Preservation Specialist
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">Insurance Information</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise" class="active">Expertise</a></li>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact" class="cta-btn">Request Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="/">Home</a> / <a href="/expertise">Expertise</a> / <a href="/hip">Hip Surgeries</a> / Pincer Resection
+    </div>
+    
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Pincer <em>Resection</em></h1>
+        <p>
+          The hip joint is a ball-and-socket joint, and a normal hip has a perfectly round ball (femoral head) and a socket (acetabulum) that matches it and is concentric. Any bony abnormalities of the ball or socket can lead to bony impingement and injury to the cartilage and labrum.
+        </p>
+        <p>
+          Another form of <strong>hip impingement</strong> is pincer impingement, where the hip socket is too deep and covers too much of the ball.
+        </p>
+      </div>
+      
+      <div class="hero-image">
+        <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+          <text x="150" y="20" text-anchor="middle" font-size="14" font-weight="600" fill="#002454">Pincer Impingement</text>
+          
+          <!-- Normal socket -->
+          <path d="M80 120 Q80 100 110 100 Q140 100 140 120 L140 160 Q140 180 110 180 Q80 180 80 160 Z" fill="#E8F5E8" stroke="#27AE60" stroke-width="2"/>
+          <circle cx="110" cy="200" r="20" fill="#E8F4FF" stroke="#007DC4" stroke-width="1"/>
+          <text x="110" y="240" text-anchor="middle" font-size="9" fill="#27AE60">Normal</text>
+          <text x="110" y="250" text-anchor="middle" font-size="9" fill="#27AE60">Coverage</text>
+          
+          <!-- Pincer socket -->
+          <path d="M190 120 Q190 90 220 90 Q250 90 250 120 L250 170 Q250 190 220 190 Q190 190 190 170 Z" fill="#FFE6E6" stroke="#E74C3C" stroke-width="2"/>
+          <circle cx="220" cy="200" r="20" fill="#E8F4FF" stroke="#007DC4" stroke-width="1"/>
+          <text x="220" y="240" text-anchor="middle" font-size="9" fill="#E74C3C">Excess</text>
+          <text x="220" y="250" text-anchor="middle" font-size="9" fill="#E74C3C">Coverage</text>
+          
+          <!-- Impingement indication -->
+          <path d="M220 170 L220 180" stroke="#E74C3C" stroke-width="3"/>
+          <text x="220" y="165" text-anchor="middle" font-size="8" fill="#E74C3C">Impingement</text>
+          
+          <text x="150" y="300" text-anchor="middle" font-size="12" font-weight="500" fill="#007DC4">Deep socket causes impingement</text>
+          
+          <!-- Arrows showing coverage -->
+          <path d="M70 140 L50 140" stroke="#27AE60" stroke-width="2" marker-end="url(#arrowgreen)"/>
+          <path d="M260 140 L280 140" stroke="#E74C3C" stroke-width="2" marker-end="url(#arrowred)"/>
+          
+          <defs>
+            <marker id="arrowgreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#27AE60" />
+            </marker>
+            <marker id="arrowred" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#E74C3C" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCKET COMPARISON -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Socket Anatomy</div>
+      <h2>Normal vs <em>excessive coverage</em></h2>
+    </div>
+    
+    <div class="socket-comparison">
+      <h3>Hip Socket Coverage Comparison</h3>
+      <div class="socket-grid">
+        <div class="socket-item normal">
+          <div class="socket-visual">
+            <svg viewBox="0 0 120 120" style="width: 100%; height: auto;">
+              <path d="M30 60 Q30 30 60 30 Q90 30 90 60 L90 80 Q90 100 60 100 Q30 100 30 80 Z" fill="#E8F5E8" stroke="#27AE60" stroke-width="2"/>
+              <circle cx="60" cy="85" r="15" fill="#E8F4FF" stroke="#007DC4" stroke-width="1"/>
+              <text x="60" y="20" text-anchor="middle" font-size="8" fill="#27AE60">Normal Depth</text>
+            </svg>
+          </div>
+          <h4>Normal Hip Socket</h4>
+          <p>Appropriate depth and coverage allowing normal range of motion without impingement</p>
+        </div>
+        <div class="socket-item pincer">
+          <div class="socket-visual">
+            <svg viewBox="0 0 120 120" style="width: 100%; height: auto;">
+              <path d="M30 60 Q30 20 60 20 Q90 20 90 60 L90 85 Q90 105 60 105 Q30 105 30 85 Z" fill="#FFE6E6" stroke="#E74C3C" stroke-width="2"/>
+              <circle cx="60" cy="85" r="15" fill="#E8F4FF" stroke="#007DC4" stroke-width="1"/>
+              <text x="60" y="15" text-anchor="middle" font-size="8" fill="#E74C3C">Too Deep</text>
+              <path d="M60 65 L60 70" stroke="#E74C3C" stroke-width="2"/>
+            </svg>
+          </div>
+          <h4>Pincer Impingement</h4>
+          <p>Hip socket too deep and covers too much of the ball, causing impingement and cartilage damage</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMBINED LABRAL REPAIR -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="combined-procedure">
+      <h3>Combined Procedure</h3>
+      <p>Frequently, the labrum is torn in the setting of pincer impingement, and when it is a <strong>labral repair</strong> is performed during the same surgery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SURGICAL TECHNIQUE -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Surgical Process</div>
+      <h2>Arthroscopic <em>pincer resection</em></h2>
+    </div>
+    
+    <div class="surgical-steps">
+      <h3>Pincer Resection Procedure</h3>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-title">Arthroscopic Access</div>
+          <div class="step-description">Enter hip joint through minimally invasive portals</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-title">Pincer Identification</div>
+          <div class="step-description">Locate the excess socket rim causing impingement</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-title">Rim Resection</div>
+          <div class="step-description">Remove excess bone using motorized burr</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-title">X-ray Verification</div>
+          <div class="step-description">Ensure proper bone removal with portable x-ray</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <div class="step-title">Socket Restoration</div>
+          <div class="step-description">Reestablish normal socket depth and coverage</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">6</div>
+          <div class="step-title">Labral Repair</div>
+          <div class="step-description">Repair any labral tear if present</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOME -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="content-text">
+      <p>
+        This excess coverage causes impingement and damage to the cartilage and labrum. If non-surgical treatments fail to alleviate pain and improve function, pincer impingement can be properly treated with surgery, including <strong>hip arthroscopy</strong> for the vast majority of cases, and occasionally a surgical dislocation of the hip.
+      </p>
+      
+      <p>
+        A portable x-ray machine is used to ensure the proper amount of bone is removed and to help reestablish a socket with normal depth and coverage. Once adequately resected, the hip no longer impinges during motion and activity.
+      </p>
+      
+      <p>
+        Rehabilitation from a pincer resection and labral repair typically follows the same outline in the <strong>hip arthroscopy</strong> section and is modified as needed.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Expert <em>pincer resection</em></h2>
+    <p>If you have pincer-type hip impingement causing pain and limiting function, arthroscopic pincer resection can restore normal socket coverage and prevent further damage to cartilage and labrum.</p>
+    <a href="#" class="btn-primary">
+      Schedule consultation
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Sports Medicine<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Hip Surgeries</h4>
+      <ul>
+        <li><a href="#">Hip Arthroscopy</a></li>
+        <li><a href="#">Cam Resection</a></li>
+        <li><a href="#">Pincer Resection</a></li>
+        <li><a href="#">Labral Repair</a></li>
+        <li><a href="#">Capsule Repair</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Other Specialties</h4>
+      <ul>
+        <li><a href="#">Knee Surgery</a></li>
+        <li><a href="#">Shoulder Surgery</a></li>
+        <li><a href="#">Elbow Surgery</a></li>
+        <li><a href="#">Sports Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+        <li><a href="#">Recovery Resources</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon-footer">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon-footer">Li</a>
+      <a href="#" class="social-icon-footer">X</a>
+      <a href="#" class="social-icon-footer">Yt</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

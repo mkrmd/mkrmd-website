@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Clinical Research & Publications | Michael K. Ryan, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== SHARED STYLES ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--paper);
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  text-align: center;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--navy); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bellin-blue);
+}
+.hero-lede {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== RESEARCH FOCUS ===== */
+.research-focus {
+  padding: 6rem 0;
+  background: var(--paper-cool);
+}
+.focus-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.section-label::before, .section-label::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--bellin-blue);
+}
+.focus-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.focus-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.focus-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.focus-header p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.focus-areas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+.focus-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s;
+}
+.focus-card:hover {
+  border-color: var(--bellin-blue);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.focus-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bellin-blue);
+}
+.focus-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-soft));
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+}
+.focus-icon svg { width: 28px; height: 28px; }
+.focus-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.focus-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== PUBLICATIONS ===== */
+.publications {
+  padding: 6rem 0;
+  background: var(--paper);
+}
+.publications-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.publications-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.publications-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.publications-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.publications-header p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.publication-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.stat-item {
+  text-align: center;
+}
+.stat-number {
+  font-family: 'Fraunces', serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--bellin-blue);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.publications-list {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.publication {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.2s;
+}
+.publication:hover {
+  border-color: var(--bellin-blue);
+  box-shadow: var(--shadow-sm);
+}
+.publication-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.publication-year {
+  background: var(--navy);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.publication h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+.publication-journal {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+.publication-authors {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.publication-authors strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ===== ONGOING RESEARCH ===== */
+.ongoing-research {
+  padding: 6rem 0;
+  background: var(--paper-warm);
+  border-top: 1px solid var(--rule);
+}
+.research-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.research-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.research-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.research-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.research-header p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.research-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  transition: all 0.3s;
+}
+.research-card:hover {
+  border-color: var(--bellin-blue);
+  box-shadow: var(--shadow-sm);
+}
+.research-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background: rgba(0,125,196,0.1);
+  color: var(--bellin-blue);
+}
+.research-card h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.research-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ===== CTA SECTION ===== */
+.cta {
+  background: var(--paper);
+  padding: 6rem 0;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.cta h2 em { font-style: italic; color: var(--bellin-blue); }
+.cta p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-primary:hover {
+  background: var(--bellin-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,125,196,0.25);
+}
+.arrow { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .focus-areas { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+}
+@media (max-width: 900px) {
+  .focus-areas { grid-template-columns: 1fr; }
+  .publication-stats { flex-direction: column; gap: 2rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 3rem 0 2rem; }
+  .hero-inner, .focus-inner, .publications-inner, .research-inner, .cta-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .research-focus, .publications, .ongoing-research, .cta { padding: 4rem 0; }
+  .footer-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        (920) 430-4888
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        Titletown Orthopaedics · Green Bay, WI
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">MRI / X-Ray Review</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#research" class="active">Research</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact" class="cta-btn">Request Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="/">Home</a> / Research
+    </div>
+    <h1>Clinical <em>Research</em></h1>
+    <p class="hero-lede">
+      Contributing to the advancement of orthopaedic surgery through clinical research, peer-reviewed publications, and evidence-based practice — translating research findings into better patient outcomes.
+    </p>
+  </div>
+</section>
+
+<!-- RESEARCH FOCUS AREAS -->
+<section class="research-focus">
+  <div class="focus-inner">
+    <div class="section-label">Research Focus</div>
+    <div class="focus-header">
+      <h2>Areas of <em>Investigation</em></h2>
+      <p>Dr. Ryan's research focuses on advancing surgical techniques, improving patient outcomes, and developing evidence-based protocols across sports medicine subspecialties.</p>
+    </div>
+    
+    <div class="focus-areas">
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.07 2.07 0 0 1-2.44-2.44 2.07 2.07 0 0 1-2.44-2.44 2.07 2.07 0 0 1-2.44-2.44A2.5 2.5 0 0 1 2.5 10H12"/>
+          </svg>
+        </div>
+        <h3>Hip Preservation</h3>
+        <p>Femoroacetabular impingement, hip arthroscopy outcomes, periacetabular osteotomy, and labral reconstruction techniques in young active patients.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h3>Knee Surgery</h3>
+        <p>Meniscal allograft transplantation, multiligament knee injuries, ACL reconstruction techniques, and return-to-sport outcomes in athletes.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="13" r="8"/>
+            <path d="M5 3 2 6l3 3"/>
+            <path d="m22 6-3 3 3 3"/>
+            <path d="M6.38 9a10 10 0 0 1 15.24 0"/>
+          </svg>
+        </div>
+        <h3>Shoulder & Elbow</h3>
+        <p>Rotator cuff repair techniques, ulnar collateral ligament surgery, osteochondritis dissecans, and throwing athlete injury patterns.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3>Outcomes Research</h3>
+        <p>Return-to-sport analysis, rehabilitation protocols, and biomechanical studies to optimize patient outcomes across all surgical interventions.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="publications">
+  <div class="publications-inner">
+    <div class="publications-header">
+      <h2>Research <em>Publications</em></h2>
+      <p>Peer-reviewed research contributing to the orthopaedic literature and advancing evidence-based practice in sports medicine.</p>
+    </div>
+    
+    <div class="publication-stats">
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Publications</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">12</div>
+        <div class="stat-label">Years Active</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Journals</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">
+          <a href="https://www.researchgate.net/profile/Michael-Ryan-12" target="_blank" style="color: var(--bellin-blue); text-decoration: none;">ResearchGate</a>
+        </div>
+        <div class="stat-label">Research Profile</div>
+      </div>
+    </div>
+    
+    <div class="publications-list">
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2025</span>
+        </div>
+        <h3>Clinical Outcomes of Ulnar Collateral Ligament Repair with Internal Brace Versus Ulnar Collateral Ligament Reconstruction in Competitive Athletes</h3>
+        <div class="publication-journal">American Journal of Sports Medicine</div>
+        <div class="publication-authors">Dugas JR, Froom RJ, Mussel EA, Carlson SM, Crawford AE, Tulowitzky GE, Dias T, Wilk KE, Patel AN, Kidwell-Chandler AL, <strong>Ryan MK</strong>, Atkinson AW, Manual AH, Rothermich MA, Ithurburn MP, Emblom BA, Cain EL.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2024</span>
+        </div>
+        <h3>Addressing Extra-Articular Impingement in the Athlete</h3>
+        <div class="publication-journal">Operative Techniques in Sports Medicine</div>
+        <div class="publication-authors"><strong>Ryan MK</strong>.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2024</span>
+        </div>
+        <h3>Rehabilitation-Specific Predictors of Pain Intensity and Physical Activity Levels in Individuals with Acetabular Dysplasia 6 Months after Periacetabular Osteotomy</h3>
+        <div class="publication-journal">Scandinavian Journal of Medicine & Science in Sports</div>
+        <div class="publication-authors">Alrashdi NZ, Motl RW, Lein DH, Aguiar EJ, Perumean-Chaney SE, <strong>Ryan MK</strong>, Ithurburn MP.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2024</span>
+        </div>
+        <h3>Outcomes of Surgical Treatment for Multiligament Knee Injuries in a Cohort Including Competitive Athletes with Long-term Follow-up</h3>
+        <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
+        <div class="publication-authors">Mussell EA, Crawford AE, Ithurburn MP, Layton BO, Fleisig GS, Rothermich MA, Emblom BA, <strong>Ryan MK</strong>, Dugas JR, Andrews JR, Cain EL.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2024</span>
+        </div>
+        <h3>The Relationship Between All-Suture and Solid Medial-Row Anchors and Patient-Reported Outcomes for Double-Row Suture Bridge Rotator Cuff Repair</h3>
+        <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
+        <div class="publication-authors">Feldman JJ, Ostrander B, Ithurburn MP, Fleisig GS, Tatum R, Oschner MG, <strong>Ryan MK</strong>, Rothermich MA, Emblom BA, Dugas JR, Cain EL.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2024</span>
+        </div>
+        <h3>Long-term Outcomes of Multiligament Knee Injuries in American Football Players</h3>
+        <div class="publication-journal">American Journal of Sports Medicine</div>
+        <div class="publication-authors">Cain EL, Mussell EA, Crawford AE, Ithurburn MP, Layton BO, Fleisig GS, Rothermich MA, Emblom BA, <strong>Ryan MK</strong>, Dugas JR, Andrews JR.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2023</span>
+        </div>
+        <h3>Fixation Strength in Arthroscopic Labral Repair of the Hip: A Head-to-Head Comparison of the Biomechanical Performance of a Biocompatible vs All-Suture Anchor in the Setting of Acetabuloplasty</h3>
+        <div class="publication-journal">PLoS ONE</div>
+        <div class="publication-authors">Emblom BA, Walters B, Mast L, Beason D, Ruder J, <strong>Ryan MK</strong>, Gould S, Schwartz M.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2023</span>
+        </div>
+        <h3>Outcomes of Double-Row Rotator Cuff Repair Using a Novel All-Suture Soft Anchor Medial Row</h3>
+        <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
+        <div class="publication-authors">Loeb AE, Ostrander BS, Ithurburn MP, Fleisig GS, Arceo C, Brockington D, Tatum R, Feldman J, <strong>Ryan MK</strong>, Rothermich MA, Emblom BA, Dugas JR, Cain EL.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2023</span>
+        </div>
+        <h3>Clinical Outcomes of Osteochondritis Dissecans Lesions of the Capitellum Treated with Arthroscopy with a Mean Follow-up Period of 8.3 Years</h3>
+        <div class="publication-journal">Journal of Shoulder and Elbow Surgery</div>
+        <div class="publication-authors">Rothermich MA, Mussell EA, <strong>Ryan MK</strong>, Fleisig GS, Sitton SE, Emblom BA, Dugas JR, Andrews JR, Cain EL.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2023</span>
+        </div>
+        <h3>Clinical Outcomes and Return to Play in Softball Players Following SLAP Repair or Biceps Tenodesis</h3>
+        <div class="publication-journal">Journal of Shoulder and Elbow Surgery</div>
+        <div class="publication-authors">Rothermich MA, <strong>Ryan MK</strong>, Fleisig GS, Layton BO, Mussell EA, Andrews JR, Emblom BA, Cain EL, Dugas JR.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2023</span>
+        </div>
+        <h3>A History of Eponym Usage in Hip and Pelvis Radiography Part 2: The Adult Hip</h3>
+        <div class="publication-journal">Hip International</div>
+        <div class="publication-authors">Bi A, <strong>Ryan MK</strong>, Castaneda P, Youm T.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2023</span>
+        </div>
+        <h3>Demographic and Clinical Correlates of Device-Measured Physical Activity Levels in Individuals with Femoroacetabular Impingement</h3>
+        <div class="publication-journal">Archives of Rehabilitation Research and Clinical Translation</div>
+        <div class="publication-authors">Alrashdi NZ, Motl RW, Samchok S, Momaya AM, Emblom BA, <strong>Ryan MK</strong>, Ithurburn MP.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2022</span>
+        </div>
+        <h3>Clinical Outcomes of Ulnar Collateral Ligament Surgery in Non-Throwing Athletes</h3>
+        <div class="publication-journal">American Journal of Sports Medicine</div>
+        <div class="publication-authors">Rothermich MA, Pharr Z, Mundy A, Fleisig GS, Mussell EA, <strong>Ryan MK</strong>, Bernier H, Ostrander B, Slowik J, Emblom BA, Cain EL, Dugas JR.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2022</span>
+        </div>
+        <h3>Endoscopic Gluteus Medius Repair Replicates Open, Knotless Repair with Similar Cyclic Loading Properties: A Cadaveric Study</h3>
+        <div class="publication-journal">Arthroscopy, Sports Medicine, and Rehabilitation</div>
+        <div class="publication-authors">Flynn ME, Beason DP, Bartush KC, <strong>Ryan MK</strong>, Emblom BA.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2021</span>
+        </div>
+        <h3>In-Line Pullout Strength of 2 Acetabular Fixation Methods for Ligamentum Teres Reconstruction of the Hip</h3>
+        <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
+        <div class="publication-authors">Lall A, Ankem H, <strong>Ryan MK</strong>, Beason D, Diulus S, Roach R, Rosinsky P, Maldonado D, Emblom BA, Domb B.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2021</span>
+        </div>
+        <h3>Mobility-Related Outcomes for Periacetabular Osteotomy in Persons with Acetabular Dysplasia: Setting the Stage for Measurements of Real-World Outcomes</h3>
+        <div class="publication-journal">Journal of Hip Preservation Surgery</div>
+        <div class="publication-authors">Alrashdi NZ, Aguiar E, <strong>Ryan MK</strong>, Ithurburn MP.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2021</span>
+        </div>
+        <h3>Early Complications of Ulnar Collateral Ligament Repair with Internal Brace Augmentation</h3>
+        <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
+        <div class="publication-authors">Rothermich MA, Mussel EA, <strong>Ryan MK</strong>, Fleisig G, Andrews JR, Emblom BA, Cain EL, Dugas JR.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2021</span>
+        </div>
+        <h3>Association of Slipped Capital Femoral Epiphysis with Panhypopituitarism Due to Pituitary Macroadenoma: A Case Report</h3>
+        <div class="publication-journal">Journal of Investigative Medicine High Impact Case Reports</div>
+        <div class="publication-authors">Harris JB, Sunil B, <strong>Ryan MK</strong>, Beauchamp G.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2021</span>
+        </div>
+        <h3>Outcomes of Open and Endoscopic Repairs of Chronic Partial- and Full-Thickness Proximal Hamstring Tendon Tears: A Multicenter Study with Minimum 2-Year Follow-up</h3>
+        <div class="publication-journal">American Journal of Sports Medicine</div>
+        <div class="publication-authors">Maldonado DR, Annin S, Lall AC, Krych AJ, Athey AG, Spinner RJ, Hartigan DE, Emblom BA, <strong>Ryan MK</strong>, Domb BG.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2020</span>
+        </div>
+        <h3>Location of Intra- and Extraarticular Impingement is Different in Patients with Pincer-Type and Mixed-Type Femoroacetabular Impingement Due to Acetabular Retroversion or Protrusio Acetabuli on 3D-CT-Based Impingement Simulation</h3>
+        <div class="publication-journal">American Journal of Sports Medicine</div>
+        <div class="publication-authors">Lerch TD, Siegfried M, Schmaranzer F, Leibold CS, Zurmühle CA, Hanke MS, <strong>Ryan MK</strong>, Steppacher SD, Siebenrock KA, Tannast M.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2020</span>
+        </div>
+        <h3>Does Traumatic Etiology of Hip Pain Influence Hip Arthroscopy Outcomes?</h3>
+        <div class="publication-journal">Arthroscopy</div>
+        <div class="publication-authors">Chenard KE, Mai D, Begly JP, <strong>Ryan MK</strong>, Youm T.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2020</span>
+        </div>
+        <h3>Atypical Hip Pain in Femoroacetabular Impingement: A Comparison of Outcomes Based on Primary Hip Pain Location</h3>
+        <div class="publication-journal">American Journal of Sports Medicine</div>
+        <div class="publication-authors">Hamula MJ, <strong>Ryan MK</strong>, Baron SL, Bloom DA, Youm T.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2019</span>
+        </div>
+        <h3>Outcome Trends after Hip Arthroscopy for Femoroacetabular Impingement: When Do Patients Improve?</h3>
+        <div class="publication-journal">Arthroscopy</div>
+        <div class="publication-authors">Wolfson TS, <strong>Ryan MK</strong>, Begly JP, Youm T.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2019</span>
+        </div>
+        <h3>Femoroacetabular Impingement Patients with Decreased Femoral Version have Different Impingement Locations and Intra- and Extraarticular Anterior Subspine FAI on 3D-CT-Based Impingement Simulation: Implications for Hip Arthroscopy</h3>
+        <div class="publication-journal">American Journal of Sports Medicine</div>
+        <div class="publication-authors">Lerch TD, Boschung A, Todorski IAS, Steppacher SD, Schmaranzer F, Zheng G, <strong>Ryan MK</strong>, Siebenrock KA, Tannast M.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2019</span>
+        </div>
+        <h3>Portal Placement and Biomechanical Performance of Endoscopic Proximal Hamstring Repair</h3>
+        <div class="publication-journal">American Journal of Sports Medicine</div>
+        <div class="publication-authors"><strong>Ryan MK</strong>, Beason DP, Fleisig GS, Emblom BA.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2019</span>
+        </div>
+        <h3>Proof of Concept: Hip Joint Damage Occurs at the Zone of Femoroacetabular Impingement (FAI) in an Experimental FAI Sheep Model</h3>
+        <div class="publication-journal">Osteoarthritis and Cartilage</div>
+        <div class="publication-authors">Zurmühle C, Schmaranzer F, Wolfer N, Lerch TD, Steppacher S, Nuss K, von Rechenberg B, <strong>Ryan MK</strong>, Tannast M.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2018</span>
+        </div>
+        <h3>Traumatic Instability: Treatment Options and Considerations for Recurrent Post Traumatic Instability</h3>
+        <div class="publication-journal">Sports Medicine and Arthroscopy Review</div>
+        <div class="publication-authors">Cain EL, <strong>Ryan MK</strong>.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2018</span>
+        </div>
+        <h3>The Vascular Supply of the Femoral Head in Sheep – Implications for the Ovine Femoroacetabular Impingement Model</h3>
+        <div class="publication-journal">Journal of Orthopaedic Research</div>
+        <div class="publication-authors">Steppacher S, von Rechenberg B, Nuss K, Wolfer N, <strong>Ryan MK</strong>, Tannast M.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2018</span>
+        </div>
+        <h3>Beyond the Scope: Indications for Open Surgical Hip Dislocation for Treatment of Femoroacetabular Impingement</h3>
+        <div class="publication-journal">Bulletin of the Hospital for Joint Disease</div>
+        <div class="publication-authors"><strong>Ryan MK</strong>, Youm T, Vigdorchik J.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2018</span>
+        </div>
+        <h3>Meniscal Root Tears Evaluation and Management</h3>
+        <div class="publication-journal">Bulletin of the Hospital for Joint Disease</div>
+        <div class="publication-authors">Day MS, <strong>Ryan MK</strong>, Strauss EJ.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2018</span>
+        </div>
+        <h3>Independent Risk Factors for Revision Surgery or Conversion to THA after Hip Arthroscopy: An Analysis of 3,957 Patients</h3>
+        <div class="publication-journal">Arthroscopy</div>
+        <div class="publication-authors">Kester BS, Capogna B, Mahure SA, <strong>Ryan MK</strong>, Mollon B, Rokito AS, Youm T.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2017</span>
+        </div>
+        <h3>Independent Risk Factors for Poor Outcome after Hip Arthroscopy</h3>
+        <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
+        <div class="publication-authors">Capogna B, Hamula M, Begly JP, Wolfson T, Looze CA, <strong>Ryan MK</strong>, Youm T.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2017</span>
+        </div>
+        <h3>Concomitant Lumbar Spine Pathology in Patients Undergoing Hip Arthroscopy: A Matched Cohort Analysis</h3>
+        <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
+        <div class="publication-authors">Mahure SA, <strong>Ryan MK</strong>, Buckland A, Hamula M, Begly JP, Capogna B, Looze C, Chenard KE, Wolfson T, Youm T.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2017</span>
+        </div>
+        <h3>Surgical Reasons for Failure of Anterior Cruciate Ligament Reconstruction: An Update</h3>
+        <div class="publication-journal">Minerva Ortopedica e Traumatologica</div>
+        <div class="publication-authors">Hamula MJ, Badash J, Jejurikar N, <strong>Ryan MK</strong>, Strauss EJ.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2017</span>
+        </div>
+        <h3>Evaluation and Management of Osteochondral Lesions of the Talus</h3>
+        <div class="publication-journal">Cartilage</div>
+        <div class="publication-authors">Looze CA, Capo J, <strong>Ryan MK</strong>, Begly JP, Chapman C, Swanson D, Singh BC, Strauss EJ.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2016</span>
+        </div>
+        <h3>Outcome Trends after Hip Arthroscopy for Femoroacetabular Impingement: When Do Patients Improve?</h3>
+        <div class="publication-journal">Journal of Hip Preservation Surgery</div>
+        <div class="publication-authors">Youm T, Wolfson T, <strong>Ryan MK</strong>, Looze CA, Capogna B, Begly JP, Hamula M, Chenard K, Mahure S.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2016</span>
+        </div>
+        <h3>Clinical Outcomes of Hip Arthroscopy in Patients Over 60: A Minimum of Two-Year Follow-Up</h3>
+        <div class="publication-journal">Arthroscopy</div>
+        <div class="publication-authors">Capogna B, <strong>Ryan MK</strong>, Begly JP, Chenard KE, Youm T.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2016</span>
+        </div>
+        <h3>Evaluation, Treatment and Outcomes of Meniscal Root Tears: A Critical Analysis Review</h3>
+        <div class="publication-journal">JBJS Reviews</div>
+        <div class="publication-authors">Strauss EJ, Day MS, <strong>Ryan MK</strong>, Jazrawi L.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2016</span>
+        </div>
+        <h3>Clinical Outcomes Following Arthroscopic Micro Fracture of the Hip</h3>
+        <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
+        <div class="publication-authors">Begly JP, <strong>Ryan MK</strong>, Capogna B, Youm T.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2015</span>
+        </div>
+        <h3>Meniscal Allograft Transplantation: A Comprehensive Historical and Current Review</h3>
+        <div class="publication-journal">Bulletin of the Hospital for Joint Disease</div>
+        <div class="publication-authors">Hannon MG, <strong>Ryan MK</strong>, Strauss EJ.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2014</span>
+        </div>
+        <h3>Surgical Reasons for Failure of Anterior Cruciate Ligament Reconstruction</h3>
+        <div class="publication-journal">Minerva Ortopedica e Traumatologica</div>
+        <div class="publication-authors"><strong>Ryan MK</strong>, Small W, Strauss EJ.</div>
+      </div>
+      
+      <div class="publication">
+        <div class="publication-meta">
+          <span class="publication-year">2013</span>
+        </div>
+        <h3>Both-bone Forearm Fracture with Distal Radioulnar Joint Dislocation</h3>
+        <div class="publication-journal">American Journal of Orthopedics</div>
+        <div class="publication-authors"><strong>Ryan MK</strong>, MacKay B, Tejwani NT.</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ONGOING RESEARCH -->
+<section class="ongoing-research">
+  <div class="research-inner">
+    <div class="research-header">
+      <h2>Ongoing <em>Research</em></h2>
+      <p>Current investigations focused on advancing sports medicine outcomes and optimizing patient care protocols.</p>
+    </div>
+    
+    <div class="research-grid">
+      
+      <div class="research-card">
+        <span class="research-status">Active</span>
+        <h4>Sports Medicine Outcomes Research</h4>
+        <p>Comprehensive analysis of surgical outcomes, return-to-sport timelines, and long-term functional performance across multiple sports medicine subspecialties.</p>
+      </div>
+      
+      <div class="research-card">
+        <span class="research-status">Active</span>
+        <h4>Hip Arthroscopy Outcomes Analysis</h4>
+        <p>Prospective review of failed and revision hip arthroscopy cases to identify predictive factors and improve patient selection criteria.</p>
+      </div>
+      
+      <div class="research-card">
+        <span class="research-status">Active</span>
+        <h4>Endoscopic Proximal Hamstring Repair</h4>
+        <p>Prospective evaluation of clinical outcomes, return-to-sport rates, and long-term functional performance following endoscopic hamstring repair techniques.</p>
+      </div>
+      
+      <div class="research-card">
+        <span class="research-status">Active</span>
+        <h4>Capsular Management in Hip Arthroscopy</h4>
+        <p>Investigation of capsular closure and plication techniques in hip arthroscopy and their impact on joint stability and patient outcomes.</p>
+      </div>
+      
+      <div class="research-card">
+        <span class="research-status">Active</span>
+        <h4>GPS-Based Return to Sport Analysis</h4>
+        <p>Utilization of GPS tracking systems to objectively measure return-to-sport performance and establish evidence-based return-to-play protocols.</p>
+      </div>
+      
+      <div class="research-card">
+        <span class="research-status">Active</span>
+        <h4>Hip Dysplasia Biomechanics</h4>
+        <p>Prospective cohort study examining muscular kinematics and movement patterns in patients with hip dysplasia before and after surgical intervention.</p>
+      </div>
+      
+      <div class="research-card">
+        <span class="research-status">Collaborative</span>
+        <h4>MASH Study Group</h4>
+        <p>Multi-center hip arthroscopy study group focused on advancing surgical techniques, outcomes research, and evidence-based protocols for hip preservation surgery across institutions.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Evidence-based <em>patient care</em></h2>
+    <p>Benefit from treatment protocols informed by the latest research and clinical evidence. Dr. Ryan translates research findings into practical applications that improve patient outcomes and accelerate recovery.</p>
+    <a href="#" class="btn-primary">
+      Request consultation
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Orthopaedics at Bellin Health<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul>
+        <li><a href="#">About Dr. Ryan</a></li>
+        <li><a href="#">The Team</a></li>
+        <li><a href="#">Titletown Orthopaedics</a></li>
+        <li><a href="#">Bellin Health</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Expertise</h4>
+      <ul>
+        <li><a href="#">Hip</a></li>
+        <li><a href="#">Knee</a></li>
+        <li><a href="#">Shoulder</a></li>
+        <li><a href="#">Sports Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">MRI Review</a></li>
+        <li><a href="#">Recover Like the Pros</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon">Li</a>
+      <a href="#" class="social-icon">X</a>
+      <a href="#" class="social-icon">Yt</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media & Appearances — Interviews, Podcasts & Speaking Engagements | Michael K. Ryan, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== SHARED STYLES ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--paper);
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  text-align: center;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--navy); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bellin-blue);
+}
+.hero-lede {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== SOCIAL FEEDS ===== */
+.social-feeds {
+  padding: 6rem 0;
+  background: var(--paper-cool);
+  position: relative;
+  overflow: hidden;
+}
+.social-feeds::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 1000px 500px at 80% 20%, rgba(0,125,196,0.06), transparent 60%);
+}
+.feeds-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.section-label::before, .section-label::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--bellin-blue);
+}
+.feeds-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.feeds-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.feeds-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.feeds-header p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.social-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+}
+.social-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--navy), var(--bellin-blue), var(--accent-gold));
+}
+.social-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--bellin-blue);
+}
+.social-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--white);
+  position: relative;
+}
+.social-icon.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.social-icon.twitter { background: #1DA1F2; }
+.social-icon.linkedin { background: #0077B5; }
+.social-icon.facebook { background: #1877F2; }
+.social-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+.social-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.feed-placeholder {
+  background: var(--paper-cool);
+  border: 2px dashed var(--rule);
+  padding: 2rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+/* ===== PINNED CONTENT ===== */
+.pinned-content {
+  padding: 6rem 0;
+  background: var(--navy-deep);
+  color: var(--white);
+  position: relative;
+}
+.pinned-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 800px 400px at 20% 80%, rgba(200,169,81,0.15), transparent 60%);
+}
+.pinned-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.pinned-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.pinned-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.pinned-header h2 em { font-style: italic; color: var(--accent-gold); }
+.pinned-header p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.pinned-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+}
+.pinned-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2.5rem;
+  transition: all 0.3s;
+  position: relative;
+}
+.pinned-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-gold);
+}
+.pinned-item:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--accent-gold);
+}
+.pin-badge {
+  position: absolute;
+  top: -8px;
+  right: 1rem;
+  background: var(--accent-gold);
+  color: var(--navy);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'JetBrains Mono', monospace;
+}
+.pinned-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.pinned-item h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  color: var(--white);
+}
+.pinned-item p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.pinned-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+}
+.pinned-link {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+.pinned-link:hover { color: var(--white); }
+
+/* ===== MEDIA TIMELINE ===== */
+.media-timeline {
+  padding: 6rem 0;
+  background: var(--paper);
+}
+.timeline-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.timeline-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.timeline-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.timeline-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.timeline-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--paper-warm);
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'JetBrains Mono', monospace;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: var(--rule);
+  top: 0;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.timeline-content {
+  flex: 1;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+  max-width: none;
+}
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  left: -16px;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right-color: var(--rule);
+}
+.timeline-date {
+  position: absolute;
+  left: 20px;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  z-index: 2;
+}
+.media-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--bellin-blue);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.timeline-content h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.timeline-content p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.timeline-meta {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ===== PODCAST SECTION ===== */
+.podcast-section {
+  padding: 6rem 0;
+  background: var(--paper-warm);
+}
+.podcast-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.podcast-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.podcast-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.podcast-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.podcast-featured {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 3rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+}
+.podcast-featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--bellin-blue));
+}
+.podcast-artwork {
+  width: 200px;
+  height: 200px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 3rem;
+  position: relative;
+}
+.podcast-artwork::after {
+  content: '▶';
+  position: absolute;
+  color: var(--accent-gold);
+}
+.podcast-info h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+.podcast-info p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.podcast-meta {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+.podcast-link {
+  color: var(--bellin-blue);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+.podcast-link:hover { color: var(--navy); }
+
+/* ===== CTA ===== */
+.cta {
+  background: var(--paper);
+  padding: 6rem 0;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.cta h2 em { font-style: italic; color: var(--bellin-blue); }
+.cta p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-primary:hover {
+  background: var(--bellin-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,125,196,0.25);
+}
+.arrow { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon-footer {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon-footer:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .social-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+  .pinned-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .podcast-featured { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .timeline::before { display: none; }
+  .timeline-item { flex-direction: column !important; }
+  .timeline-item:nth-child(odd) .timeline-content { margin-left: 0; }
+  .timeline-content { max-width: 100%; margin: 0 auto; }
+  .timeline-content::before { display: none; }
+  .timeline-date { position: static; transform: none; margin-bottom: 1rem; display: inline-block; }
+}
+@media (max-width: 900px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .timeline-filters { flex-direction: column; align-items: center; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 3rem 0 2rem; }
+  .hero-inner, .feeds-inner, .pinned-inner, .timeline-inner, .podcast-inner, .cta-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .social-feeds, .pinned-content, .media-timeline, .podcast-section, .cta { padding: 4rem 0; }
+  .social-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .timeline-filters { gap: 0.5rem; }
+  .filter-btn { padding: 0.5rem 1rem; font-size: 0.75rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        (920) 430-4888
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        Titletown Orthopaedics · Green Bay, WI
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">MRI / X-Ray Review</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#media" class="active">Media</a></li>
+        <li><a href="#contact" class="cta-btn">Request Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="/">Home</a> / Media & Appearances
+    </div>
+    <h1>Media & <em>Appearances</em></h1>
+    <p class="hero-lede">
+      Sharing expertise in sports medicine and orthopaedic surgery through interviews, podcasts, speaking engagements, and social media to advance patient care and education.
+    </p>
+  </div>
+</section>
+
+<!-- SOCIAL FEEDS -->
+<section class="social-feeds">
+  <div class="feeds-inner">
+    <div class="section-label">Stay Connected</div>
+    <div class="feeds-header">
+      <h2>Follow the <em>Latest</em></h2>
+      <p>Stay updated with the latest insights, behind-the-scenes content, and patient education through our social media channels.</p>
+    </div>
+    
+    <div class="social-grid">
+      <div class="social-card">
+        <div class="social-icon instagram">📸</div>
+        <h3>Instagram</h3>
+        <p>Behind-the-scenes content, patient success stories, and educational posts about sports medicine and injury prevention.</p>
+        <div class="feed-placeholder">
+          <p>@mkr.md_<br>Live Instagram feed integration coming soon</p>
+        </div>
+      </div>
+      
+      <div class="social-card">
+        <div class="social-icon twitter">𝕏</div>
+        <h3>X (Twitter)</h3>
+        <p>Real-time updates, commentary on sports medicine trends, and professional insights from the field.</p>
+        <div class="feed-placeholder">
+          <p>@MichaelKRyanMD<br>Live X feed integration coming soon</p>
+        </div>
+      </div>
+      
+      <div class="social-card">
+        <div class="social-icon linkedin">💼</div>
+        <h3>LinkedIn</h3>
+        <p>Professional insights, research updates, and industry commentary on orthopaedic surgery and sports medicine.</p>
+        <div class="feed-placeholder">
+          <p>Dr. Michael K. Ryan<br>Live LinkedIn feed integration coming soon</p>
+        </div>
+      </div>
+      
+      <div class="social-card">
+        <div class="social-icon facebook">📘</div>
+        <h3>Facebook</h3>
+        <p>Community engagement, educational content, and updates from Titletown Orthopaedics and the Green Bay Packers.</p>
+        <div class="feed-placeholder">
+          <p>Dr. Michael K. Ryan<br>Live Facebook feed integration coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PINNED CONTENT -->
+<section class="pinned-content">
+  <div class="pinned-inner">
+    <div class="pinned-header">
+      <h2>Featured <em>Content</em></h2>
+      <p>Highlighted appearances and content that showcase expertise in sports medicine, hip preservation, and orthopaedic surgery.</p>
+    </div>
+    
+    <div class="pinned-grid">
+      <div class="pinned-item">
+        <div class="pin-badge">Pinned</div>
+        <div class="pinned-type">Official Announcement</div>
+        <h3>Named Head Team Physician for Green Bay Packers</h3>
+        <p>Official announcement from the Green Bay Packers organization naming Dr. Ryan as Head Team Physician after serving as assistant team physician since 2023.</p>
+        <div class="pinned-meta">
+          <span>Green Bay Packers</span>
+          <span>October 9, 2025</span>
+          <span>Press Release</span>
+        </div>
+        <a href="https://www.packers.com/news/packers-announce-updates-to-medical-staff-oct-9-2025" class="pinned-link">Read Announcement →</a>
+      </div>
+      
+      <div class="pinned-item">
+        <div class="pin-badge">Pinned</div>
+        <div class="pinned-type">Professional Announcement</div>
+        <h3>Springbok Analytics Welcomes Dr. Ryan</h3>
+        <p>Professional announcement from Springbok Analytics welcoming Dr. Ryan to their advisory network, highlighting his expertise in sports medicine and orthopedic surgery.</p>
+        <div class="pinned-meta">
+          <span>Springbok Analytics</span>
+          <span>LinkedIn</span>
+          <span>Professional Network</span>
+        </div>
+        <a href="https://www.linkedin.com/posts/springbok-analytics_please-join-us-in-welcoming-michael-k-ryan-activity-7181745785250705408-zQ8J/" class="pinned-link">View Post →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA TIMELINE -->
+<section class="media-timeline">
+  <div class="timeline-inner">
+    <div class="timeline-header">
+      <h2>Recent <em>Appearances</em></h2>
+    </div>
+    
+    <div class="timeline-filters">
+      <a href="#" class="filter-btn active">All</a>
+      <a href="#" class="filter-btn">Podcasts</a>
+      <a href="#" class="filter-btn">TV/Interviews</a>
+      <a href="#" class="filter-btn">Speaking</a>
+    </div>
+    
+    <div class="timeline">
+      
+      <div class="timeline-item">
+        <div class="timeline-date">Jan 2025</div>
+        <div class="timeline-content">
+          <div class="media-type">TV Interview</div>
+          <h3>Becoming an Orthopedic Surgeon</h3>
+          <p>Personal insights into the journey of becoming an orthopedic surgeon and what inspired Dr. Ryan to pursue sports medicine.</p>
+          <div class="timeline-meta">
+            <span>Inside Wisconsin</span>
+            <span><a href="https://www.youtube.com/watch?v=g0WSjy33an0" target="_blank">43 seconds</a></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">2024</div>
+        <div class="timeline-content">
+          <div class="media-type">Professional Network</div>
+          <h3>Springbok Analytics Advisory Appointment</h3>
+          <p>Announcement of Dr. Ryan joining Springbok Analytics as an advisor, bringing sports medicine expertise to their analytics platform.</p>
+          <div class="timeline-meta">
+            <span>Springbok Analytics</span>
+            <span><a href="https://www.linkedin.com/posts/springbok-analytics_please-join-us-in-welcoming-michael-k-ryan-activity-7181745785250705408-zQ8J/" target="_blank">LinkedIn</a></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 2025</div>
+        <div class="timeline-content">
+          <div class="media-type">Press Coverage</div>
+          <h3>Green Bay Packers Promotes New Head Team Physician</h3>
+          <p>National coverage of Dr. Ryan's promotion to Head Team Physician for the Green Bay Packers in Becker's Spine Review.</p>
+          <div class="timeline-meta">
+            <span>Becker's Spine Review</span>
+            <span><a href="https://www.beckersspine.com/orthopedic/green-bay-packers-promotes-new-head-team-physician/" target="_blank">Medical News</a></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 2025</div>
+        <div class="timeline-content">
+          <div class="media-type">Official Announcement</div>
+          <h3>Packers Announce Updates to Medical Staff</h3>
+          <p>Official Green Bay Packers press release announcing Dr. Ryan's appointment as Head Team Physician after serving as assistant since 2023.</p>
+          <div class="timeline-meta">
+            <span>Green Bay Packers</span>
+            <span><a href="https://www.packers.com/news/packers-announce-updates-to-medical-staff-oct-9-2025" target="_blank">Press Release</a></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">May 2020</div>
+        <div class="timeline-content">
+          <div class="media-type">Print Media</div>
+          <h3>The Silver Lining of Social Isolation for Athletes</h3>
+          <p>Expert commentary on how athletes can use isolation periods productively for training and mental health during the pandemic.</p>
+          <div class="timeline-meta">
+            <span>Trussville Tribune</span>
+            <span><a href="https://www.trussvilletribune.com/2020/05/22/the-silver-lining-of-social-isolation-in-regards-to-athletes/" target="_blank">Article</a></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">May 2020</div>
+        <div class="timeline-content">
+          <div class="media-type">Magazine Feature</div>
+          <h3>The One Stretch Everyone with a Desk Job Should Be Doing</h3>
+          <p>Expert advice on the Jefferson curl stretch and its benefits for office workers and sedentary lifestyles.</p>
+          <div class="timeline-meta">
+            <span>Men's Journal</span>
+            <span><a href="https://www.mensjournal.com/health-fitness/how-to-do-jefferson-curl-stretch/" target="_blank">Health & Fitness</a></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">Apr 2019</div>
+        <div class="timeline-content">
+          <div class="media-type">Magazine Feature</div>
+          <h3>Everything You Need to Know about Triathlon Distances</h3>
+          <p>Expert insights on triathlon training, distance preparation, and injury prevention for endurance athletes.</p>
+          <div class="timeline-meta">
+            <span>Bicycling Magazine</span>
+            <span><a href="https://www.bicycling.com/racing/a27117645/triathlon-distances/" target="_blank">Sports Training</a></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">2019</div>
+        <div class="timeline-content">
+          <div class="media-type">Magazine Feature</div>
+          <h3>How to Avoid the Most Common Injuries in the Weight Room</h3>
+          <p>Expert advice on weight room safety, proper form, and injury prevention strategies for strength training.</p>
+          <div class="timeline-meta">
+            <span>GQ Magazine</span>
+            <span><a href="https://www.gq.com/story/how-to-not-hurt-yourself-in-the-gym" target="_blank">Fitness</a></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">2019</div>
+        <div class="timeline-content">
+          <div class="media-type">Online Feature</div>
+          <h3>6 Tips for Getting Back into Running</h3>
+          <p>Professional guidance for runners returning to the sport after time off, focusing on injury prevention and gradual progression.</p>
+          <div class="timeline-meta">
+            <span>Greatist.com</span>
+            <span><a href="https://greatist.com/fitness/tips-for-falling-back-in-love-with-running" target="_blank">Fitness Guide</a></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">2018</div>
+        <div class="timeline-content">
+          <div class="media-type">Medical Publication</div>
+          <h3>Periacetabular Osteotomy for Hip Dysplasia Can Prevent Joint Replacement</h3>
+          <p>Expert commentary on advanced hip preservation techniques and their role in preventing total joint replacement in young adults.</p>
+          <div class="timeline-meta">
+            <span>Birmingham Medical News</span>
+            <span><a href="https://www.birminghammedicalnews.com/news.php?viewStory=2905" target="_blank">Medical Education</a></span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST SECTION -->
+<section class="podcast-section">
+  <div class="podcast-inner">
+    <div class="podcast-header">
+      <h2>Victory Over <em>Injury</em></h2>
+    </div>
+    
+    <div class="podcast-featured">
+      <div class="podcast-artwork">🎙️</div>
+      <div class="podcast-info">
+        <h3>Victory Over Injury Podcast</h3>
+        <p>Dr. Ryan's former podcast series featuring in-depth conversations about sports medicine, injury prevention, and return-to-play strategies with leading experts in the field.</p>
+        <div class="podcast-meta">Hosted: 2020-2021 • 24 episodes • Sports Medicine Focus</div>
+        <a href="#" class="podcast-link">
+          Listen to Episodes →
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Expert insights for <em>your audience</em></h2>
+    <p>Available for interviews, podcast appearances, and speaking engagements on sports medicine, orthopaedic surgery, and athlete care. Let's discuss how we can share valuable insights with your audience.</p>
+    <a href="#" class="btn-primary">
+      Media inquiries
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Orthopaedics at Bellin Health<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul>
+        <li><a href="#">About Dr. Ryan</a></li>
+        <li><a href="#">The Team</a></li>
+        <li><a href="#">Titletown Orthopaedics</a></li>
+        <li><a href="#">Bellin Health</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Expertise</h4>
+      <ul>
+        <li><a href="#">Hip</a></li>
+        <li><a href="#">Knee</a></li>
+        <li><a href="#">Shoulder</a></li>
+        <li><a href="#">Sports Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">MRI Review</a></li>
+        <li><a href="#">Recover Like the Pros</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon-footer">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon-footer">Li</a>
+      <a href="#" class="social-icon-footer">X</a>
+      <a href="#" class="social-icon-footer">Yt</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

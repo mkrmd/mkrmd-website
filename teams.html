@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teams — Team Physician Experience | Michael K. Ryan, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== SHARED STYLES ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-soft) 100%);
+  color: var(--white);
+  padding: 5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 800px 400px at 30% 50%, rgba(200,169,81,0.12), transparent 70%),
+    radial-gradient(ellipse 600px 300px at 70% 80%, rgba(0,125,196,0.08), transparent 60%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-gold);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--white); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-gold-soft);
+}
+.hero-lede {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== CURRENT ROLE ===== */
+.current-role {
+  padding: 6rem 0;
+  background: var(--paper);
+}
+.current-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--bellin-blue);
+}
+.current-role h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  color: var(--navy);
+}
+.current-role h2 em {
+  font-style: italic;
+  color: var(--bellin-blue);
+}
+.current-role p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.current-role .lead {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--ink);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.packers-card {
+  background: linear-gradient(135deg, rgba(24,48,40,0.95), rgba(255,184,28,0.1));
+  color: var(--white);
+  padding: 3rem;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.packers-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,184,28,0.1)"/></svg>') repeat;
+  background-size: 50px 50px;
+  opacity: 0.3;
+}
+.packers-content {
+  position: relative;
+  z-index: 1;
+}
+.packers-logo {
+  width: 80px;
+  height: 80px;
+  background: #FFB81C;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #183028;
+  margin-bottom: 1.5rem;
+}
+.packers-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #FFB81C;
+}
+.packers-card p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.role-details {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+.role-details li {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.role-details li::before {
+  content: '⭐';
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* ===== COVERAGE SECTIONS ===== */
+.coverage {
+  padding: 6rem 0;
+  background: var(--paper-warm);
+  border-top: 1px solid var(--rule);
+}
+.coverage-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.coverage-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.coverage-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.coverage-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.coverage-header p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.coverage-section {
+  margin-bottom: 4rem;
+}
+.coverage-section:last-child { margin-bottom: 0; }
+.coverage-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--bellin-blue);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+}
+.team-card:hover {
+  border-color: var(--bellin-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bellin-blue);
+}
+.team-logo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--navy), var(--bellin-blue));
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.team-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.team-years {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.team-sport {
+  font-size: 0.8rem;
+  color: var(--bellin-blue);
+  background: rgba(0,125,196,0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+.team-description {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ===== EXPERIENCE HIGHLIGHTS ===== */
+.experience {
+  padding: 6rem 0;
+  background: var(--navy-deep);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.experience::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(200,169,81,0.12), transparent 60%);
+}
+.experience-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.experience-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.experience-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.experience-header h2 em { font-style: italic; color: var(--accent-gold); }
+.experience-header p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+.highlight-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+.highlight-number {
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--accent-gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.highlight-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.highlight-description {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* ===== CTA SECTION ===== */
+.cta {
+  background: var(--paper);
+  padding: 6rem 0;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.cta h2 em { font-style: italic; color: var(--bellin-blue); }
+.cta p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn-primary, .btn-ghost {
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--bellin-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,125,196,0.25);
+}
+.btn-ghost {
+  color: var(--navy);
+  border: 1px solid var(--navy);
+}
+.btn-ghost:hover {
+  border-color: var(--bellin-blue);
+  background: var(--bellin-blue);
+  color: var(--white);
+}
+.arrow { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-primary:hover .arrow, .btn-ghost:hover .arrow { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .current-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+  .highlights-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 800px) {
+  .teams-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 4rem 0 3rem; }
+  .hero-inner, .current-inner, .coverage-inner, .experience-inner, .cta-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .current-role, .coverage, .experience, .cta { padding: 4rem 0; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .cta-buttons { flex-direction: column; align-items: stretch; }
+  .cta-buttons .btn-primary, .cta-buttons .btn-ghost { justify-content: center; }
+  .packers-card { padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        (920) 430-4888
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        Titletown Orthopaedics · Green Bay, WI
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">MRI / X-Ray Review</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#teams" class="active">Teams</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact" class="cta-btn">Request Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="/">Home</a> / Teams
+    </div>
+    <h1>Team Physician <em>Experience</em></h1>
+    <p class="hero-lede">
+      From the University of Alabama under Nick Saban to the Green Bay Packers in the NFL, Dr. Ryan has served as a team physician at the highest levels of competitive athletics — bringing that elite-level experience to every patient.
+    </p>
+  </div>
+</section>
+
+<!-- CURRENT ROLE -->
+<section class="current-role">
+  <div class="current-inner">
+    <div>
+      <div class="section-label">Current Role</div>
+      <h2>Head Team Physician, <em>Green Bay Packers</em></h2>
+      
+      <p class="lead">
+        Since 2025, Dr. Ryan has served as the Head Team Physician for the Green Bay Packers, overseeing the medical care of one of the NFL's most storied franchises.
+      </p>
+      
+      <p>In this role, Dr. Ryan directs the orthopaedic care of the entire roster, coordinates with the training staff on injury prevention and recovery protocols, and ensures players are directed to the right recovery protocols based on their time away from injury or surgery. The medical standards and return-to-play criteria used at Lambeau Field are the same standards applied to every patient in his practice.</p>
+    </div>
+    
+    <div class="packers-card">
+      <div class="packers-content">
+        <div class="packers-logo">G</div>
+        <h3>Green Bay Packers</h3>
+        <p>Head Team Physician for the NFL's most storied franchise at historic Lambeau Field. Following in the tradition of legendary Packers like Bart Starr, who also played at the University of Alabama.</p>
+        <ul class="role-details">
+          <li>Direct medical decision-making for NFL roster</li>
+          <li>Coordinate with training and coaching staff</li>
+          <li>Coordinate injury prevention with exceptional athletic training and strength staff</li>
+          <li>Guide return-to-play decisions</li>
+          <li>Emergency sideline care for all games at Lambeau Field and on the road</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE SECTIONS -->
+<section class="coverage">
+  <div class="coverage-inner">
+    <div class="coverage-header">
+      <h2>Team <em>Coverage History</em></h2>
+      <p>A comprehensive record of team physician service across professional, collegiate, and high school athletics throughout the Southeast and Midwest.</p>
+    </div>
+    
+    <!-- Current Green Bay Area Teams -->
+    <div class="coverage-section">
+      <h3 class="coverage-title">Current Green Bay Area</h3>
+      <div class="teams-grid">
+        
+        <div class="team-card">
+          <div class="team-logo">UW</div>
+          <h3>UW-Green Bay Phoenix</h3>
+          <div class="team-years">2024 - 2026</div>
+          <div class="team-sport">All Sports</div>
+          <p class="team-description">Horizon League Division I athletics program with comprehensive team physician coverage across all sports.</p>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-logo">SN</div>
+          <h3>St. Norbert College</h3>
+          <div class="team-years">2024 - 2026</div>
+          <div class="team-sport">All Sports</div>
+          <p class="team-description">NCAA Division III athletics program with comprehensive sports medicine coverage across all athletic programs.</p>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-logo">UW</div>
+          <h3>UW-Oshkosh Titans</h3>
+          <div class="team-years">2024 - 2026</div>
+          <div class="team-sport">All Sports</div>
+          <p class="team-description">NCAA Division III athletics program with comprehensive team physician coverage for all varsity sports.</p>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-logo">KH</div>
+          <h3>Kimberly High School</h3>
+          <div class="team-years">2024 - 2026</div>
+          <div class="team-sport">All Sports</div>
+          <p class="team-description">Wisconsin high school athletics program with comprehensive sports medicine support across all sports.</p>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Former Birmingham Area Teams -->
+    <div class="coverage-section">
+      <h3 class="coverage-title">Former Birmingham Area</h3>
+      <div class="teams-grid">
+        
+        <div class="team-card">
+          <div class="team-logo">UA</div>
+          <h3>University of Alabama</h3>
+          <div class="team-years">2017 - 2019</div>
+          <div class="team-sport">All Sports</div>
+          <p class="team-description">Associate Team Physician under Nick Saban with comprehensive coverage across all Crimson Tide athletic programs.</p>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-logo">S</div>
+          <h3>Samford University</h3>
+          <div class="team-years">2019 - 2025</div>
+          <div class="team-sport">All Sports</div>
+          <p class="team-description">Head Team Physician for all athletic programs. Southern Conference competitor with comprehensive sports medicine coverage.</p>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-logo">SP</div>
+          <h3>Spain Park High School</h3>
+          <div class="team-years">2019 - 2025</div>
+          <div class="team-sport">All Sports</div>
+          <p class="team-description">Head Team Physician for one of Alabama's premier high school programs, covering all varsity athletics.</p>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-logo">BS</div>
+          <h3>Birmingham Squadron</h3>
+          <div class="team-years">2021 - 2024</div>
+          <div class="team-sport">Basketball</div>
+          <p class="team-description">NBA G League affiliate of the New Orleans Pelicans. Professional basketball development league.</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE HIGHLIGHTS -->
+<section class="experience">
+  <div class="experience-inner">
+    <div class="experience-header">
+      <h2>Experience <em>Highlights</em></h2>
+      <p>Key metrics from a decade of team physician service across multiple levels of competitive athletics.</p>
+    </div>
+    
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-number">11+</div>
+        <div class="highlight-label">Teams Covered</div>
+        <div class="highlight-description">Professional, collegiate, and high school programs</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-number">1000+</div>
+        <div class="highlight-label">Athletes Treated</div>
+        <div class="highlight-description">From high school to NFL level</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-number">8</div>
+        <div class="highlight-label">Years Experience</div>
+        <div class="highlight-description">Team physician service since 2017</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Receive care at the <em>professional level</em></h2>
+    <p>The same medical standards and protocols used for professional and elite collegiate athletes are available to every patient. Experience the difference that team physician expertise makes in your recovery.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">
+        Request consultation
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#" class="btn-ghost">
+        Learn about recovery protocols
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Orthopaedics at Bellin Health<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul>
+        <li><a href="#">About Dr. Ryan</a></li>
+        <li><a href="#">The Team</a></li>
+        <li><a href="#">Titletown Orthopaedics</a></li>
+        <li><a href="#">Bellin Health</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Expertise</h4>
+      <ul>
+        <li><a href="#">Hip</a></li>
+        <li><a href="#">Knee</a></li>
+        <li><a href="#">Shoulder</a></li>
+        <li><a href="#">Sports Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">MRI Review</a></li>
+        <li><a href="#">Recover Like the Pros</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon">Li</a>
+      <a href="#" class="social-icon">X</a>
+      <a href="#" class="social-icon">Yt</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

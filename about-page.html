@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Dr. Michael K. Ryan, MD — Hip Preservation & Sports Medicine Specialist | Green Bay Packers Team Physician</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== TOP UTILITY BAR ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+/* ===== HEADER ===== */
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--paper);
+  padding: 4rem 0 2rem;
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: var(--bellin-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--navy); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  max-width: 960px;
+  margin-bottom: 1.5rem;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bellin-blue);
+}
+.hero-lede {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 680px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+/* ===== ABOUT LAYOUT ===== */
+.about-main {
+  padding: 4rem 0;
+}
+.about-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* Left column - images */
+.about-images {
+  position: sticky;
+  top: 6rem;
+}
+.about-image-main {
+  position: relative;
+  aspect-ratio: 4/5;
+  margin-bottom: 2rem;
+}
+.about-image-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.about-image-frame {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: -24px;
+  bottom: -24px;
+  border: 1px solid var(--navy);
+  z-index: -1;
+}
+.about-image-caption {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+.about-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.about-image-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--rule);
+}
+
+/* Right column - content */
+.about-content {
+  padding-top: 1rem;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--bellin-blue);
+}
+.about-content h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  color: var(--navy);
+}
+.about-content h2 em {
+  font-style: italic;
+  color: var(--bellin-blue);
+}
+.about-lead {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+.about-content p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.about-content h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin: 3rem 0 1.25rem 0;
+  letter-spacing: -0.01em;
+}
+.about-content h3:first-of-type { margin-top: 2rem; }
+
+/* ===== PULLQUOTE ===== */
+.pullquote {
+  margin: 3rem 0;
+  padding: 2rem 0 2rem 2rem;
+  border-left: 3px solid var(--accent-gold);
+  position: relative;
+}
+.pullquote::before {
+  content: '"';
+  font-family: 'Fraunces', serif;
+  font-size: 4rem;
+  color: var(--accent-gold);
+  position: absolute;
+  left: -0.5rem;
+  top: 0.5rem;
+  line-height: 0.7;
+  font-style: italic;
+}
+.pullquote p {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin: 0 !important;
+}
+
+/* ===== CREDENTIALS GRID ===== */
+.credentials {
+  background: var(--paper-warm);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 5rem 0;
+  margin: 5rem 0;
+}
+.credentials-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.credentials-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.credentials-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.credentials-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.credentials-header p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+.credential-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+}
+.credential-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 2px;
+  background: var(--bellin-blue);
+}
+.credential-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--navy), var(--bellin-blue));
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.credential-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.credential-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== AWARDS ===== */
+.awards {
+  padding: 6rem 0;
+  background: var(--paper-warm);
+}
+.awards-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.awards-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.awards-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.awards-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.awards-header p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.award-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s;
+}
+.award-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.award-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gold);
+}
+.award-year {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--navy);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.award-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+.award-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.award-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.award-organization {
+  font-size: 0.8rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===== PROFESSIONAL APPOINTMENTS ===== */
+.appointments {
+  padding: 6rem 0;
+  background: var(--paper-cool);
+}
+.appointments-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.appointments-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.appointments-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.appointments-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.appointments-header p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.appointments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.appointment-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s;
+}
+.appointment-card:hover {
+  border-color: var(--bellin-blue);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.appointment-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bellin-blue);
+}
+.appointment-type {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--bellin-blue);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.appointment-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+.appointment-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.appointment-card p {
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.appointment-organization {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.appointment-period {
+  font-size: 0.8rem;
+  color: var(--bellin-blue);
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ===== PHILOSOPHY SECTION ===== */
+.philosophy {
+  padding: 5rem 0;
+  background: var(--navy-deep);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.philosophy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 800px 500px at 80% 30%, rgba(0,125,196,0.15), transparent 60%);
+  pointer-events: none;
+}
+.philosophy-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.philosophy-inner .section-label {
+  justify-content: center;
+  color: var(--accent-gold);
+}
+.philosophy-inner .section-label::before { display: none; }
+.philosophy-inner .section-label::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent-gold);
+  margin-left: 0.75rem;
+}
+.philosophy h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.philosophy h2 em {
+  font-style: italic;
+  color: var(--accent-gold);
+}
+.philosophy p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  font-weight: 300;
+}
+
+/* ===== CTA SECTION ===== */
+.cta {
+  background: var(--paper);
+  padding: 5rem 0;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.cta h2 em { font-style: italic; color: var(--bellin-blue); }
+.cta p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn-primary, .btn-ghost {
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--bellin-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,125,196,0.25);
+}
+.btn-ghost {
+  color: var(--navy);
+  border: 1px solid var(--navy);
+}
+.btn-ghost:hover {
+  border-color: var(--bellin-blue);
+  background: var(--bellin-blue);
+  color: var(--white);
+}
+.arrow { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-primary:hover .arrow, .btn-ghost:hover .arrow { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-images { position: static; }
+  .credentials-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .awards-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 3rem 0 1rem; }
+  .hero-inner, .about-inner, .credentials-inner, .awards-inner, .philosophy-inner, .cta-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .about-main, .credentials, .awards, .philosophy, .cta { padding: 3rem 0; }
+  .credentials-grid { grid-template-columns: 1fr; }
+  .awards-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .cta-buttons { flex-direction: column; align-items: stretch; }
+  .cta-buttons .btn-primary, .cta-buttons .btn-ghost { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        (920) 430-4888
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        Titletown Orthopaedics · Green Bay, WI
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">MRI / X-Ray Review</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="/" class="active">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact" class="cta-btn">Request Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="/">Home</a> / About Dr. Ryan
+    </div>
+    <h1>A surgeon's job is to <em>return you</em> to the things you love.</h1>
+    <p class="hero-lede">
+      Dr. Michael K. Ryan is a fellowship-trained orthopaedic surgeon whose practice is built on a simple premise: careful diagnosis, meticulous technique, and a treatment plan calibrated to the life you actually want to live.
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT MAIN -->
+<section class="about-main">
+  <div class="about-inner">
+    
+    <!-- Left column: Images -->
+    <div class="about-images">
+      <div class="about-image-main">
+        <div class="about-image-frame"></div>
+        <img src="portrait-primary.jpg" alt="Dr. Michael K. Ryan">
+      </div>
+      <p class="about-image-caption">
+        Dr. Ryan at Titletown Orthopaedics, Green Bay
+      </p>
+      <div class="about-image-grid">
+        <img src="or-portrait.jpg" alt="Dr. Ryan in surgery">
+        <img src="formal-headshot.jpg" alt="Dr. Ryan professional headshot">
+      </div>
+    </div>
+    
+    <!-- Right column: Content -->
+    <div class="about-content">
+      <div class="section-label">About Dr. Ryan</div>
+      <h2>A practice built around <em>return to activity</em>.</h2>
+      
+      <p class="about-lead">
+        Every patient who walks into Dr. Ryan's office has something they are no longer able to do — a sport they've stepped back from, a trail they've stopped running, a child they can no longer lift, a career move they've put on hold.
+      </p>
+      
+      <p>The first job of the visit is to understand exactly what that activity is. The second is to design a diagnostic and treatment pathway that gets the patient back to it.</p>
+      
+      <p>That framing — return to activity as the North Star, not just pain relief or a clean scan — shapes the entire practice. It determines which imaging gets ordered, how surgical decisions are made, and what the rehabilitation timeline looks like. It is also what elite athletes demand by default, and what Dr. Ryan believes every patient deserves.</p>
+      
+      <h3>Training That Shaped the Practice</h3>
+      
+      <p><strong>American Sports Medicine Institute — Birmingham, Alabama</strong><br>
+      Dr. Ryan completed his orthopaedic sports medicine fellowship at the American Sports Medicine Institute, a world-renowned sports medicine mecca established by Dr. James Andrews, where the world's best athletes have sought care for decades. Training alongside five co-fellows in this environment — where Andrews and his predecessors have taught generations of the nation's best sports medicine surgeons — Dr. Ryan was exposed to cutting-edge sports medicine at the highest volume in the country.</p>
+      
+      <p>During fellowship, he served as an associate team physician for the University of Alabama football team under head coach Nick Saban, contributing to the care of teams of national championship caliber. Working in that environment and delivering care at that level molded his ability to understand and deliver sports medicine and orthopaedic care at the highest possible standard — a foundation that led to his subsequent roles caring for Samford University, numerous high schools, an NBA G-League team, and eventually the Packers, along with three local colleges and area high schools.</p>
+      
+      <p>The ASMI environment is unusual for how it forces fellows to think in parallel about tissue-level decisions and return-to-play timelines, about long-term joint preservation and short-term competition calendars. That dual perspective — biology and calendar — shapes how Dr. Ryan approaches every surgical plan today.</p>
+      
+      <div class="pullquote">
+        <p>The same evidence, the same care, and the same return-to-activity mindset we apply on Lambeau Field, we apply in clinic every morning. That isn't marketing — it's the only way to practice.</p>
+      </div>
+      
+      <p><strong>Inselspital — Bern, Switzerland</strong><br>
+      Dr. Ryan subsequently completed a hip preservation fellowship at Inselspital in Bern, widely considered one of the founding centers of modern hip preservation surgery. The Bern experience added surgical hip dislocation, periacetabular osteotomy (PAO), and femoral osteotomies to a surgical toolbox that had previously been arthroscopy-dominant.</p>
+      
+      <p>More importantly, this training — combined with his background in hip arthroscopy, open hip preservation, and total joint replacement — gives Dr. Ryan a unique perspective that counteracts the common nail-and-hammer, limited skill set of surgeons who perform only one of those approaches. The decision-making framework for when each approach is the right one is often the difference between a good outcome and an exceptional one.</p>
+      
+      <h3>The Packers</h3>
+      
+      <p>In 2025, Dr. Ryan was named Head Team Physician for the Green Bay Packers, joining a medical program built by Dr. Pat McKenzie that is widely regarded as one of the most thoughtful in professional sports. In that role, Dr. Ryan oversees the orthopaedic care of an NFL roster — the medical decisions, the surgical plans when they're required, and the return-to-play timelines that ultimately determine what happens on Sunday.</p>
+      
+      <h3>Beyond the Operating Room</h3>
+      
+      <p>A Colorado native, Dr. Ryan grew up playing ice hockey and football and was shaped by the family tradition of Notre Dame football — a background that, more than anything else, explains why he ended up in a profession built around the intersection of sport, medicine, and meticulous craft.</p>
+      
+      <p>Outside of orthopaedics, his interests reflect his background as a former triathlete, marathoner, and endurance athlete: running, cycling, skiing, fly-fishing, and golf. He lives in the Green Bay area with his family.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials">
+  <div class="credentials-inner">
+    <div class="credentials-header">
+      <h2>Education & <em>Credentials</em></h2>
+      <p>Fellowship training at leading institutions, board certification, and ongoing commitment to advancing the field through research and education.</p>
+    </div>
+    <div class="credentials-grid">
+      
+      <div class="credential-card">
+        <div class="credential-icon">H</div>
+        <h3>Hip Preservation Fellowship</h3>
+        <p>Inselspital, Bern, Switzerland — widely regarded as one of the founding centers of modern hip preservation surgery</p>
+      </div>
+      
+      <div class="credential-card">
+        <div class="credential-icon">S</div>
+        <h3>Sports Medicine Fellowship</h3>
+        <p>American Sports Medicine Institute, Birmingham, Alabama — world-renowned sports medicine mecca established by Dr. James Andrews</p>
+      </div>
+      
+      <div class="credential-card">
+        <div class="credential-icon">R</div>
+        <h3>Orthopaedic Surgery Residency</h3>
+        <p>NYU Hospital for Joint Diseases — one of the nation's premier orthopaedic training programs</p>
+      </div>
+      
+      <div class="credential-card">
+        <div class="credential-icon">M</div>
+        <h3>Medical School</h3>
+        <p>Georgetown University School of Medicine — Doctor of Medicine with distinction</p>
+      </div>
+      
+      <div class="credential-card">
+        <div class="credential-icon">N</div>
+        <h3>Undergraduate</h3>
+        <p>University of Notre Dame — Bachelor of Science, continuing the family tradition</p>
+      </div>
+      
+      <div class="credential-card">
+        <div class="credential-icon">B</div>
+        <h3>Board Certified</h3>
+        <p>American Board of Orthopaedic Surgery, with subspecialty certification in Orthopaedic Sports Medicine</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS & RECOGNITION -->
+<section class="awards">
+  <div class="awards-inner">
+    <div class="awards-header">
+      <div class="section-label">Awards & Recognition</div>
+      <h2>Recognition for <em>Excellence</em></h2>
+      <p>Professional achievements recognizing contributions to orthopaedic surgery, research excellence, and leadership in sports medicine.</p>
+    </div>
+    <div class="awards-grid">
+      
+      <div class="award-card">
+        <div class="award-year">2022</div>
+        <div class="award-icon">🏆</div>
+        <h3>Arthrex Hip Horizons Think Tank Showdown Champion</h3>
+        <p>Treatment of Complex Combined Post-SCFE FAI and Dysplasia in a Young Athlete</p>
+        <div class="award-organization">Arthrex Hip Horizons Conference</div>
+      </div>
+      
+      <div class="award-card">
+        <div class="award-year">2023</div>
+        <div class="award-icon">⭐</div>
+        <h3>Freddie Fu He for She Award Nominee</h3>
+        <p>Recognizing leadership and advocacy for women in orthopaedic surgery</p>
+        <div class="award-organization">Ruth Jackson Orthopaedic Society</div>
+      </div>
+      
+      <div class="award-card">
+        <div class="award-year">2017</div>
+        <div class="award-icon">🔬</div>
+        <h3>Basic Science Award</h3>
+        <p>Endoscopic Proximal Hamstring Repair: Surgical Technique and Portal Site Anatomy – A Cadaveric Study</p>
+        <div class="award-organization">American Sports Medicine Fellowship Society</div>
+      </div>
+      
+      <div class="award-card">
+        <div class="award-year">2011</div>
+        <div class="award-icon">🎓</div>
+        <h3>John N. Delahay, M.D. Award</h3>
+        <p>Excellence in Orthopaedic Surgery during medical school training</p>
+        <div class="award-organization">Georgetown University School of Medicine</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL APPOINTMENTS -->
+<section class="appointments">
+  <div class="appointments-inner">
+    <div class="appointments-header">
+      <div class="section-label">Professional Appointments</div>
+      <h2>Leadership & <em>Advisory Roles</em></h2>
+      <p>Active involvement in academic medicine, sports medicine organizations, and industry innovation to advance the field and improve patient care.</p>
+    </div>
+    <div class="appointments-grid">
+      
+      <div class="appointment-card">
+        <div class="appointment-type">Academic Appointment</div>
+        <div class="appointment-icon">🎓</div>
+        <h3>Honorary Fellow</h3>
+        <p>Department of Orthopaedics and Rehabilitation</p>
+        <div class="appointment-organization">University of Wisconsin School of Medicine and Public Health</div>
+        <div class="appointment-period">2025 - Current</div>
+      </div>
+      
+      <div class="appointment-card">
+        <div class="appointment-type">Sports Medicine Committee</div>
+        <div class="appointment-icon">⚡</div>
+        <h3>Medical Advisory Committee Member</h3>
+        <p>Providing medical guidance and policy recommendations for high school athletics across Wisconsin</p>
+        <div class="appointment-organization">Wisconsin Interscholastic Athletic Association (WIAA)</div>
+        <div class="appointment-period">Current</div>
+      </div>
+      
+      <div class="appointment-card">
+        <div class="appointment-type">Medical Advisory Board</div>
+        <div class="appointment-icon">📊</div>
+        <h3>Medical Advisory Board Member</h3>
+        <p>Contributing sports medicine expertise to analytics platform development and injury prevention research</p>
+        <div class="appointment-organization">SpringBok Analytics</div>
+        <div class="appointment-period">Current</div>
+      </div>
+      
+      <div class="appointment-card">
+        <div class="appointment-type">Industry Consulting</div>
+        <div class="appointment-icon">🔬</div>
+        <h3>Education & Innovation Consultant</h3>
+        <p>Collaborating on surgical technique development, education programs, and research initiatives</p>
+        <div class="appointment-organization">Arthrex, JRF, Allosource, formerly Zimmer Biomet</div>
+        <div class="appointment-period">Current</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philosophy-inner">
+    <div class="section-label">Clinical Philosophy</div>
+    <h2>Every patient deserves the <em>standard of care</em> an NFL player gets on Lambeau Field.</h2>
+    
+    <p>Sports medicine is often framed as a specialty for professional athletes — but in Dr. Ryan's practice, the majority of patients are not professionals. They are high school athletes trying to earn a scholarship, collegiate competitors trying to get back on the field, weekend warriors trying to stay active into their 50s and 60s, and active adults trying to avoid a replacement.</p>
+    
+    <p>What unites them is a simple expectation: the same standard of care an NFL player gets on Lambeau Field should be available to every patient, every day. That is what the practice is built to deliver.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Ready to get back to <em>what you love?</em></h2>
+    <p>Dr. Ryan accepts new patients from Wisconsin, across the Midwest, and throughout the United States. Out-of-state and international patients are welcome; consultations can begin with a remote MRI and imaging review.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">
+        Request a consultation
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#" class="btn-ghost">
+        MRI Review
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Orthopaedics at Bellin Health<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul>
+        <li><a href="#">About Dr. Ryan</a></li>
+        <li><a href="#">The Team</a></li>
+        <li><a href="#">Titletown Orthopaedics</a></li>
+        <li><a href="#">Bellin Health</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Expertise</h4>
+      <ul>
+        <li><a href="#">Hip</a></li>
+        <li><a href="#">Knee</a></li>
+        <li><a href="#">Shoulder</a></li>
+        <li><a href="#">Sports Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">MRI Review</a></li>
+        <li><a href="#">PT Protocols</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon">Li</a>
+      <a href="#" class="social-icon">X</a>
+      <a href="#" class="social-icon">Yt</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

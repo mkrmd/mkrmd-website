@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Core Muscle Repair - Athletic Pubalgia Surgery | Michael K. Ryan, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --surgical-blue: #E8F4FF;
+  --surgical-blue-border: #C8E6FF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== SHARED STYLES ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--surgical-blue);
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--surgical-blue-border);
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  text-align: center;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--navy); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bellin-blue);
+}
+.hero-lede {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-highlight {
+  background: rgba(200,169,81,0.15);
+  border: 1px solid var(--accent-gold-soft);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--navy);
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+.content-section {
+  padding: 6rem 0;
+}
+.content-section:nth-child(even) {
+  background: var(--paper-warm);
+}
+.content-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.section-label::before, .section-label::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--bellin-blue);
+}
+.section-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.section-header h2 em { font-style: italic; color: var(--bellin-blue); }
+
+.content-text p {
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+.content-text strong {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ===== SURGICAL INDICATIONS ===== */
+.surgical-indications {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+}
+.surgical-indications h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.indications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.indication-item {
+  background: var(--surgical-blue);
+  border: 1px solid var(--surgical-blue-border);
+  padding: 1.25rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--navy);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.indication-item:hover {
+  background: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== SURGICAL TECHNIQUE ===== */
+.surgical-technique {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+}
+.surgical-technique h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.technique-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.technique-step {
+  text-align: center;
+  position: relative;
+}
+.technique-step::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  right: -1rem;
+  width: 2rem;
+  height: 2px;
+  background: var(--accent-gold);
+  opacity: 0.3;
+}
+.technique-step:last-child::after {
+  display: none;
+}
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: var(--accent-gold);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 auto 1rem;
+}
+.step-title {
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+.step-description {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ===== SAME DAY SURGERY ===== */
+.same-day-surgery {
+  background: var(--surgical-blue);
+  border: 1px solid var(--surgical-blue-border);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+}
+.same-day-surgery h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.same-day-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.same-day-item {
+  background: var(--white);
+  padding: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0,125,196,0.1);
+  text-align: center;
+}
+.same-day-item h5 {
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+.same-day-item p {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ===== RECOVERY TIMELINE ===== */
+.recovery-timeline {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+}
+.recovery-timeline h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minMax(200px, 1fr));
+  gap: 1.5rem;
+}
+.timeline-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: var(--paper-cool);
+  border-radius: 6px;
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 4px;
+  background: var(--bellin-blue);
+  border-radius: 2px;
+}
+.timeline-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--bellin-blue);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.timeline-milestone {
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.timeline-description {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+/* ===== RETURN TO PLAY ===== */
+.return-to-play {
+  background: var(--surgical-blue);
+  border: 1px solid var(--surgical-blue-border);
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+}
+.return-to-play h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.return-phases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minSize(280px, 1fr));
+  gap: 2rem;
+}
+.phase-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-gold);
+}
+.phase-card h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+.phase-card ul {
+  list-style: none;
+}
+.phase-card li {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+.phase-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--bellin-blue);
+  font-weight: bold;
+}
+
+/* ===== SUCCESS RATES ===== */
+.success-rates {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+  text-align: center;
+}
+.success-rates h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minMax(150px, 1fr));
+  gap: 2rem;
+}
+.stat-item {
+  padding: 1rem;
+  background: var(--paper-cool);
+  border-radius: 6px;
+}
+.stat-number {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--bellin-blue);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: var(--paper-cool);
+  padding: 6rem 0;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.cta h2 em { font-style: italic; color: var(--bellin-blue); }
+.cta p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-primary:hover {
+  background: var(--bellin-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,125,196,0.25);
+}
+.arrow { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon-footer {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon-footer:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .return-phases { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 3rem 0 2rem; }
+  .hero-inner, .content-inner, .cta-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .content-section, .cta { padding: 4rem 0; }
+  .footer-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        (920) 430-4888
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        Titletown Sports Medicine · Hip Preservation Specialist
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">Insurance Information</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise" class="active">Expertise</a></li>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact" class="cta-btn">Request Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="/">Home</a> / <a href="/expertise">Expertise</a> / <a href="/hip">Hip Surgeries</a> / Core Muscle Repair
+    </div>
+    
+    <h1>Core Muscle <em>Repair</em></h1>
+    <p class="hero-lede">
+      Surgical repair of core muscle injury (athletic pubalgia) involves strengthening weakened muscle attachments, releasing tight structures, and restoring proper biomechanics to the core muscle complex. This minimally invasive procedure provides definitive treatment for chronic groin pain in athletes.
+    </p>
+    <div class="hero-highlight">
+      Outpatient procedure with expected return to competitive sports in approximately 4 months
+    </div>
+  </div>
+</section>
+
+<!-- SURGICAL INDICATIONS -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Surgical Candidates</div>
+      <h2>When surgery <em>is recommended</em></h2>
+    </div>
+    
+    <div class="surgical-indications">
+      <h3>Indications for Core Muscle Repair</h3>
+      <div class="indications-grid">
+        <div class="indication-item">Failed conservative treatment (3-6 months)</div>
+        <div class="indication-item">Chronic groin pain limiting performance</div>
+        <div class="indication-item">MRI evidence of muscle/tendon injury</div>
+        <div class="indication-item">Positive diagnostic injection response</div>
+        <div class="indication-item">Desire to return to competitive athletics</div>
+        <div class="indication-item">Weakness in core muscle complex</div>
+      </div>
+    </div>
+    
+    <div class="content-text">
+      <p>
+        Core muscle repair is recommended when conservative treatment fails to provide adequate pain relief and functional improvement after 3-6 months. The surgery is particularly beneficial for athletes who need to return to high-level sports that involve cutting, sprinting, and explosive movements.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SURGICAL TECHNIQUE -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Surgical Procedure</div>
+      <h2>Core muscle <em>repair technique</em></h2>
+    </div>
+    
+    <div class="surgical-technique">
+      <h3>Comprehensive Repair Process</h3>
+      <div class="technique-steps">
+        <div class="technique-step">
+          <div class="step-number">1</div>
+          <div class="step-title">Muscle Strengthening</div>
+          <div class="step-description">Repair weakened conjoint tendon and abdominal muscle attachments</div>
+        </div>
+        <div class="technique-step">
+          <div class="step-number">2</div>
+          <div class="step-title">Adductor Release</div>
+          <div class="step-description">Release tight adductor tendon to reduce tension on core</div>
+        </div>
+        <div class="technique-step">
+          <div class="step-number">3</div>
+          <div class="step-title">Nerve Decompression</div>
+          <div class="step-description">Address any nerve entrapment contributing to pain</div>
+        </div>
+        <div class="technique-step">
+          <div class="step-number">4</div>
+          <div class="step-title">Tissue Reinforcement</div>
+          <div class="step-description">Add mesh support if needed for structural integrity</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content-text">
+      <p>
+        The surgical approach is tailored to each patient's specific anatomy and injury pattern. Most procedures can be performed using minimally invasive techniques through small incisions, reducing recovery time and improving cosmetic outcomes while achieving excellent functional results.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SAME DAY SURGERY -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Outpatient Procedure</div>
+      <h2>Same-day <em>surgery benefits</em></h2>
+    </div>
+    
+    <div class="same-day-surgery">
+      <h3>Outpatient Surgery Advantages</h3>
+      <div class="same-day-grid">
+        <div class="same-day-item">
+          <h5>Same-Day Discharge</h5>
+          <p>Go home within hours of surgery completion</p>
+        </div>
+        <div class="same-day-item">
+          <h5>Faster Recovery</h5>
+          <p>Return to familiar environment aids healing</p>
+        </div>
+        <div class="same-day-item">
+          <h5>Lower Infection Risk</h5>
+          <p>Reduced hospital exposure minimizes complications</p>
+        </div>
+        <div class="same-day-item">
+          <h5>Cost Effective</h5>
+          <p>Outpatient setting reduces overall treatment costs</p>
+        </div>
+        <div class="same-day-item">
+          <h5>Immediate Mobilization</h5>
+          <p>Early movement promotes optimal healing</p>
+        </div>
+        <div class="same-day-item">
+          <h5>Family Support</h5>
+          <p>Recovery with family support system</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content-text">
+      <p>
+        Core muscle repair is performed as an outpatient procedure, allowing patients to return home the same day. This approach has been shown to improve patient satisfaction and recovery outcomes while maintaining excellent safety profiles.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- RECOVERY PROTOCOL -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Post-Operative Care</div>
+      <h2>Recovery <em>timeline & protocol</em></h2>
+    </div>
+    
+    <div class="recovery-timeline">
+      <h3>Structured Recovery Program</h3>
+      <div class="timeline-grid">
+        <div class="timeline-item">
+          <div class="timeline-period">Days 1-7</div>
+          <div class="timeline-milestone">Initial Healing</div>
+          <div class="timeline-description">Rest, ice, gentle walking, pain management</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Weeks 2-4</div>
+          <div class="timeline-milestone">Early Mobilization</div>
+          <div class="timeline-description">Physical therapy begins, gentle stretching, core activation</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Weeks 6-8</div>
+          <div class="timeline-milestone">Progressive Loading</div>
+          <div class="timeline-description">Increased activity, strengthening exercises, light jogging</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Weeks 10-12</div>
+          <div class="timeline-milestone">Sport-Specific Training</div>
+          <div class="timeline-description">Running, cutting movements, sport-specific drills</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Weeks 14-16</div>
+          <div class="timeline-milestone">Return to Competition</div>
+          <div class="timeline-description">Full training, contact clearance, competitive play</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETURN TO PLAY -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-header">
+      <div class="section-label">Athletic Return</div>
+      <h2>4-month return to <em>competitive sports</em></h2>
+    </div>
+    
+    <div class="return-to-play">
+      <h3>Phased Return-to-Play Protocol</h3>
+      <div class="return-phases">
+        <div class="phase-card">
+          <h4>Phase 1: Healing (0-6 weeks)</h4>
+          <ul>
+            <li>Protect surgical repair</li>
+            <li>Control pain and inflammation</li>
+            <li>Maintain cardiovascular fitness</li>
+            <li>Begin gentle range of motion</li>
+            <li>Core stabilization exercises</li>
+          </ul>
+        </div>
+        <div class="phase-card">
+          <h4>Phase 2: Strengthening (6-12 weeks)</h4>
+          <ul>
+            <li>Progressive resistance training</li>
+            <li>Core and hip strengthening</li>
+            <li>Improve flexibility and mobility</li>
+            <li>Begin running progression</li>
+            <li>Address movement patterns</li>
+          </ul>
+        </div>
+        <div class="phase-card">
+          <h4>Phase 3: Return to Sport (12-16 weeks)</h4>
+          <ul>
+            <li>Sport-specific movement training</li>
+            <li>Plyometric and agility work</li>
+            <li>Contact progression (if applicable)</li>
+            <li>Full training participation</li>
+            <li>Return to competition clearance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content-text">
+      <p>
+        Most athletes can expect to return to competitive sports within 4 months following core muscle repair. The timeline may vary based on individual healing, adherence to rehabilitation, and sport demands. Elite athletes often achieve faster return with intensive rehabilitation programs.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS RATES -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="success-rates">
+      <h3>Surgical Outcomes</h3>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">90-95%</span>
+          <span class="stat-label">Success Rate</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Months RTP</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">85%+</span>
+          <span class="stat-label">Return to Pre-Injury Level</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">Low</span>
+          <span class="stat-label">Complication Rate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Expert <em>core muscle repair</em></h2>
+    <p>If you're an athlete with chronic groin pain that hasn't responded to conservative treatment, core muscle repair can provide definitive treatment and help you return to competitive sports.</p>
+    <a href="#" class="btn-primary">
+      Schedule consultation
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Sports Medicine<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Hip Surgeries</h4>
+      <ul>
+        <li><a href="#">Core Muscle Repair</a></li>
+        <li><a href="#">Hip Arthroscopy</a></li>
+        <li><a href="#">Labral Repair</a></li>
+        <li><a href="#">Hip Preservation</a></li>
+        <li><a href="#">Gluteus Tendon Repair</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Other Specialties</h4>
+      <ul>
+        <li><a href="#">Knee Surgery</a></li>
+        <li><a href="#">Shoulder Surgery</a></li>
+        <li><a href="#">Elbow Surgery</a></li>
+        <li><a href="#">Sports Medicine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+        <li><a href="#">Recovery Resources</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon-footer">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon-footer">Li</a>
+      <a href="#" class="social-icon-footer">X</a>
+      <a href="#" class="social-icon-footer">Yt</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
