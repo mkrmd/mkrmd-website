@@ -216,7 +216,7 @@ nav a.active::after { width: 100%; }
 
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(rgba(0, 36, 84, 0.7), rgba(0, 21, 47, 0.8)), url('4_Bellin-Titletown-Sports-Medicine-Orthopedics-HERO.jpg');
+  background: linear-gradient(rgba(0, 36, 84, 0.7), rgba(0, 21, 47, 0.8)), url('images/4_Bellin-Titletown-Sports-Medicine-Orthopedics-HERO.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -425,6 +425,27 @@ nav a.active::after { width: 100%; }
   margin-right: auto;
   text-align: center;
 }
+.titletown-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.titletown-gallery .gallery-item {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(200,169,81,0.45);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+}
+.titletown-gallery .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.titletown-gallery .gallery-item:hover img { transform: scale(1.06); }
 
 /* ===== CAPABILITIES ===== */
 .capabilities {
@@ -894,6 +915,59 @@ footer {
   </div>
 </section>
 
+<!-- TITLETOWN SPORTS MEDICINE -->
+<section class="titletown-sports">
+  <div class="titletown-inner">
+    <div class="titletown-header">
+      <div class="section-label">Our Legacy</div>
+      <h2>Titletown <em>Sports Medicine</em></h2>
+    </div>
+    
+    <div class="titletown-content">
+      <p>
+        <strong>Titletown Sports Medicine</strong> was established by Dr. Pat McKenzie and Dr. Spears alongside world-renowned foot and ankle specialist Dr. Bob Anderson, creating a sought-after destination for highly specialized orthopaedic care. This foundation established Titletown as a center of excellence that attracts patients seeking world-class treatment in a community setting.
+      </p>
+      <p>
+        That tradition of excellence continues today with all surgeons being highly specialized in their respective areas — complex shoulder, complex knee, and complex hip treatments. This unique combination of subspecialty expertise is not available anywhere else in the region outside of major academic or urban systems, providing patients with big-city, world-renowned care in a small, local setting with unparalleled accessibility.
+      </p>
+    </div>
+    <div class="titletown-gallery">
+      <div class="gallery-item"><img src="images/Titletown%20Image.jpeg" alt="Titletown Sports Medicine"></div>
+      <div class="gallery-item"><img src="images/Titletown%20Image%202.jpeg" alt="Titletown Sports Medicine facility"></div>
+      <div class="gallery-item"><img src="images/Titletown%20Image%203.jpeg" alt="Titletown Sports Medicine specialized care"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY OUTREACH -->
+<section class="community-outreach" style="padding: 6rem 0; background: var(--paper-cool);">
+  <div class="outreach-inner" style="max-width: 1360px; margin: 0 auto; padding: 0 2.5rem;">
+    <div class="outreach-header" style="text-align: center; margin-bottom: 4rem;">
+      <div class="section-label">Community Leadership</div>
+      <h2 style="font-family: 'Fraunces', serif; font-size: clamp(2.25rem, 4vw, 3rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1.5rem;">
+        Regional <em style="font-style: italic; color: var(--bellin-blue);">community outreach</em>
+      </h2>
+      <p style="font-size: 1.1rem; color: var(--ink); line-height: 1.65; max-width: 800px; margin: 0 auto;">
+        Titletown Sports Medicine leads the field in community outreach, providing direct access to NFL-caliber care for local athletes, families, and communities throughout Northeast Wisconsin.
+      </p>
+    </div>
+    
+    <div class="outreach-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+      <div class="outreach-text">
+        <h3 style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--navy); margin-bottom: 1.5rem;">Over 30 Local High Schools</h3>
+        <p style="font-size: 1.05rem; color: var(--ink); line-height: 1.65; margin-bottom: 1.5rem;">
+          Our comprehensive coverage extends to more than 30 local area high schools, each supported by exceptional athletic trainers who serve as direct conduits to specialized care. This unique network provides the most rapid access in the region for athletes, their families, and the broader community to reach physicians and surgeons.
+        </p>
+        <p style="font-size: 1.05rem; color: var(--ink); line-height: 1.65; margin-bottom: 0;">
+          <strong>Local community with rapid and easy access to NFL-caliber care</strong> — this direct connection ensures that high-level sports medicine expertise is immediately available when needed most, providing the same quality of care available to professional athletes.
+        </p>
+      </div>
+      
+      <div class="outreach-image" style="background: url('images/Titletown%20Image%202.jpeg'); background-size: cover; background-position: center; height: 300px; border-radius: 8px;"></div>
+    </div>
+  </div>
+</section>
+
 <!-- PARTNERSHIP OVERVIEW -->
 <section class="partnership-overview">
   <div class="overview-inner">
@@ -923,54 +997,6 @@ footer {
           <li>Easy referral pathways from local providers</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- TITLETOWN SPORTS MEDICINE -->
-<section class="titletown-sports">
-  <div class="titletown-inner">
-    <div class="titletown-header">
-      <div class="section-label">Our Legacy</div>
-      <h2>Titletown <em>Sports Medicine</em></h2>
-    </div>
-    
-    <div class="titletown-content">
-      <p>
-        <strong>Titletown Sports Medicine</strong> was established by Dr. Pat McKenzie and Dr. Spears alongside world-renowned foot and ankle specialist Dr. Bob Anderson, creating a sought-after destination for highly specialized orthopaedic care. This foundation established Titletown as a center of excellence that attracts patients seeking world-class treatment in a community setting.
-      </p>
-      <p>
-        That tradition of excellence continues today with all surgeons being highly specialized in their respective areas — complex shoulder, complex knee, and complex hip treatments. This unique combination of subspecialty expertise is not available anywhere else in the region outside of major academic or urban systems, providing patients with big-city, world-renowned care in a small, local setting with unparalleled accessibility.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- COMMUNITY OUTREACH -->
-<section class="community-outreach" style="padding: 6rem 0; background: var(--paper-cool);">
-  <div class="outreach-inner" style="max-width: 1360px; margin: 0 auto; padding: 0 2.5rem;">
-    <div class="outreach-header" style="text-align: center; margin-bottom: 4rem;">
-      <div class="section-label">Community Leadership</div>
-      <h2 style="font-family: 'Fraunces', serif; font-size: clamp(2.25rem, 4vw, 3rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1.5rem;">
-        Regional <em style="font-style: italic; color: var(--bellin-blue);">community outreach</em>
-      </h2>
-      <p style="font-size: 1.1rem; color: var(--ink); line-height: 1.65; max-width: 800px; margin: 0 auto;">
-        Titletown Sports Medicine leads the field in community outreach, providing direct access to NFL-caliber care for local athletes, families, and communities throughout Northeast Wisconsin.
-      </p>
-    </div>
-    
-    <div class="outreach-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      <div class="outreach-text">
-        <h3 style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--navy); margin-bottom: 1.5rem;">Over 30 Local High Schools</h3>
-        <p style="font-size: 1.05rem; color: var(--ink); line-height: 1.65; margin-bottom: 1.5rem;">
-          Our comprehensive coverage extends to more than 30 local area high schools, each supported by exceptional athletic trainers who serve as direct conduits to specialized care. This unique network provides the most rapid access in the region for athletes, their families, and the broader community to reach physicians and surgeons.
-        </p>
-        <p style="font-size: 1.05rem; color: var(--ink); line-height: 1.65; margin-bottom: 0;">
-          <strong>Local community with rapid and easy access to NFL-caliber care</strong> — this direct connection ensures that high-level sports medicine expertise is immediately available when needed most, providing the same quality of care available to professional athletes.
-        </p>
-      </div>
-      
-      <div class="outreach-image" style="background: url('Titletown_Image.jpeg'); background-size: cover; background-position: center; height: 300px; border-radius: 8px;"></div>
     </div>
   </div>
 </section>
@@ -1122,8 +1148,8 @@ footer {
       </div>
       
       <div class="facilities-gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-        <div style="background: url('Titletown_Image_2.jpeg'); background-size: cover; background-position: center; height: 200px; border-radius: 8px;"></div>
-        <div style="background: url('Titletown_Image_3.jpeg'); background-size: cover; background-position: center; height: 200px; border-radius: 8px;"></div>
+        <div style="background: url('images/Titletown%20Image%202.jpeg'); background-size: cover; background-position: center; height: 200px; border-radius: 8px;"></div>
+        <div style="background: url('images/Titletown%20Image%203.jpeg'); background-size: cover; background-position: center; height: 200px; border-radius: 8px;"></div>
       </div>
     </div>
   </div>
