@@ -140,6 +140,67 @@ nav a::after {
   transition: width 0.25s ease;
 }
 nav a:hover::after { width: 100%; }
+nav li { position: relative; }
+nav .has-dropdown > a { padding-right: 0.9rem; }
+nav .has-dropdown > a::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-70%) rotate(45deg);
+  opacity: 0.55;
+}
+nav .dropdown {
+  position: absolute;
+  top: 100%;
+  left: -0.9rem;
+  margin-top: 0.9rem;
+  min-width: 230px;
+  background: rgba(250, 250, 247, 0.98);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  padding: 0.5rem 0;
+  list-style: none;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 200;
+}
+nav .dropdown::before {
+  content: '';
+  position: absolute;
+  top: -0.9rem;
+  left: 0;
+  right: 0;
+  height: 0.9rem;
+}
+nav .has-dropdown:hover > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+nav .dropdown li { position: static; }
+nav .dropdown a {
+  display: block;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--ink-soft);
+}
+nav .dropdown a::after { display: none; }
+nav .dropdown a:hover {
+  color: var(--bellin-blue);
+  background: var(--paper-cool);
+}
 nav a.active { color: var(--bellin-blue); }
 nav a.active::after { width: 100%; }
 .cta-btn {
@@ -627,12 +688,54 @@ footer {
     </a>
     <nav>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#expertise" class="active">Expertise</a></li>
-        <li><a href="#teams">Teams</a></li>
-        <li><a href="#patients">Patients</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#media">Media</a></li>
+        <li class="has-dropdown">
+          <a href="about-page.html">About</a>
+          <ul class="dropdown">
+            <li><a href="about-page.html">Michael K. Ryan, MD</a></li>
+            <li><a href="team-page.html">Our Team</a></li>
+            <li><a href="#">Research &amp; Education</a></li>
+            <li><a href="#">Titletown Sports Medicine &amp; Orthopaedics</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#expertise" class="active">Expertise</a>
+          <ul class="dropdown">
+            <li><a href="hip-preservation.html">Hip</a></li>
+            <li><a href="knee-specialty.html">Knee</a></li>
+            <li><a href="shoulder-specialty.html">Shoulder</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#teams">Teams</a>
+          <ul class="dropdown">
+            <li><a href="#">Green Bay Packers</a></li>
+            <li><a href="#">NFLPS</a></li>
+            <li><a href="#">Former Teams</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#patients">Patients</a>
+          <ul class="dropdown">
+            <li><a href="#">Request Consultation</a></li>
+            <li><a href="#">MRI/X-ray Review</a></li>
+            <li><a href="#">PT Protocols</a></li>
+            <li><a href="#">Out-of-state Patients</a></li>
+            <li><a href="#">Office Information</a></li>
+            <li><a href="#">Patient Forms</a></li>
+            <li><a href="#">Surgery Information</a></li>
+            <li><a href="#">Post-op Information</a></li>
+            <li><a href="#">Athlete Sports-Specific Information</a></li>
+            <li><a href="#">Videos</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#media">Media</a>
+          <ul class="dropdown">
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Podcast</a></li>
+          </ul>
+        </li>
         <li><a href="#contact" class="cta-btn">Request Consultation</a></li>
       </ul>
     </nav>
