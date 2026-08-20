@@ -537,6 +537,37 @@ nav a.active::after { width: 100%; }
   flex-shrink: 0;
 }
 
+/* ===== OVERVIEW ===== */
+.overview {
+  padding: 6rem 0;
+  background: var(--paper);
+}
+.overview-inner {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.overview .section-label {
+  margin-bottom: 1.25rem;
+}
+.overview h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+}
+.overview h2 em { font-style: italic; color: var(--bellin-blue); }
+.overview p {
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin-bottom: 1.35rem;
+}
+.overview p strong { color: var(--navy); font-weight: 600; }
+
 /* ===== WHAT TO EXPECT ===== */
 .expect {
   padding: 6rem 0;
@@ -732,7 +763,7 @@ footer {
   margin: 0 auto;
   padding: 0 2.5rem;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.3fr 2fr 2fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
 }
@@ -761,6 +792,11 @@ footer {
 }
 .footer-col ul { list-style: none; }
 .footer-col li { margin-bottom: 0.7rem; }
+.footer-col ul.two-col {
+  column-count: 2;
+  column-gap: 2rem;
+}
+.footer-col ul.two-col li { break-inside: avoid; }
 .footer-col a {
   color: rgba(255,255,255,0.7);
   text-decoration: none;
@@ -827,6 +863,7 @@ footer {
   .philosophy, .conditions, .expect, .cta { padding: 4rem 0; }
   .hero-stats { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
+  .footer-col ul.two-col { column-count: 1; }
   .cta-buttons { flex-direction: column; align-items: stretch; }
   .cta-buttons .btn-primary, .cta-buttons .btn-ghost { justify-content: center; }
   .conditions-tabs { flex-wrap: wrap; gap: 0.5rem; }
@@ -949,6 +986,20 @@ footer {
   </div>
 </section>
 
+<!-- OVERVIEW -->
+<section class="overview">
+  <div class="overview-inner">
+    <div class="section-label">Understanding the Knee</div>
+    <h2>The body's largest joint — where <em>stability, cushioning, and motion</em> all have to work together.</h2>
+
+    <p>The knee is a hinge joint that bends and straightens the lower leg, built from three bones: the femur (thigh bone), tibia (shin bone), and patella (kneecap). Four ligaments hold it stable in every direction. The <strong>ACL</strong> and <strong>PCL</strong> sit at the center of the joint and control the tibia's forward and backward movement, while the <strong>MCL</strong> and <strong>LCL</strong> run along the inner and outer sides to prevent side-to-side motion. These ligaments are commonly torn by abrupt twisting, hyperextension, or direct trauma — and of the four, the ACL is torn most often.</p>
+
+    <p>The knee is also a weight-bearing joint, and the <strong>meniscus</strong> is what makes that possible: a thick, specialized cushion that distributes force across the joint and creates a smooth surface for the bones to glide on. Because the meniscus has a blood supply only in its outer third, the location of a tear largely determines whether it can be repaired or needs to be trimmed. The ends of the bones are also capped with <strong>articular cartilage</strong>, which cushions and lubricates the joint; acute damage to it is painful and causes swelling, while long-term wear leads to arthritis — the loss of that cartilage surface and painful bone-on-bone contact.</p>
+
+    <p>A range of other problems can affect the knee as well, from patellar (kneecap) instability to complex multi-ligament injuries. Many can be diagnosed and treated with minimally invasive <strong>arthroscopy</strong>, which repairs the soft tissues surrounding the joint through small incisions. The conditions and procedures below span the full range of knee care, from meniscus repair to complex reconstruction.</p>
+  </div>
+</section>
+
 <!-- PHILOSOPHY -->
 <section class="philosophy">
   <div class="philosophy-inner">
@@ -1008,69 +1059,48 @@ footer {
     <div id="conditions" class="tab-content active">
       
       <div class="condition-card">
-        <h3>ACL Tears</h3>
-        <p>Complete or partial tears of the anterior cruciate ligament, often occurring during cutting or pivoting movements in sports.</p>
-        <ul class="condition-symptoms">
-          <li>Pop or crack at time of injury</li>
-          <li>Immediate swelling and pain</li>
-          <li>Knee instability or giving way</li>
-          <li>Difficulty bearing weight</li>
-        </ul>
+        <h3>ACL Tear</h3>
+        <p>Complete or partial tears of the anterior cruciate ligament, usually during cutting or pivoting, causing instability and giving-way.</p>
       </div>
       
       <div class="condition-card">
-        <h3>Meniscus Tears</h3>
-        <p>Tears in the C-shaped cartilage that cushions and stabilizes the knee joint, common in both traumatic and degenerative settings.</p>
-        <ul class="condition-symptoms">
-          <li>Knee pain with twisting</li>
-          <li>Swelling and stiffness</li>
-          <li>Catching or locking sensation</li>
-          <li>Limited range of motion</li>
-        </ul>
+        <h3>PCL Tear</h3>
+        <p>Injury to the posterior cruciate ligament, often from a direct blow to the shin or forced hyperflexion, frequently part of a larger injury.</p>
       </div>
       
       <div class="condition-card">
-        <h3>Patellar Instability</h3>
-        <p>Recurrent patellar dislocation or subluxation, often due to anatomic factors such as trochlear dysplasia or patella alta.</p>
-        <ul class="condition-symptoms">
-          <li>Kneecap dislocation episodes</li>
-          <li>Pain with knee bending</li>
-          <li>Apprehension with activity</li>
-          <li>Feeling of instability</li>
-        </ul>
+        <h3>MCL Tear</h3>
+        <p>Injury to the ligament on the inner knee, typically from a blow to the outside of the joint; most heal without surgery.</p>
       </div>
       
       <div class="condition-card">
-        <h3>Multiligament Knee Injury</h3>
-        <p>Complex injuries involving two or more ligaments, typically from high-energy trauma or sports injuries requiring staged reconstruction.</p>
-        <ul class="condition-symptoms">
-          <li>Severe knee instability</li>
-          <li>Multiple directions of laxity</li>
-          <li>Significant swelling</li>
-          <li>Possible neurovascular injury</li>
-        </ul>
+        <h3>LCL Tear</h3>
+        <p>Injury to the ligament on the outer knee, often part of a posterolateral corner injury that may require surgical repair.</p>
       </div>
       
       <div class="condition-card">
-        <h3>Cartilage Defects</h3>
-        <p>Focal areas of damaged cartilage on the femur, tibia, or patella that can cause pain and mechanical symptoms in active individuals.</p>
-        <ul class="condition-symptoms">
-          <li>Deep aching pain</li>
-          <li>Swelling after activity</li>
-          <li>Mechanical catching</li>
-          <li>Limited athletic performance</li>
-        </ul>
+        <h3>Other Knee Ligament Injuries</h3>
+        <p>Complex, multi-ligament injuries from high-energy trauma, requiring careful evaluation and coordinated reconstruction.</p>
       </div>
       
       <div class="condition-card">
-        <h3>PCL & Posterolateral Corner Injuries</h3>
-        <p>Injuries to the posterior cruciate ligament and associated structures, often resulting from dashboard injuries or athletic trauma.</p>
-        <ul class="condition-symptoms">
-          <li>Posterior knee pain</li>
-          <li>Feeling of knee hyperextension</li>
-          <li>Difficulty with stairs</li>
-          <li>Progressive instability</li>
-        </ul>
+        <h3>Meniscus Tear</h3>
+        <p>Tears of the C-shaped cushion, common with twisting, causing pain along the joint line and mechanical catching or locking.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3>Articular Cartilage Injury</h3>
+        <p>Focal damage to the cartilage surface of the knee, causing pain and swelling and, over time, a risk of arthritis.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3>Patellar (Kneecap) Dislocation</h3>
+        <p>Instability in which the kneecap slips out of its groove, often driven by underlying anatomy and prone to recurrence.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3>Knee Arthritis</h3>
+        <p>Progressive loss of cartilage — from wear, prior injury, or inflammation — leading to pain, stiffness, and reduced motion.</p>
       </div>
       
     </div>
@@ -1078,69 +1108,48 @@ footer {
     <div id="procedures" class="tab-content">
       
       <div class="procedure-card">
-        <h3>ACL Reconstruction</h3>
-        <p>Optimal reconstruction using the ideal graft for each patient, with time-tested techniques proven in high-level athletes to restore knee biomechanics and reduce re-injury risk.</p>
-        <ul class="procedure-details">
-          <li>Optimal tunnel placement</li>
-          <li>Ideal graft selection for each patient</li>
-          <li>Time-tested techniques in high level athletes</li>
-          <li>Return to sport typically 6-9 months</li>
-        </ul>
+        <h3>Knee Arthroscopy</h3>
+        <p>Minimally invasive keyhole surgery used to diagnose and treat cartilage, meniscus, and ligament problems inside the knee.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>Meniscus Repair</h3>
-        <p>Preservation of meniscus tissue through repair techniques when tear pattern and location allow, prioritizing long-term joint health.</p>
-        <ul class="procedure-details">
-          <li>All-inside repair techniques</li>
-          <li>Root tear repair when indicated</li>
-          <li>Biologic augmentation options</li>
-          <li>Protected weight-bearing for 6 weeks</li>
-        </ul>
+        <h3>Meniscus Repair &amp; Meniscectomy</h3>
+        <p>Preserving the meniscus with a repair when the tear allows, or trimming the damaged portion when it cannot heal.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3>ACL Reconstruction</h3>
+        <p>Rebuilding a torn ACL with the ideal graft for each patient, using time-tested techniques proven in high-level athletes.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3>Other Ligament Repair/Reconstruction</h3>
+        <p>Repair or reconstruction of the PCL, MCL, and LCL, including coordinated management of multi-ligament injuries.</p>
       </div>
       
       <div class="procedure-card">
         <h3>MPFL Reconstruction</h3>
-        <p>Medial patellofemoral ligament reconstruction for recurrent patellar instability, often combined with bony procedures when indicated.</p>
-        <ul class="procedure-details">
-          <li>Anatomic graft placement</li>
-          <li>May combine with tibial tubercle osteotomy</li>
-          <li>Addresses underlying risk factors</li>
-          <li>Return to sport typically 4-6 months</li>
-        </ul>
+        <p>Rebuilding the ligament that stabilizes the kneecap to prevent recurrent dislocation, often with an arthroscopy to address joint damage.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>Multiligament Reconstruction</h3>
-        <p>Comprehensive reconstruction of multiple ligament injuries using a systematic approach to restore stability in all planes of motion, typically performed in a single surgery.</p>
-        <ul class="procedure-details">
-          <li>Comprehensive injury assessment</li>
-          <li>Single-stage surgical approach</li>
-          <li>Multiple graft reconstruction</li>
-          <li>Extended rehabilitation required</li>
-        </ul>
+        <h3>Tibial Osteotomy</h3>
+        <p>Realigning the bone to correct atypical anatomy that contributes to instability or uneven joint wear.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>Cartilage Restoration</h3>
-        <p>Techniques to address focal cartilage defects including microfracture, osteochondral transplantation, and osteochondral allograft transplant for larger defects.</p>
-        <ul class="procedure-details">
-          <li>Microfracture for smaller defects</li>
-          <li>Osteochondral autograft transfer</li>
-          <li>Osteochondral allograft transplant</li>
-          <li>Protected weight-bearing initially</li>
-        </ul>
+        <h3>Cartilage Preservation Surgeries</h3>
+        <p>Restoring focal cartilage defects with microfracture, osteochondral transplant, or cell-based techniques to delay arthritis.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>Revision ACL Reconstruction</h3>
-        <p>Complex revision surgery for failed primary ACL reconstructions, addressing causes of failure and restoring knee stability.</p>
-        <ul class="procedure-details">
-          <li>Analysis of failure mechanism</li>
-          <li>Bone graft for tunnel widening</li>
-          <li>Staged approach when necessary</li>
-          <li>Longer recovery timeline</li>
-        </ul>
+        <h3>Meniscus Transplant</h3>
+        <p>Replacing a meniscus-deficient knee with a custom-sized donor graft to relieve pain and protect the joint.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3>Total Knee Replacement</h3>
+        <p>Resurfacing an arthritic knee with metal and plastic components — the most reliable long-term treatment for advanced arthritis.</p>
       </div>
       
     </div>
@@ -1246,21 +1255,31 @@ footer {
       </p>
     </div>
     <div class="footer-col">
-      <h4>Practice</h4>
-      <ul>
-        <li><a href="#">About Dr. Ryan</a></li>
-        <li><a href="#">The Team</a></li>
-        <li><a href="#">Titletown Orthopaedics</a></li>
-        <li><a href="#">Bellin Health</a></li>
+      <h4>Knee Injuries</h4>
+      <ul class="two-col">
+        <li><a href="acl-tear.html">ACL Tear</a></li>
+        <li><a href="other-knee-ligament-injuries.html">Other Knee Ligament Injuries</a></li>
+        <li><a href="pcl-tear.html">PCL Tear</a></li>
+        <li><a href="mcl-tear.html">MCL Tear</a></li>
+        <li><a href="lcl-tear.html">LCL Tear</a></li>
+        <li><a href="meniscus-tear.html">Meniscus Tear</a></li>
+        <li><a href="articular-cartilage-injury.html">Articular Cartilage Injury</a></li>
+        <li><a href="patellar-dislocation.html">Patellar (Kneecap) Dislocation</a></li>
+        <li><a href="knee-arthritis.html">Knee Arthritis</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Expertise</h4>
-      <ul>
-        <li><a href="#">Hip</a></li>
-        <li><a href="#">Knee</a></li>
-        <li><a href="#">Shoulder</a></li>
-        <li><a href="#">Sports Medicine</a></li>
+      <h4>Knee Surgeries</h4>
+      <ul class="two-col">
+        <li><a href="knee-arthroscopy.html">Knee Arthroscopy</a></li>
+        <li><a href="meniscus-repair.html">Meniscus Repair &amp; Meniscectomy</a></li>
+        <li><a href="acl-reconstruction.html">ACL Reconstruction</a></li>
+        <li><a href="other-ligament-reconstruction.html">Other Ligament Repair/Reconstruction</a></li>
+        <li><a href="mpfl-reconstruction.html">MPFL Reconstruction</a></li>
+        <li><a href="tibial-osteotomy.html">Tibial Osteotomy</a></li>
+        <li><a href="cartilage-preservation.html">Cartilage Preservation Surgeries</a></li>
+        <li><a href="meniscus-transplant.html">Meniscus Transplant</a></li>
+        <li><a href="total-knee-replacement.html">Total Knee Replacement</a></li>
       </ul>
     </div>
     <div class="footer-col">
