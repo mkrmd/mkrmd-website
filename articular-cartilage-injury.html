@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articular Cartilage Injury - Cartilage Repair &amp; Restoration | Michael K. Ryan, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== SHARED STYLES ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav li { position: relative; }
+nav .has-dropdown > a { padding-right: 0.9rem; }
+nav .has-dropdown > a::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-70%) rotate(45deg);
+  opacity: 0.55;
+}
+nav .dropdown {
+  position: absolute;
+  top: 100%;
+  left: -0.9rem;
+  margin-top: 0.9rem;
+  min-width: 230px;
+  background: rgba(250, 250, 247, 0.98);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  padding: 0.5rem 0;
+  list-style: none;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 200;
+}
+nav .dropdown::before {
+  content: '';
+  position: absolute;
+  top: -0.9rem;
+  left: 0;
+  right: 0;
+  height: 0.9rem;
+}
+nav .has-dropdown:hover > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+nav .dropdown li { position: static; }
+nav .dropdown a {
+  display: block;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--ink-soft);
+}
+nav .dropdown a::after { display: none; }
+nav .dropdown a:hover {
+  color: var(--bellin-blue);
+  background: var(--paper-cool);
+}
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--paper-cool);
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  text-align: center;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--navy); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bellin-blue);
+}
+.hero-lede {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 0;
+  font-weight: 300;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+.content-section {
+  padding: 6rem 0;
+}
+.content-section:nth-child(even) {
+  background: var(--paper-warm);
+}
+.content-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.content-text p {
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+.content-text strong {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: var(--paper-cool);
+  padding: 6rem 0;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.cta h2 em { font-style: italic; color: var(--bellin-blue); }
+.cta p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-primary:hover {
+  background: var(--bellin-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,125,196,0.25);
+}
+.arrow { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.3fr 2fr 2fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col ul.two-col {
+  column-count: 2;
+  column-gap: 2rem;
+}
+.footer-col ul.two-col li { break-inside: avoid; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon-footer {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon-footer:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .content-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 3rem 0 2rem; }
+  .hero-inner, .content-inner, .cta-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .content-section, .cta { padding: 4rem 0; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-col ul.two-col { column-count: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        <a href="tel:+19204304888" style="color:inherit;text-decoration:none;">(920) 430-4888</a>
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        <a href="contact-locations.html" style="color:inherit;text-decoration:none;">Titletown Sports Medicine and Orthopaedics · Green Bay, WI</a>
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">Insurance Information</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li class="has-dropdown">
+          <a href="about-page.html">About</a>
+          <ul class="dropdown">
+            <li><a href="about-page.html">Michael K. Ryan, MD</a></li>
+            <li><a href="team-page.html">Our Team</a></li>
+            <li><a href="research.html">Research &amp; Education</a></li>
+            <li><a href="bellin-health-partnership.html">Titletown Sports Medicine &amp; Orthopaedics</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#expertise" class="active">Expertise</a>
+          <ul class="dropdown">
+            <li><a href="hip-preservation.html">Hip</a></li>
+            <li><a href="knee-specialty.html">Knee</a></li>
+            <li><a href="shoulder-specialty.html">Shoulder</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="teams.html">Teams</a>
+          <ul class="dropdown">
+            <li><a href="#">Green Bay Packers</a></li>
+            <li><a href="#">NFLPS</a></li>
+            <li><a href="#">Former Teams</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#patients">Patients</a>
+          <ul class="dropdown">
+            <li><a href="contact-locations.html">Request Consultation</a></li>
+            <li><a href="#">MRI/X-ray Review</a></li>
+            <li><a href="#">PT Protocols</a></li>
+            <li><a href="out-of-state-international-patients.html">Out-of-state Patients</a></li>
+            <li><a href="#">Office Information</a></li>
+            <li><a href="#">Patient Forms</a></li>
+            <li><a href="#">Surgery Information</a></li>
+            <li><a href="#">Post-op Information</a></li>
+            <li><a href="#">Athlete Sports-Specific Information</a></li>
+            <li><a href="#">Videos</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="media-page.html">Media</a>
+          <ul class="dropdown">
+            <li><a href="#">Press</a></li>
+            <li><a href="patient-reviews.html">Reviews</a></li>
+            <li><a href="#">Podcast</a></li>
+          </ul>
+        </li>
+        <li><a href="contact-locations.html" class="cta-btn">Request Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="/">Home</a> / <a href="/expertise">Expertise</a> / <a href="/knee">Knee</a> / Articular Cartilage Injury
+    </div>
+    
+    <h1>Articular <em>Cartilage Injury</em></h1>
+    <p class="hero-lede">
+      Articular cartilage is the specialized tissue that covers the ends of the bones in the knee. This thin, smooth layer forms part of the joint's weight-bearing surface and reduces friction, allowing the knee to move easily and painlessly.
+    </p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="content-text">
+      <p>
+        Damage to the articular cartilage can result from a <strong>direct injury, long-term wear and tear, excessive weight overload, or a genetic predisposition</strong>. When cartilage is damaged, the knee typically becomes swollen and painful, with a loss of motion or function. Over time, significant cartilage degeneration can progress to <strong><a href="knee-arthritis.html" style="color: var(--bellin-blue); text-decoration: none;">osteoarthritis</a></strong> within the knee.
+      </p>
+      
+      <p>
+        Because articular cartilage has no direct blood supply, it has a limited ability to repair itself. Initial treatment focuses on managing symptoms with physical therapy, activity modification, anti-inflammatory medication, ice, and occasionally injections.
+      </p>
+      
+      <p>
+        When non-operative treatment does not provide lasting relief, surgery can be performed in select patients — those without established arthritis — to fill in or restore areas of damaged cartilage. Several <strong>arthroscopic and open techniques</strong> are used to repair the cartilage surface and help prevent further arthritic damage.
+      </p>
+      
+      <p>
+        The right procedure depends on a number of factors, including the patient's age and BMI, the size and location of the cartilage lesion, the severity of the injury and symptoms, and the health of the surrounding cartilage. Recovery varies with the specific procedure, but in every case the goal is the same: to restore the joint surface and <strong>return the patient to their previous level of activity</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Expert treatment for <em>cartilage injuries</em></h2>
+    <p>Cartilage damage is often best addressed before it progresses to arthritis. A specialized evaluation can determine the extent of the injury and whether cartilage repair or restoration can protect your knee and keep you active.</p>
+    <a href="contact-locations.html" class="btn-primary">
+      Schedule consultation
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Sports Medicine<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Knee Injuries</h4>
+      <ul class="two-col">
+        <li><a href="acl-tear.html">ACL Tear</a></li>
+        <li><a href="other-knee-ligament-injuries.html">Other Knee Ligament Injuries</a></li>
+        <li><a href="#">PCL Tear</a></li>
+        <li><a href="#">MCL Tear</a></li>
+        <li><a href="#">LCL Tear</a></li>
+        <li><a href="meniscus-tear.html">Meniscus Tear</a></li>
+        <li><a href="articular-cartilage-injury.html">Articular Cartilage Injury</a></li>
+        <li><a href="#">Patellar (Kneecap) Dislocation</a></li>
+        <li><a href="#">Knee Arthritis</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Knee Procedures</h4>
+      <ul class="two-col">
+        <li><a href="#">Knee Arthroscopy</a></li>
+        <li><a href="#">Meniscus Repair &amp; Meniscectomy</a></li>
+        <li><a href="acl-reconstruction.html">ACL Reconstruction</a></li>
+        <li><a href="#">Other Ligament Repair/Reconstruction</a></li>
+        <li><a href="#">MPFL Reconstruction</a></li>
+        <li><a href="#">Tibial Osteotomy</a></li>
+        <li><a href="#">Cartilage Preservation Surgeries</a></li>
+        <li><a href="#">Meniscus Transplant</a></li>
+        <li><a href="#">Total Knee Replacement</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+        <li><a href="#">Recovery Resources</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon-footer">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon-footer">Li</a>
+      <a href="#" class="social-icon-footer">X</a>
+      <a href="#" class="social-icon-footer">Yt</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

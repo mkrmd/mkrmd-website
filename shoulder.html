@@ -537,6 +537,37 @@ nav a.active::after { width: 100%; }
   flex-shrink: 0;
 }
 
+/* ===== OVERVIEW ===== */
+.overview {
+  padding: 6rem 0;
+  background: var(--paper);
+}
+.overview-inner {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.overview .section-label {
+  margin-bottom: 1.25rem;
+}
+.overview h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+}
+.overview h2 em { font-style: italic; color: var(--bellin-blue); }
+.overview p {
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin-bottom: 1.35rem;
+}
+.overview p strong { color: var(--navy); font-weight: 600; }
+
 /* ===== WHAT TO EXPECT ===== */
 .expect {
   padding: 6rem 0;
@@ -732,7 +763,7 @@ footer {
   margin: 0 auto;
   padding: 0 2.5rem;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.3fr 2fr 2fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
 }
@@ -761,6 +792,11 @@ footer {
 }
 .footer-col ul { list-style: none; }
 .footer-col li { margin-bottom: 0.7rem; }
+.footer-col ul.two-col {
+  column-count: 2;
+  column-gap: 2rem;
+}
+.footer-col ul.two-col li { break-inside: avoid; }
 .footer-col a {
   color: rgba(255,255,255,0.7);
   text-decoration: none;
@@ -827,6 +863,7 @@ footer {
   .philosophy, .conditions, .expect, .cta { padding: 4rem 0; }
   .hero-stats { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
+  .footer-col ul.two-col { column-count: 1; }
   .cta-buttons { flex-direction: column; align-items: stretch; }
   .cta-buttons .btn-primary, .cta-buttons .btn-ghost { justify-content: center; }
   .conditions-tabs { flex-wrap: wrap; gap: 0.5rem; }
@@ -953,6 +990,22 @@ footer {
   </div>
 </section>
 
+<!-- OVERVIEW -->
+<section class="overview">
+  <div class="overview-inner">
+    <div class="section-label">Understanding the Shoulder</div>
+    <h2>The most mobile joint in the body — and the most reliant on <em>soft-tissue stability</em>.</h2>
+
+    <p>The shoulder is a ball-and-socket joint, known as the glenohumeral joint, that trades stability for an extraordinary range of motion. The socket — called the <strong>glenoid</strong> — is a shallow cavity on the shoulder blade, and the ball is the top of the upper arm bone (the humeral head). Both surfaces are covered in smooth cartilage that lets the joint glide freely.</p>
+
+    <p>Because the socket is so shallow, the shoulder relies heavily on soft tissue for stability. A ring of cartilage called the <strong>labrum</strong> deepens the socket, creates a seal that holds joint fluid in place, and — together with the surrounding ligaments, collectively the capsulolabral complex — keeps the ball centered. When the ball slips out of the socket, the labrum is frequently torn, leading to weakness, instability, and recurrent dislocations, along with pain during both high-demand activities (throwing, pressing, lifting) and everyday tasks like reaching overhead or getting dressed.</p>
+
+    <p>Several other structures support and move the shoulder. The <strong>rotator cuff</strong> — a sleeve of four muscles — lifts and rotates the arm, and can tear or become inflamed, a condition known as impingement. The AC joint, where the collarbone meets the shoulder blade, can be sprained or fully separated, and the collarbone itself is among the most commonly fractured bones in the body. The biceps tendon attaches at the shoulder and is often injured alongside labral tears.</p>
+
+    <p>Many of these injuries can be diagnosed and treated with minimally invasive <strong>shoulder arthroscopy</strong>, and specialized stabilization procedures restore a torn labrum to rebuild strength and mobility. When the cartilage surfaces wear down, the result is arthritis; in advanced cases, a total shoulder replacement resurfaces the joint. The conditions and procedures below span the full range of shoulder care, from first-time dislocations to complex reconstruction.</p>
+  </div>
+</section>
+
 <!-- PHILOSOPHY -->
 <section class="philosophy">
   <div class="philosophy-inner">
@@ -1008,68 +1061,62 @@ footer {
       
       <div class="condition-card">
         <h3>Anterior Shoulder Instability</h3>
-        <p>Recurrent anterior dislocations or subluxations, often with associated labral tears (Bankart lesions) and potential bone loss.</p>
-        <ul class="condition-symptoms">
-          <li>Recurrent shoulder dislocations</li>
-          <li>Fear of dislocation with activity</li>
-          <li>Pain with overhead activities</li>
-          <li>Apprehension with external rotation</li>
-        </ul>
-      </div>
-      
-      <div class="condition-card">
-        <h3>Rotator Cuff Tears</h3>
-        <p>Full or partial thickness tears of the rotator cuff tendons, ranging from small traumatic tears to massive chronic tears.</p>
-        <ul class="condition-symptoms">
-          <li>Shoulder pain at rest and with activity</li>
-          <li>Weakness with overhead lifting</li>
-          <li>Night pain disrupting sleep</li>
-          <li>Progressive loss of motion</li>
-        </ul>
+        <p>Recurrent forward dislocations or subluxations, often with an associated labral (Bankart) tear and potential bone loss.</p>
       </div>
       
       <div class="condition-card">
         <h3>Posterior Shoulder Instability</h3>
-        <p>Less common form of instability typically seen in athletes who load the shoulder in flexion and internal rotation.</p>
-        <ul class="condition-symptoms">
-          <li>Shoulder pain with bench press</li>
-          <li>Posterior shoulder discomfort</li>
-          <li>Weakness in internal rotation</li>
-          <li>Sense of shoulder slipping</li>
-        </ul>
+        <p>A less common instability seen in athletes who load the shoulder in flexion and internal rotation, such as with bench press or blocking.</p>
       </div>
       
       <div class="condition-card">
         <h3>Multidirectional Instability</h3>
-        <p>Excessive translation in multiple directions, often associated with ligamentous laxity and requiring capsular tightening procedures.</p>
-        <ul class="condition-symptoms">
-          <li>Shoulder subluxation in multiple directions</li>
-          <li>Generalized shoulder looseness</li>
-          <li>Difficulty with overhead activities</li>
-          <li>Associated neck and upper back pain</li>
-        </ul>
+        <p>Excessive looseness in more than one direction, often tied to ligamentous laxity and treated with capsular tightening.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3>Rotator Cuff Tears</h3>
+        <p>Partial- or full-thickness tears of the cuff tendons, from small traumatic tears to massive chronic tears, causing pain and overhead weakness.</p>
       </div>
       
       <div class="condition-card">
         <h3>SLAP Tears</h3>
-        <p>Superior labral tears from anterior to posterior, often seen in throwing athletes and overhead sport participants.</p>
-        <ul class="condition-symptoms">
-          <li>Deep shoulder aching</li>
-          <li>Pain with overhead throwing</li>
-          <li>Mechanical catching or clicking</li>
-          <li>Loss of throwing velocity</li>
-        </ul>
+        <p>Superior labral tears running front to back, common in throwing and overhead athletes and marked by deep aching and loss of velocity.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3>Shoulder Impingement</h3>
+        <p>Inflammation of the rotator cuff tendons and surrounding tissue, producing pain when raising the arm.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3>Biceps Tendon Injuries</h3>
+        <p>Irritation or tearing of the biceps tendon at the shoulder, causing pain and limited motion — often alongside a labral tear.</p>
       </div>
       
       <div class="condition-card">
         <h3>AC Joint Separation</h3>
-        <p>Injury to the acromioclavicular joint ranging from mild sprains to complete separations requiring surgical reconstruction.</p>
-        <ul class="condition-symptoms">
-          <li>Point tenderness over AC joint</li>
-          <li>Pain with cross-body movement</li>
-          <li>Visible deformity in severe cases</li>
-          <li>Weakness with overhead lifting</li>
-        </ul>
+        <p>Injury to the acromioclavicular joint, ranging from a mild sprain to a complete separation with visible deformity.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3>Clavicle Fracture</h3>
+        <p>A break of the collarbone — one of the most commonly fractured bones — causing sharp pain at the front of the shoulder.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3>Pectoralis Rupture</h3>
+        <p>A tear of the pectoralis tendon, typically during heavy pressing, causing weakness and bruising at the front of the shoulder.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3>Frozen Shoulder</h3>
+        <p>Progressive stiffness and pain from tightening of the shoulder capsule, with a gradual loss of both active and passive motion.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3>Shoulder Arthritis</h3>
+        <p>Loss of the cartilage surfaces of the joint, leading to painful bone-on-bone contact and progressive stiffness.</p>
       </div>
       
     </div>
@@ -1077,69 +1124,53 @@ footer {
     <div id="procedures" class="tab-content">
       
       <div class="procedure-card">
-        <h3>Arthroscopic Bankart Repair</h3>
-        <p>Minimally invasive repair of anterior labral tears using suture anchors to restore the labral bumper and capsular tension.</p>
-        <ul class="procedure-details">
-          <li>All-arthroscopic technique</li>
-          <li>Multiple anchor repair as needed</li>
-          <li>Capsular tensioning for stability</li>
-          <li>Return to contact sports 4-6 months</li>
-        </ul>
+        <h3>Shoulder Arthroscopy</h3>
+        <p>Minimally invasive keyhole surgery used to diagnose and repair soft-tissue injuries throughout the shoulder.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3>Labral (Bankart) Repair</h3>
+        <p>Arthroscopic repair of a torn labrum using suture anchors to restore the labral bumper and capsular tension.</p>
       </div>
       
       <div class="procedure-card">
         <h3>Latarjet Procedure</h3>
-        <p>Bone block procedure transferring the coracoid process to the glenoid rim for mechanical stability in high-risk collision athletes.</p>
-        <ul class="procedure-details">
-          <li>Immediate mechanical stability</li>
-          <li>Ideal for collision sport athletes</li>
-          <li>Addresses significant bone loss</li>
-          <li>Open surgical technique</li>
-        </ul>
+        <p>A bone-block procedure that transfers the coracoid to the glenoid rim for immediate mechanical stability in high-risk or bone-loss cases.</p>
       </div>
       
       <div class="procedure-card">
         <h3>Rotator Cuff Repair</h3>
-        <p>Arthroscopic repair of full-thickness rotator cuff tears using modern techniques to maximize healing potential and restore function.</p>
-        <ul class="procedure-details">
-          <li>Double-row repair technique</li>
-          <li>Biologic augmentation when indicated</li>
-          <li>Minimal-access arthroscopic approach</li>
-          <li>Progressive rehabilitation protocol</li>
-        </ul>
+        <p>Arthroscopic repair of cuff tendon tears using modern double-row techniques, with biologic augmentation when indicated.</p>
       </div>
       
       <div class="procedure-card">
         <h3>Capsular Shift</h3>
-        <p>Surgical tightening of the shoulder capsule for multidirectional instability, restoring normal capsular volume and tension.</p>
-        <ul class="procedure-details">
-          <li>Open or arthroscopic approach</li>
-          <li>360-degree capsular tightening</li>
-          <li>Customized to patient's laxity pattern</li>
-          <li>Extended immobilization required</li>
-        </ul>
+        <p>Tightening of the shoulder capsule to treat multidirectional instability, restoring normal capsular volume and tension.</p>
       </div>
       
       <div class="procedure-card">
         <h3>SLAP Repair</h3>
-        <p>Repair of superior labral tears in appropriate candidates, particularly throwing athletes under 30 with acute traumatic tears.</p>
-        <ul class="procedure-details">
-          <li>Selective repair in appropriate candidates</li>
-          <li>Consider debridement in older athletes</li>
-          <li>Biceps tenodesis alternative when indicated</li>
-          <li>Extended return to throwing timeline</li>
-        </ul>
+        <p>Repair of superior labral tears in appropriate candidates, with biceps tenodesis as an alternative when better suited.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3>Biceps Tenodesis</h3>
+        <p>Reattachment of the biceps tendon to the arm bone to relieve pain from biceps or labral pathology.</p>
       </div>
       
       <div class="procedure-card">
         <h3>AC Joint Reconstruction</h3>
-        <p>Anatomic reconstruction of high-grade AC separations using modern techniques to restore both horizontal and vertical stability.</p>
-        <ul class="procedure-details">
-          <li>Anatomic coracoclavicular reconstruction</li>
-          <li>Preserves native anatomy when possible</li>
-          <li>Multiple graft and fixation options</li>
-          <li>Activity modification during healing</li>
-        </ul>
+        <p>Anatomic reconstruction of high-grade AC separations to restore both horizontal and vertical stability.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3>Pectoralis Repair</h3>
+        <p>Reattachment of a torn pectoralis tendon to the arm bone to restore pressing strength.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3>Clavicle Fracture Fixation</h3>
+        <p>Surgical stabilization of a displaced collarbone fracture with a plate and screws to restore alignment.</p>
       </div>
       
     </div>
@@ -1245,21 +1276,35 @@ footer {
       </p>
     </div>
     <div class="footer-col">
-      <h4>Practice</h4>
-      <ul>
-        <li><a href="#">About Dr. Ryan</a></li>
-        <li><a href="#">The Team</a></li>
-        <li><a href="#">Titletown Orthopaedics</a></li>
-        <li><a href="#">Bellin Health</a></li>
+      <h4>Shoulder Injuries</h4>
+      <ul class="two-col">
+        <li><a href="#">Anterior Shoulder Instability</a></li>
+        <li><a href="#">Posterior Shoulder Instability</a></li>
+        <li><a href="#">Multidirectional Instability</a></li>
+        <li><a href="#">Rotator Cuff Tears</a></li>
+        <li><a href="#">SLAP Tears</a></li>
+        <li><a href="#">Shoulder Impingement</a></li>
+        <li><a href="#">Biceps Tendon Injuries</a></li>
+        <li><a href="#">AC Joint Separation</a></li>
+        <li><a href="#">Clavicle Fracture</a></li>
+        <li><a href="#">Pectoralis Rupture</a></li>
+        <li><a href="#">Frozen Shoulder</a></li>
+        <li><a href="#">Shoulder Arthritis</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Expertise</h4>
-      <ul>
-        <li><a href="#">Hip</a></li>
-        <li><a href="#">Knee</a></li>
-        <li><a href="#">Shoulder</a></li>
-        <li><a href="#">Sports Medicine</a></li>
+      <h4>Shoulder Surgeries</h4>
+      <ul class="two-col">
+        <li><a href="#">Shoulder Arthroscopy</a></li>
+        <li><a href="#">Labral (Bankart) Repair</a></li>
+        <li><a href="#">Latarjet Procedure</a></li>
+        <li><a href="#">Rotator Cuff Repair</a></li>
+        <li><a href="#">Capsular Shift</a></li>
+        <li><a href="#">SLAP Repair</a></li>
+        <li><a href="#">Biceps Tenodesis</a></li>
+        <li><a href="#">AC Joint Reconstruction</a></li>
+        <li><a href="#">Pectoralis Repair</a></li>
+        <li><a href="#">Clavicle Fracture Fixation</a></li>
       </ul>
     </div>
     <div class="footer-col">
