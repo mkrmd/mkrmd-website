@@ -336,6 +336,82 @@ nav a.active::after { width: 100%; }
   padding: 6rem 0;
   background: var(--paper);
 }
+.hip-overview {
+  padding: 6rem 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.hip-overview h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.75rem;
+  color: var(--navy);
+}
+.hip-overview h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bellin-blue);
+}
+.hip-overview-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.hip-overview-text p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 1.3rem;
+}
+.hip-overview-text p:last-child { margin-bottom: 0; }
+.hip-overview-text strong { color: var(--navy); font-weight: 600; }
+.hip-overview-text a { color: var(--bellin-blue); text-decoration: none; }
+.hip-overview-text a:hover { text-decoration: underline; }
+.hip-figures {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: sticky;
+  top: 2rem;
+}
+.hip-figure {
+  margin: 0;
+  background: var(--paper);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--rule-soft);
+}
+.hip-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+.hip-figure figcaption {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.7rem;
+  text-align: center;
+  line-height: 1.5;
+}
+.hip-figure-wide {
+  max-width: 920px;
+  margin: 3rem auto 0;
+}
+.footer-col ul.two-col {
+  columns: 2;
+  column-gap: 1.75rem;
+}
+.footer-col ul.two-col li { break-inside: avoid; }
 .why-inner {
   max-width: 1360px;
   margin: 0 auto;
@@ -761,7 +837,7 @@ footer {
   margin: 0 auto;
   padding: 0 2.5rem;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.3fr 2fr 2fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
 }
@@ -837,6 +913,9 @@ footer {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1100px) {
   .hero-inner, .why-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hip-overview-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hip-figures { position: static; flex-direction: row; flex-wrap: wrap; }
+  .hip-figure { flex: 1 1 45%; }
   .hero-inner { text-align: center; }
   .hero-stats { grid-template-columns: 1fr 1fr; justify-content: center; max-width: 400px; margin: 0 auto; }
   .tab-content.active { grid-template-columns: 1fr; }
@@ -982,6 +1061,48 @@ footer {
   </div>
 </section>
 
+<!-- UNDERSTANDING THE HIP -->
+<section class="hip-overview">
+  <div class="hip-overview-inner">
+    <div class="hip-overview-text">
+      <div class="section-label">Understanding the Hip</div>
+      <h2>A deep ball-and-socket joint where <em>shape is everything</em>.</h2>
+
+      <p>The hip is a ball-and-socket joint. The socket — called the <strong>acetabulum</strong> — is part of the pelvis, shaped like a hemisphere, and forms the weight-bearing surface of the joint. It is lined with smooth cartilage that cushions and lubricates the hip, allowing fluid, painless motion. Around the rim of the socket runs a ring of specialized cartilage called the <strong>labrum</strong>, which deepens the joint, creates a seal that keeps the natural joint fluid in place, and adds stability. Because the labrum is rich in nerve fibers, a tear can be a significant source of pain.</p>
+
+      <p>The ball of the joint is the <strong>femoral head</strong> — the rounded top of the thigh bone (femur) — and it, too, is capped in smooth cartilage that glides against the socket. In a healthy hip, the socket covers the ball to just the right extent, and the ball is perfectly round.</p>
+
+      <p>Small deviations from that ideal shape cause problems. If the socket covers too much of the ball, the bones collide — a pattern called <strong>pincer impingement</strong>. If the ball isn't perfectly round, <strong>cam impingement</strong> occurs, and moving the hip becomes like forcing a square peg into a round hole. Together these make up <a href="hip-impingement-fai.html">femoroacetabular impingement (FAI)</a>, and both patterns can damage and tear the labrum and cartilage.</p>
+
+      <p>At the opposite extreme, a socket with too little coverage — a shallow socket — leaves the hip unstable and prone to wear. This is <a href="hip-dysplasia.html">hip dysplasia</a>, and like impingement, it can lead to labral and cartilage tears.</p>
+
+      <p><strong>Labral tears</strong> often cause groin pain that worsens with high-demand activity — running, jumping, cutting, squatting, pivoting — as well as everyday tasks like sitting, climbing stairs, or putting on socks and shoes. Left untreated for years, the repeated injury to the labrum and cartilage can progress to <a href="hip-arthritis.html">osteoarthritis</a>, the loss of the joint's cartilage surface. When arthritis becomes advanced, a hip replacement may be the only option — but caught early, impingement and dysplasia can often be corrected before arthritis sets in. Surgery aimed at that goal is called <strong>hip preservation</strong>.</p>
+
+      <p>Beyond the joint itself, a range of injuries affect the surrounding muscles, tendons, and ligaments — gluteus and hamstring tendon tears, snapping hip, bursitis, ligamentum teres tears, instability, and growth-plate conditions — each capable of causing pain and limiting function. The full range of hip conditions and the procedures that treat them is listed below.</p>
+    </div>
+
+    <div class="hip-figures">
+      <figure class="hip-figure">
+        <img src="https://i0.wp.com/mkrmd.com/wp-content/uploads/2020/02/Hip-Anatomy.jpg?resize=508%2C650&ssl=1" alt="Normal bony anatomy of the hip joint" loading="lazy">
+        <figcaption>Normal bony anatomy of the hip joint</figcaption>
+      </figure>
+      <figure class="hip-figure">
+        <img src="https://i0.wp.com/mkrmd.com/wp-content/uploads/2020/03/Normal-Hip-Illustration.png?resize=247%2C300&ssl=1" alt="Normal hip" loading="lazy">
+        <figcaption>Normal hip</figcaption>
+      </figure>
+      <figure class="hip-figure">
+        <img src="https://i0.wp.com/mkrmd.com/wp-content/uploads/2020/03/Dysplastic-Hip-Illustration.png?fit=247%2C300&ssl=1" alt="Dysplastic hip with a shallow socket" loading="lazy">
+        <figcaption>Dysplastic hip (shallow hip socket)</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <figure class="hip-figure hip-figure-wide">
+    <img src="https://i0.wp.com/mkrmd.com/wp-content/uploads/2020/03/FAI-Illustration.jpg?fit=1000%2C391&ssl=1" alt="Femoroacetabular impingement illustration showing pincer, cam, and combined types" loading="lazy">
+    <figcaption>Femoroacetabular impingement (FAI) — Left: socket overcoverage (pincer); Middle: aspherical ball (cam); Right: combined impingement (both cam and pincer)</figcaption>
+  </figure>
+</section>
+
 <!-- WHY PRESERVATION -->
 <section class="why-preservation">
   <div class="why-inner">
@@ -1044,69 +1165,68 @@ footer {
     <div id="conditions" class="tab-content active">
       
       <div class="condition-card">
-        <h3><a href="hip-impingement-fai.html">Femoroacetabular Impingement (FAI)</a></h3>
-        <p>Abnormal contact between the femoral head and acetabulum, often caused by excess bone (cam lesion) or socket overcoverage (pincer lesion).</p>
-        <ul class="condition-symptoms">
-          <li>Groin pain with hip flexion</li>
-          <li>Pain with getting in/out of car</li>
-          <li>C-sign: cupping hand over hip</li>
-          <li>Limited internal rotation</li>
-        </ul>
+        <h3><a href="hip-impingement-fai.html">Hip Impingement (FAI)</a></h3>
+        <p>Abnormal contact between the ball and socket — from a cam or pincer deformity — that damages the labrum and cartilage.</p>
       </div>
       
       <div class="condition-card">
-        <h3><a href="hip-labral-tear.html">Labral Tears</a></h3>
-        <p>Tears in the fibrocartilage rim that deepens the hip socket and provides joint stability, often associated with FAI or trauma.</p>
-        <ul class="condition-symptoms">
-          <li>Deep groin aching</li>
-          <li>Sharp catching or clicking</li>
-          <li>Pain with pivoting movements</li>
-          <li>Mechanical symptoms</li>
-        </ul>
+        <h3><a href="hip-labral-tear.html">Labral Tear</a></h3>
+        <p>A tear of the cartilage rim that seals and stabilizes the socket, often causing groin pain and catching.</p>
       </div>
       
       <div class="condition-card">
         <h3><a href="hip-dysplasia.html">Hip Dysplasia</a></h3>
-        <p>Shallow hip socket that inadequately covers the femoral head, leading to joint instability and accelerated cartilage wear.</p>
-        <ul class="condition-symptoms">
-          <li>Lateral hip pain</li>
-          <li>Groin pain with walking</li>
-          <li>Hip instability sensation</li>
-          <li>Activity-related symptoms</li>
-        </ul>
+        <p>A shallow socket that under-covers the ball, leaving the hip unstable and prone to accelerated wear.</p>
       </div>
       
       <div class="condition-card">
-        <h3><a href="core-muscle-injury.html">Core Muscle Injury / Sports Hernia</a></h3>
-        <p>Weakness or tear in the muscles of the lower abdominal wall and inner thigh, common in cutting and kicking sports.</p>
-        <ul class="condition-symptoms">
-          <li>Lower abdominal pain</li>
-          <li>Pain with coughing/sneezing</li>
-          <li>Adductor muscle pain</li>
-          <li>Pain with acceleration</li>
-        </ul>
+        <h3><a href="hip-instability.html">Hip Instability</a></h3>
+        <p>Excessive motion of the ball within the socket, from injury or ligament laxity, causing a sense of the hip giving way.</p>
       </div>
       
       <div class="condition-card">
-        <h3><a href="gluteus-tendon-tear.html">Gluteus Medius/Minimus Tears</a></h3>
-        <p>Tears in the primary hip stabilizing muscles, often called the "rotator cuff of the hip."</p>
-        <ul class="condition-symptoms">
-          <li>Lateral hip pain</li>
-          <li>Pain with side-lying</li>
-          <li>Weakness with single leg stance</li>
-          <li>Trendelenburg gait</li>
-        </ul>
+        <h3><a href="snapping-hip-syndrome.html">Snapping Hip Syndrome</a></h3>
+        <p>A snapping or popping from a tendon catching over bone, at the front (internal) or side (external) of the hip.</p>
       </div>
       
       <div class="condition-card">
-        <h3>Cartilage Damage</h3>
-        <p>Injury to the smooth cartilage surface of the hip joint, often associated with FAI or acetabular labral tears.</p>
-        <ul class="condition-symptoms">
-          <li>Deep aching pain</li>
-          <li>Mechanical catching</li>
-          <li>Stiffness after sitting</li>
-          <li>Progressive symptoms</li>
-        </ul>
+        <h3><a href="hamstring-tendon-tears.html">Hamstring Tears</a></h3>
+        <p>Tears of the hamstring tendons where they attach at the pelvis, causing buttock pain and weakness.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="gluteus-tendon-tear.html">Gluteus Tendon Tear</a></h3>
+        <p>A tear of the gluteus medius or minimus — the "rotator cuff of the hip" — causing lateral hip pain and weakness.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="abnormal-femoral-version.html">Abnormal Femoral Version</a></h3>
+        <p>Excessive rotation of the thigh bone that alters hip mechanics and can contribute to pain and impingement.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="acetabular-retroversion.html">Acetabular Retroversion</a></h3>
+        <p>A socket rotated backward, causing a form of impingement and abnormal contact within the joint.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="legg-calve-perthes.html">Legg-Calvé-Perthes</a></h3>
+        <p>A childhood condition in which the femoral head temporarily loses its blood supply, affecting its shape as it heals.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="slipped-capital-femoral-epiphysis-scfe.html">Slipped Capital Femoral Epiphysis (SCFE)</a></h3>
+        <p>A slip of the femoral head through its growth plate in adolescents, requiring prompt treatment.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="avascular-necrosis-avn.html">Avascular Necrosis (AVN)</a></h3>
+        <p>Loss of blood supply to the femoral head, causing the bone to weaken and collapse over time.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="hip-arthritis.html">Hip Arthritis</a></h3>
+        <p>Progressive loss of the joint's cartilage surface, leading to pain, stiffness, and reduced motion.</p>
       </div>
       
     </div>
@@ -1115,68 +1235,57 @@ footer {
       
       <div class="procedure-card">
         <h3><a href="hip-arthroscopy.html">Hip Arthroscopy</a></h3>
-        <p>Minimally invasive technique using small portals to address FAI, labral tears, and cartilage damage while preserving joint anatomy.</p>
-        <ul class="procedure-details">
-          <li>2-3 small incisions (~10mm each)</li>
-          <li>Same-day surgery</li>
-          <li>Faster recovery than open surgery</li>
-          <li>Return to sport typically 4-7 months</li>
-        </ul>
+        <p>Minimally invasive keyhole surgery to treat FAI, labral tears, and cartilage damage while preserving the joint.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3><a href="hip-labral-repair.html">Labral Repair</a></h3>
+        <p>Reattaching the torn labrum to the socket rim with sutures to restore the hip's seal and stability.</p>
       </div>
       
       <div class="procedure-card">
         <h3><a href="labral-reconstruction.html">Labral Reconstruction</a></h3>
-        <p>When labral tissue is too damaged to repair, reconstruction using cadaver tendon graft restores the critical hip seal and stability.</p>
-        <ul class="procedure-details">
-          <li>Uses cadaver tendon graft</li>
-          <li>Restores labral function</li>
-          <li>For revision cases or chronic tears</li>
-          <li>Excellent long-term outcomes</li>
-        </ul>
+        <p>Rebuilding an irreparable labrum with a tendon graft to restore its seal and function.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3><a href="cam-resection.html">Cam Resection (Femoroplasty)</a></h3>
+        <p>Reshaping the aspherical femoral head to remove the cam deformity and eliminate impingement.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3><a href="pincer-resection.html">Pincer Resection (Acetabuloplasty)</a></h3>
+        <p>Trimming an over-covering socket rim to correct pincer impingement.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3><a href="capsule-repair.html">Capsule Repair</a></h3>
+        <p>Closing and reinforcing the hip capsule to restore stability after arthroscopy.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3><a href="gluteus-tendon-repair.html">Gluteus Tendon Repair</a></h3>
+        <p>Reattaching torn gluteus tendons to relieve lateral hip pain and restore strength.</p>
+      </div>
+      
+      <div class="procedure-card">
+        <h3><a href="proximal-hamstring-repair.html">Proximal Hamstring Repair</a></h3>
+        <p>Reattaching torn hamstring tendons at the pelvis to restore strength and function.</p>
       </div>
       
       <div class="procedure-card">
         <h3><a href="periacetabular-osteotomy-pao.html">Periacetabular Osteotomy (PAO)</a></h3>
-        <p>Surgical reorientation of the hip socket to improve coverage in patients with hip dysplasia, dramatically altering joint mechanics.</p>
-        <ul class="procedure-details">
-          <li>Corrects socket orientation</li>
-          <li>Performed through Bernese approach</li>
-          <li>Hospitalization 1-3 days</li>
-          <li>Weight-bearing restrictions 6 weeks</li>
-        </ul>
+        <p>Reorienting the socket to provide proper coverage of the ball in hip dysplasia.</p>
       </div>
       
       <div class="procedure-card">
-        <h3><a href="femoral-rotational-osteotomy.html">Femoral Osteotomy</a></h3>
-        <p>Surgical correction of abnormal femoral anatomy, including excessive anteversion or neck-shaft angle abnormalities.</p>
-        <ul class="procedure-details">
-          <li>Addresses femoral-sided deformity</li>
-          <li>Often combined with arthroscopy</li>
-          <li>Restores normal hip mechanics</li>
-          <li>Prevents future impingement</li>
-        </ul>
+        <h3><a href="surgical-dislocation-hip-sdh.html">Surgical Dislocation of the Hip (SDH)</a></h3>
+        <p>A safe open approach giving full access to the joint to correct complex deformities.</p>
       </div>
       
       <div class="procedure-card">
-        <h3><a href="surgical-dislocation-hip-sdh.html">Surgical Hip Dislocation</a></h3>
-        <p>Safe surgical approach allowing 360-degree access to the hip joint while protecting blood supply to the femoral head.</p>
-        <ul class="procedure-details">
-          <li>Access for complex deformities</li>
-          <li>Preserves femoral head blood supply</li>
-          <li>Allows cartilage restoration</li>
-          <li>For cases not amenable to arthroscopy</li>
-        </ul>
-      </div>
-      
-      <div class="procedure-card">
-        <h3><a href="core-muscle-repair.html">Core Muscle Repair</a></h3>
-        <p>Direct repair of the pubic plate and rebalancing of mechanical forces through adductor lengthening, addressing the root cause of core muscle dysfunction.</p>
-        <ul class="procedure-details">
-          <li>Identifies specific tear pattern</li>
-          <li>Direct repair of pubic plate</li>
-          <li>Adductor lengthening for force balance</li>
-          <li>Return to sport typically 8-16 weeks</li>
-        </ul>
+        <h3><a href="femoral-rotational-osteotomy.html">Femoral Rotational Osteotomy</a></h3>
+        <p>Correcting abnormal thigh-bone rotation to restore normal hip mechanics.</p>
       </div>
       
     </div>
@@ -1282,21 +1391,37 @@ footer {
       </p>
     </div>
     <div class="footer-col">
-      <h4>Practice</h4>
-      <ul>
-        <li><a href="#">About Dr. Ryan</a></li>
-        <li><a href="#">The Team</a></li>
-        <li><a href="#">Titletown Orthopaedics</a></li>
-        <li><a href="#">Bellin Health</a></li>
+      <h4>Hip Injuries</h4>
+      <ul class="two-col">
+        <li><a href="#">Hip Impingement (FAI)</a></li>
+        <li><a href="#">Labral Tear</a></li>
+        <li><a href="#">Hip Dysplasia</a></li>
+        <li><a href="#">Hip Instability</a></li>
+        <li><a href="#">Snapping Hip Syndrome</a></li>
+        <li><a href="#">Hamstring Tears</a></li>
+        <li><a href="#">Gluteus Tendon Tear</a></li>
+        <li><a href="#">Abnormal Femoral Version</a></li>
+        <li><a href="#">Acetabular Retroversion</a></li>
+        <li><a href="#">Legg-Calvé-Perthes</a></li>
+        <li><a href="#">Slipped Capital Femoral Epiphysis (SCFE)</a></li>
+        <li><a href="#">Avascular Necrosis (AVN)</a></li>
+        <li><a href="#">Hip Arthritis</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Expertise</h4>
-      <ul>
-        <li><a href="#">Hip</a></li>
-        <li><a href="#">Knee</a></li>
-        <li><a href="#">Shoulder</a></li>
-        <li><a href="#">Sports Medicine</a></li>
+      <h4>Hip Surgeries</h4>
+      <ul class="two-col">
+        <li><a href="#">Hip Arthroscopy</a></li>
+        <li><a href="#">Labral Repair</a></li>
+        <li><a href="#">Labral Reconstruction</a></li>
+        <li><a href="#">Cam Resection (Femoroplasty)</a></li>
+        <li><a href="#">Pincer Resection (Acetabuloplasty)</a></li>
+        <li><a href="#">Capsule Repair</a></li>
+        <li><a href="#">Gluteus Tendon Repair</a></li>
+        <li><a href="#">Proximal Hamstring Repair</a></li>
+        <li><a href="#">Periacetabular Osteotomy (PAO)</a></li>
+        <li><a href="#">Surgical Dislocation of the Hip (SDH)</a></li>
+        <li><a href="#">Femoral Rotational Osteotomy</a></li>
       </ul>
     </div>
     <div class="footer-col">
