@@ -494,6 +494,30 @@ nav a.active::after { width: 100%; }
   color: var(--ink-soft);
   line-height: 1.6;
 }
+/* Hip Preservation Fellowship — Inselspital feature card */
+.credential-card.inselspital {
+  background:
+    linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.9)),
+    url('images/Inselspitel.Image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.credential-card.inselspital .credential-icon {
+  width: auto;
+  min-width: 160px;
+  max-width: 230px;
+  height: auto;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 0.85rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+}
+.credential-card.inselspital .credential-icon img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* ===== AWARDS ===== */
 .awards {
@@ -1104,8 +1128,8 @@ footer {
     </div>
     <div class="credentials-grid">
       
-      <div class="credential-card">
-        <div class="credential-icon">H</div>
+      <div class="credential-card inselspital">
+        <div class="credential-icon"><img src="images/Inselspital.icon.png" alt="Inselspital — Universitätsspital Bern"></div>
         <h3>Hip Preservation Fellowship</h3>
         <p>Inselspital, Bern, Switzerland — widely regarded as one of the founding centers of modern hip preservation surgery</p>
       </div>
