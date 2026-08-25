@@ -494,18 +494,21 @@ nav a.active::after { width: 100%; }
   color: var(--ink-soft);
   line-height: 1.6;
 }
-/* Hip Preservation Fellowship — Inselspital feature card */
-.credential-card.inselspital {
-  background:
-    linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.9)),
-    url('images/Inselspitel.Image.jpg');
+/* Education feature cards — photo background + institution logo */
+.credential-card.insp,
+.credential-card.asmi,
+.credential-card.hjd,
+.credential-card.gusom,
+.credential-card.nd {
   background-size: cover;
   background-position: center;
 }
-.credential-card.inselspital .credential-icon {
+.credential-card.insp .credential-icon,
+.credential-card.asmi .credential-icon,
+.credential-card.hjd .credential-icon,
+.credential-card.gusom .credential-icon,
+.credential-card.nd .credential-icon {
   width: auto;
-  min-width: 160px;
-  max-width: 230px;
   height: auto;
   background: rgba(255,255,255,0.95);
   border: 1px solid var(--rule);
@@ -513,11 +516,27 @@ nav a.active::after { width: 100%; }
   padding: 0.85rem 1.1rem;
   box-shadow: var(--shadow-sm);
 }
-.credential-card.inselspital .credential-icon img {
+.credential-card.insp .credential-icon img,
+.credential-card.asmi .credential-icon img,
+.credential-card.hjd .credential-icon img,
+.credential-card.gusom .credential-icon img,
+.credential-card.nd .credential-icon img {
   width: 100%;
   height: auto;
   display: block;
 }
+/* per-card background photos (dimmed for text legibility) */
+.credential-card.insp  { background-image: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.90)), url('images/Inselspitel.Image.jpg'); }
+.credential-card.asmi  { background-image: linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.90)), url('images/ASMI%20Graphic.png'); }
+.credential-card.hjd   { background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.90)), url('images/NYU%20HJD%20Entrance.jpeg'); }
+.credential-card.gusom { background-image: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.92)), url('images/GTown%20Med%20School.jpg'); }
+.credential-card.nd    { background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.90)), url('images/ND%20Dome%20Pic.jpg'); }
+/* per-logo icon container sizing */
+.credential-card.insp  .credential-icon { min-width: 160px; max-width: 220px; }
+.credential-card.asmi  .credential-icon { min-width: 150px; max-width: 200px; }
+.credential-card.hjd   .credential-icon { max-width: 104px; padding: 0.6rem; }
+.credential-card.gusom .credential-icon { max-width: 122px; padding: 0.6rem 0.8rem; }
+.credential-card.nd    .credential-icon { max-width: 104px; padding: 0.45rem; border-radius: 50%; }
 
 /* ===== AWARDS ===== */
 .awards {
@@ -1128,32 +1147,32 @@ footer {
     </div>
     <div class="credentials-grid">
       
-      <div class="credential-card inselspital">
+      <div class="credential-card insp">
         <div class="credential-icon"><img src="images/Inselspital.icon.png" alt="Inselspital — Universitätsspital Bern"></div>
         <h3>Hip Preservation Fellowship</h3>
         <p>Inselspital, Bern, Switzerland — widely regarded as one of the founding centers of modern hip preservation surgery</p>
       </div>
       
-      <div class="credential-card">
-        <div class="credential-icon">S</div>
+      <div class="credential-card asmi">
+        <div class="credential-icon"><img src="images/asmi%20blue.jpg" alt="American Sports Medicine Institute"></div>
         <h3>Sports Medicine Fellowship</h3>
         <p>American Sports Medicine Institute, Birmingham, Alabama — world-renowned sports medicine mecca established by Dr. James Andrews</p>
       </div>
       
-      <div class="credential-card">
-        <div class="credential-icon">R</div>
+      <div class="credential-card hjd">
+        <div class="credential-icon"><img src="images/HJD%20Logo.png" alt="NYU Hospital for Joint Diseases"></div>
         <h3>Orthopaedic Surgery Residency</h3>
         <p>NYU Hospital for Joint Diseases — one of the nation's premier orthopaedic training programs</p>
       </div>
       
-      <div class="credential-card">
-        <div class="credential-icon">M</div>
+      <div class="credential-card gusom">
+        <div class="credential-icon"><img src="images/GUSOM.Icon.jpg" alt="Georgetown University School of Medicine"></div>
         <h3>Medical School</h3>
         <p>Georgetown University School of Medicine — Doctor of Medicine with distinction</p>
       </div>
       
-      <div class="credential-card">
-        <div class="credential-icon">N</div>
+      <div class="credential-card nd">
+        <div class="credential-icon"><img src="images/ND%20Seal.svg" alt="University of Notre Dame"></div>
         <h3>Undergraduate</h3>
         <p>University of Notre Dame — Bachelor of Science, continuing the family tradition</p>
       </div>
