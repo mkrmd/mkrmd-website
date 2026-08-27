@@ -830,6 +830,39 @@ nav a.active::after { width: 100%; }
   z-index: 1;
   text-align: center;
 }
+.philosophy-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 3.5rem auto 0;
+}
+.philosophy-photo {
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: var(--shadow-md);
+}
+.philosophy-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.philosophy-photo-tbd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px dashed rgba(255,255,255,0.22);
+  box-shadow: none;
+  color: rgba(255,255,255,0.45);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
 .philosophy-inner .section-label {
   justify-content: center;
   color: var(--accent-gold);
@@ -1179,7 +1212,7 @@ footer {
       </p>
       <div class="about-image-grid">
         <img src="or-portrait.jpg" alt="Dr. Ryan in surgery">
-        <img src="formal-headshot.jpg" alt="Dr. Ryan professional headshot">
+        <img src="images/dr-michael-k-ryan-md-andrews-sports-medicine-bo-scarborough-jersey-2-print.jpg" alt="Dr. Michael K. Ryan, Andrews Sports Medicine">
       </div>
     </div>
     
@@ -1381,6 +1414,15 @@ footer {
     <p>Sports medicine is often framed as a specialty for professional athletes — but in Dr. Ryan's practice, the majority of patients are not professionals. They are high school athletes trying to earn a scholarship, collegiate competitors trying to get back on the field, weekend warriors trying to stay active into their 50s and 60s, and active adults trying to avoid a replacement.</p>
     
     <p>What unites them is a simple expectation: the same standard of care an NFL player gets on Lambeau Field should be available to every patient, every day. That is what the practice is built to deliver.</p>
+
+    <div class="philosophy-images">
+      <div class="philosophy-photo">
+        <img src="images/MKR%20Packers%20Field.jpeg" alt="Dr. Ryan on the field with the Green Bay Packers">
+      </div>
+      <div class="philosophy-photo philosophy-photo-tbd">
+        <span>Photo coming soon</span>
+      </div>
+    </div>
   </div>
 </section>
 
