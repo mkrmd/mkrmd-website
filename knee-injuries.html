@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knee Injuries — Michael K. Ryan, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #002454;
+  --navy-deep: #00152F;
+  --navy-soft: #0B3468;
+  --bellin-blue: #007DC4;
+  --bellin-light: #4DA9DB;
+  --accent-gold: #C8A951;
+  --accent-gold-soft: #E8D9A8;
+  --ink: #0A1628;
+  --ink-soft: #2B3D55;
+  --paper: #FAFAF7;
+  --paper-warm: #F4F1EA;
+  --paper-cool: #EEF2F7;
+  --rule: #D9D6CE;
+  --rule-soft: #E8E5DD;
+  --white: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(0,21,47,0.06);
+  --shadow-md: 0 4px 24px rgba(0,21,47,0.08);
+  --shadow-lg: 0 24px 64px rgba(0,21,47,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ===== SHARED STYLES (same as hip-preservation.html) ===== */
+.utility-bar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.utility-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.utility-left { display: flex; gap: 1.75rem; align-items: center; }
+.utility-left span { display: flex; align-items: center; gap: 0.4rem; }
+.utility-left svg { width: 12px; height: 12px; opacity: 0.7; }
+.utility-right { display: flex; gap: 1.5rem; }
+.utility-right a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.utility-right a:hover { color: var(--accent-gold-soft); }
+
+.header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(250, 250, 247, 0.96);
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--navy);
+}
+.logo-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+  align-items: center;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.25rem 0;
+}
+nav a:hover { color: var(--bellin-blue); }
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--bellin-blue);
+  transition: width 0.25s ease;
+}
+nav a:hover::after { width: 100%; }
+nav li { position: relative; }
+nav .has-dropdown > a { padding-right: 0.9rem; }
+nav .has-dropdown > a::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-70%) rotate(45deg);
+  opacity: 0.55;
+}
+nav .dropdown {
+  position: absolute;
+  top: 100%;
+  left: -0.9rem;
+  margin-top: 0.9rem;
+  min-width: 230px;
+  background: rgba(250, 250, 247, 0.98);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  padding: 0.5rem 0;
+  list-style: none;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 200;
+}
+nav .dropdown::before {
+  content: '';
+  position: absolute;
+  top: -0.9rem;
+  left: 0;
+  right: 0;
+  height: 0.9rem;
+}
+nav .has-dropdown:hover > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+nav .dropdown li { position: static; }
+nav .dropdown a {
+  display: block;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--ink-soft);
+}
+nav .dropdown a::after { display: none; }
+nav .dropdown a:hover {
+  color: var(--bellin-blue);
+  background: var(--paper-cool);
+}
+nav a.active { color: var(--bellin-blue); }
+nav a.active::after { width: 100%; }
+.cta-btn {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-btn:hover { background: var(--bellin-blue); color: white !important; }
+.cta-btn::after { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--navy-deep);
+  color: var(--white);
+  padding: 5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 700px 400px at 20% 30%, rgba(0,125,196,0.18), transparent 60%),
+    radial-gradient(ellipse 500px 300px at 80% 70%, rgba(200,169,81,0.08), transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5rem;
+  align-items: center;
+}
+.hero-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-breadcrumb a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-breadcrumb a:hover { color: var(--white); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-gold-soft);
+}
+.hero-lede {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.hero-stat {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.hero-stat-number {
+  font-family: 'Fraunces', serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--accent-gold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.hero-stat-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+  font-weight: 400;
+}
+.hero-image {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, rgba(0,125,196,0.4) 0%, rgba(200,169,81,0.2) 100%), url('or-portrait.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.hero-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,21,47,0.4) 100%);
+}
+
+/* ===== SHARED SECTION STYLES ===== */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--bellin-blue);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--bellin-blue);
+}
+
+/* ===== PHILOSOPHY SECTION ===== */
+.philosophy {
+  padding: 6rem 0;
+  background: var(--paper);
+}
+.philosophy-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: start;
+}
+.philosophy h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  color: var(--navy);
+}
+.philosophy h2 em {
+  font-style: italic;
+  color: var(--bellin-blue);
+}
+.philosophy p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.philosophy .lead {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--ink);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.principles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.principle-card {
+  padding: 2rem;
+  border: 1px solid var(--rule);
+  background: var(--white);
+  position: relative;
+}
+.principle-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bellin-blue);
+}
+.principle-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.principle-card p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== CONDITIONS & PROCEDURES ===== */
+.conditions {
+  padding: 6rem 0;
+  background: var(--paper-warm);
+  border-top: 1px solid var(--rule);
+}
+.conditions-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.conditions-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.conditions-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.conditions-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.conditions-header p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.conditions-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+.tab-button {
+  padding: 1rem 2rem;
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+  position: relative;
+  bottom: -1px;
+}
+.tab-button.active {
+  color: var(--bellin-blue);
+  border-bottom-color: var(--bellin-blue);
+}
+.tab-button:hover { color: var(--navy); }
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.condition-card, .procedure-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  transition: all 0.3s;
+  position: relative;
+}
+.condition-card:hover, .procedure-card:hover {
+  border-color: var(--bellin-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.condition-card h3, .procedure-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.condition-card h3 a, .procedure-card h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.condition-card h3 a:hover, .procedure-card h3 a:hover {
+  color: var(--bellin-blue);
+}
+.condition-card p, .procedure-card p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.condition-symptoms, .procedure-details {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+.condition-symptoms li, .procedure-details li {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 0.3rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.condition-symptoms li::before, .procedure-details li::before {
+  content: '→';
+  color: var(--bellin-blue);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* ===== OVERVIEW ===== */
+.overview {
+  padding: 6rem 0;
+  background: var(--paper);
+}
+.overview-inner {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.overview .section-label {
+  margin-bottom: 1.25rem;
+}
+.overview h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+}
+.overview h2 em { font-style: italic; color: var(--bellin-blue); }
+.overview p {
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin-bottom: 1.35rem;
+}
+.overview p strong { color: var(--navy); font-weight: 600; }
+
+/* ===== WHAT TO EXPECT ===== */
+.expect {
+  padding: 6rem 0;
+  background: var(--paper);
+}
+.expect-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.expect-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.expect-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.expect-header h2 em { font-style: italic; color: var(--bellin-blue); }
+.expect-header p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--bellin-blue), var(--accent-gold));
+  transform: translateX(-50%);
+}
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.timeline-item:nth-child(odd) { flex-direction: row; }
+.timeline-item:nth-child(even) { flex-direction: row-reverse; }
+.timeline-content {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  width: calc(50% - 2rem);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-right: auto;
+}
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: auto;
+}
+.timeline-marker {
+  width: 20px;
+  height: 20px;
+  background: var(--bellin-blue);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  border: 4px solid var(--paper);
+}
+.timeline-phase {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--bellin-blue);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.timeline-content h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.timeline-content p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== CTA SECTION ===== */
+.cta {
+  background: var(--navy-deep);
+  color: var(--white);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 50%, rgba(0,125,196,0.2), transparent 60%);
+}
+.cta-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.cta h2 em {
+  font-style: italic;
+  color: var(--accent-gold);
+}
+.cta p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn-primary, .btn-ghost {
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-primary {
+  background: var(--white);
+  color: var(--navy);
+}
+.btn-primary:hover {
+  background: var(--accent-gold);
+  color: var(--navy-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(200,169,81,0.25);
+}
+.btn-ghost {
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-ghost:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.05);
+}
+.arrow { width: 16px; height: 16px; transition: transform 0.25s; }
+.btn-primary:hover .arrow, .btn-ghost:hover .arrow { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.3fr 2fr 2fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 380px;
+}
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.7rem; }
+.footer-col ul.two-col {
+  column-count: 2;
+  column-gap: 2rem;
+}
+.footer-col ul.two-col li { break-inside: avoid; }
+.footer-col a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-bottom-left {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.social-icon:hover {
+  background: var(--bellin-blue);
+  border-color: var(--bellin-blue);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .hero-inner, .philosophy-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-inner { text-align: center; }
+  .hero-stats { grid-template-columns: 1fr 1fr; justify-content: center; max-width: 400px; margin: 0 auto; }
+  .tab-content.active { grid-template-columns: 1fr; }
+  .principles-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .timeline::before { left: 2rem; }
+  .timeline-item { flex-direction: row !important; }
+  .timeline-content { width: calc(100% - 6rem); margin-left: 4rem !important; margin-right: 0 !important; }
+  .timeline-marker { left: 2rem; }
+}
+@media (max-width: 700px) {
+  .utility-bar { display: none; }
+  .header-inner { padding: 1rem 1.25rem; }
+  nav ul { display: none; }
+  .hero { padding: 4rem 0 3rem; }
+  .hero-inner, .philosophy-inner, .conditions-inner, .expect-inner, .cta-inner, .footer-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .philosophy, .conditions, .expect, .cta { padding: 4rem 0; }
+  .hero-stats { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-col ul.two-col { column-count: 1; }
+  .cta-buttons { flex-direction: column; align-items: stretch; }
+  .cta-buttons .btn-primary, .cta-buttons .btn-ghost { justify-content: center; }
+  .conditions-tabs { flex-wrap: wrap; gap: 0.5rem; }
+  .tab-button { padding: 0.75rem 1rem; font-size: 0.85rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        <a href="tel:+19204304888" style="color:inherit;text-decoration:none;">(920) 430-4888</a>
+      </span>
+      <span style="color: rgba(255,255,255,0.5);">
+        <a href="contact-locations.html" style="color:inherit;text-decoration:none;">Titletown Sports Medicine and Orthopaedics · Green Bay, WI</a>
+      </span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Patient Portal</a>
+      <a href="#">For Referring Providers</a>
+      <a href="#">MRI / X-Ray Review</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">Michael K. Ryan, MD</span>
+      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+    </a>
+    <nav>
+      <ul>
+        <li class="has-dropdown">
+          <a href="about-page.html">About</a>
+          <ul class="dropdown">
+            <li><a href="about-page.html">Michael K. Ryan, MD</a></li>
+            <li><a href="team-page.html">Our Team</a></li>
+            <li><a href="research.html">Research &amp; Education</a></li>
+            <li><a href="bellin-health-partnership.html">Titletown Sports Medicine &amp; Orthopaedics</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#expertise" class="active">Expertise</a>
+          <ul class="dropdown">
+            <li><a href="hip-preservation.html">Hip</a></li>
+            <li><a href="knee-specialty.html">Knee</a></li>
+            <li><a href="shoulder-specialty.html">Shoulder</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="teams.html">Teams</a>
+          <ul class="dropdown">
+            <li><a href="#">Green Bay Packers</a></li>
+            <li><a href="#">NFLPS</a></li>
+            <li><a href="#">Former Teams</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#patients">Patients</a>
+          <ul class="dropdown">
+            <li><a href="contact-locations.html">Request Consultation</a></li>
+            <li><a href="#">MRI/X-ray Review</a></li>
+            <li><a href="#">PT Protocols</a></li>
+            <li><a href="out-of-state-international-patients.html">Out-of-state Patients</a></li>
+            <li><a href="#">Office Information</a></li>
+            <li><a href="#">Patient Forms</a></li>
+            <li><a href="#">Surgery Information</a></li>
+            <li><a href="#">Post-op Information</a></li>
+            <li><a href="#">Athlete Sports-Specific Information</a></li>
+            <li><a href="#">Videos</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="media-page.html">Media</a>
+          <ul class="dropdown">
+            <li><a href="#">Press</a></li>
+            <li><a href="patient-reviews.html">Reviews</a></li>
+            <li><a href="#">Podcast</a></li>
+          </ul>
+        </li>
+        <li><a href="contact-locations.html" class="cta-btn">Request Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-breadcrumb">
+        <a href="/">Home</a> / <a href="#expertise">Expertise</a> / <a href="knee.html">Knee</a> / Knee Injuries
+      </div>
+      <h1>Knee <em>Injuries</em></h1>
+      <p class="hero-lede">
+        The knee relies on its ligaments, menisci, and cartilage to stay stable and move smoothly. Explore the conditions Dr. Ryan treats — from ACL and meniscus tears to cartilage injuries, patellar instability, and arthritis.
+      </p>
+    </div>
+    <div class="hero-image"></div>
+  </div>
+</section>
+
+<!-- KNEE INJURIES -->
+<section class="conditions">
+  <div class="conditions-inner">
+    <div class="conditions-header">
+      <h2>Knee <em>Injuries</em></h2>
+      <p>Select any condition to learn more about its symptoms, causes, and treatment options.</p>
+    </div>
+    <div class="tab-content active">
+      
+      <div class="condition-card">
+        <h3><a href="acl-tear.html">ACL Tear</a></h3>
+        <p>Complete or partial tears of the anterior cruciate ligament, usually during cutting or pivoting, causing instability and giving-way.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="pcl-tear.html">PCL Tear</a></h3>
+        <p>Injury to the posterior cruciate ligament, often from a direct blow to the shin or forced hyperflexion, frequently part of a larger injury.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="mcl-tear.html">MCL Tear</a></h3>
+        <p>Injury to the ligament on the inner knee, typically from a blow to the outside of the joint; most heal without surgery.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="lcl-tear.html">LCL Tear</a></h3>
+        <p>Injury to the ligament on the outer knee, often part of a posterolateral corner injury that may require surgical repair.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="other-knee-ligament-injuries.html">Other Knee Ligament Injuries</a></h3>
+        <p>Complex, multi-ligament injuries from high-energy trauma, requiring careful evaluation and coordinated reconstruction.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="meniscus-tear.html">Meniscus Tear</a></h3>
+        <p>Tears of the C-shaped cushion, common with twisting, causing pain along the joint line and mechanical catching or locking.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="articular-cartilage-injury.html">Articular Cartilage Injury</a></h3>
+        <p>Focal damage to the cartilage surface of the knee, causing pain and swelling and, over time, a risk of arthritis.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="patellar-dislocation.html">Patellar (Kneecap) Dislocation</a></h3>
+        <p>Instability in which the kneecap slips out of its groove, often driven by underlying anatomy and prone to recurrence.</p>
+      </div>
+      
+      <div class="condition-card">
+        <h3><a href="knee-arthritis.html">Knee Arthritis</a></h3>
+        <p>Progressive loss of cartilage — from wear, prior injury, or inflammation — leading to pain, stiffness, and reduced motion.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Ready to get back on the <em>field?</em></h2>
+    <p>Dr. Ryan accepts new patients from Wisconsin, across the Midwest, and throughout the United States. Same-week urgent access available for in-season athletes and time-sensitive cases.</p>
+    <div class="cta-buttons">
+      <a href="contact-locations.html" class="btn-primary">
+        Request a consultation
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#" class="btn-ghost">
+        MRI Review
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Michael K. Ryan, MD</h3>
+      <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
+      <p>
+        Titletown Orthopaedics at Bellin Health<br>
+        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        (920) 430-4888
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Knee Injuries</h4>
+      <ul class="two-col">
+        <li><a href="acl-tear.html">ACL Tear</a></li>
+        <li><a href="other-knee-ligament-injuries.html">Other Knee Ligament Injuries</a></li>
+        <li><a href="pcl-tear.html">PCL Tear</a></li>
+        <li><a href="mcl-tear.html">MCL Tear</a></li>
+        <li><a href="lcl-tear.html">LCL Tear</a></li>
+        <li><a href="meniscus-tear.html">Meniscus Tear</a></li>
+        <li><a href="articular-cartilage-injury.html">Articular Cartilage Injury</a></li>
+        <li><a href="patellar-dislocation.html">Patellar (Kneecap) Dislocation</a></li>
+        <li><a href="knee-arthritis.html">Knee Arthritis</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Knee Surgeries</h4>
+      <ul class="two-col">
+        <li><a href="knee-arthroscopy.html">Knee Arthroscopy</a></li>
+        <li><a href="meniscus-repair.html">Meniscus Repair &amp; Meniscectomy</a></li>
+        <li><a href="acl-reconstruction.html">ACL Reconstruction</a></li>
+        <li><a href="other-ligament-reconstruction.html">Other Ligament Repair/Reconstruction</a></li>
+        <li><a href="mpfl-reconstruction.html">MPFL Reconstruction</a></li>
+        <li><a href="tibial-osteotomy.html">Tibial Osteotomy</a></li>
+        <li><a href="cartilage-preservation.html">Cartilage Preservation Surgeries</a></li>
+        <li><a href="meniscus-transplant.html">Meniscus Transplant</a></li>
+        <li><a href="total-knee-replacement.html">Total Knee Replacement</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">Request Appointment</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">MRI Review</a></li>
+        <li><a href="#">PT Protocols</a></li>
+        <li><a href="#">Out-of-State Patients</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      © 2026 Michael K. Ryan, MD. All rights reserved. · <a href="#" style="color: rgba(255,255,255,0.5);">Privacy</a> · <a href="#" style="color: rgba(255,255,255,0.5);">Disclaimer</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/mkr.md_/" class="social-icon">IG</a>
+      <a href="https://www.linkedin.com/in/drmkr/" class="social-icon">Li</a>
+      <a href="#" class="social-icon">X</a>
+      <a href="#" class="social-icon">Yt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Tab switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetTab = button.getAttribute('data-tab');
+      
+      // Remove active class from all buttons and contents
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+      
+      // Add active class to clicked button and corresponding content
+      button.classList.add('active');
+      document.getElementById(targetTab).classList.add('active');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
