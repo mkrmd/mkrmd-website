@@ -451,7 +451,14 @@ nav .submenu a:hover {
   color: var(--navy-deep);
   font-size: 1.75rem;
   flex-shrink: 0;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.packers-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .credential-header-text h3 {
   font-family: 'Fraunces', serif;
@@ -762,7 +769,7 @@ nav .submenu a:hover {
   position: relative;
 }
 .expertise-card.featured::before {
-  content: 'PRIMARY FOCUS';
+  content: none;
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
@@ -937,6 +944,26 @@ nav .submenu a:hover {
   transition: opacity 0.2s;
 }
 .logo-item:hover { opacity: 1; }
+.media-carousel {
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+.media-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.media-carousel .media-card {
+  flex: 0 0 calc((100% - 4rem) / 3);
+  min-width: 0;
+}
+@media (max-width: 900px) {
+  .media-carousel .media-card { flex-basis: calc((100% - 2rem) / 2); }
+}
+@media (max-width: 600px) {
+  .media-carousel .media-card { flex-basis: 100%; }
+}
 
 /* ===== JOURNEY / TESTIMONIAL ===== */
 .testimonial {
@@ -1039,6 +1066,23 @@ nav .submenu a:hover {
   margin-bottom: 2rem;
 }
 .research-list { list-style: none; }
+.research-carousel {
+  position: relative;
+  height: 440px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+.research-track { animation: research-scroll 32s linear infinite; }
+.research-carousel:hover .research-track { animation-play-state: paused; }
+@keyframes research-scroll {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .research-track { animation: none; }
+  .research-carousel { height: auto; -webkit-mask-image: none; mask-image: none; }
+}
 .research-list li {
   border-bottom: 1px solid var(--rule);
   padding: 1.5rem 0;
@@ -1556,7 +1600,7 @@ footer {
     </div>
     <div class="credential-card">
       <div class="credential-header">
-        <div class="packers-mark">G</div>
+        <div class="packers-mark"><img src="images/GB%20Logo%20Rivalries.jpg" alt="Green Bay Packers"></div>
         <div class="credential-header-text">
           <h3>Head Team Physician</h3>
           <p>GREEN BAY PACKERS · NFL</p>
@@ -1581,11 +1625,11 @@ footer {
       <div class="stat-label">Years caring for elite & everyday athletes</div>
     </div>
     <div class="stat">
-      <div class="stat-number">3,000<sup>+</sup></div>
-      <div class="stat-label">Hip arthroscopies & preservation procedures performed</div>
+      <div class="stat-number">5,000<sup>+</sup></div>
+      <div class="stat-label">Sports Medicine and Hip Preservation Surgeries</div>
     </div>
     <div class="stat">
-      <div class="stat-number">50<sup>+</sup></div>
+      <div class="stat-number">60<sup>+</sup></div>
       <div class="stat-label">Peer-reviewed publications & book chapters</div>
     </div>
     <div class="stat">
@@ -1645,7 +1689,7 @@ footer {
 
       <a href="hip-preservation.html" class="expertise-card featured">
         <div>
-          <div class="expertise-num">01 / HIP</div>
+          <div class="expertise-num">HIP</div>
           <h3>Hip <em>Preservation</em> & Arthroscopy</h3>
           <p>
             For hip pain in young, active patients, joint replacement is rarely the first answer. Dr. Ryan's practice focuses on preserving the native hip — restoring normal anatomy, relieving pain, and keeping patients decades ahead of arthritis.
@@ -1654,9 +1698,9 @@ footer {
             <li>Hip Arthroscopy for FAI & Labral Tears</li>
             <li>Labral Reconstruction</li>
             <li>Periacetabular Osteotomy (PAO)</li>
+            <li>Core Muscle Repair / Sports Hernia</li>
             <li>Femoral Osteotomy</li>
             <li>Surgical Hip Dislocation</li>
-            <li>Core Muscle Repair / Sports Hernia</li>
           </ul>
         </div>
         <span class="expertise-link">
@@ -1667,14 +1711,16 @@ footer {
 
       <a href="knee.html" class="expertise-card">
         <div>
-          <div class="expertise-num">02 / KNEE</div>
+          <div class="expertise-num">KNEE</div>
           <h3>Knee</h3>
           <p>Ligament reconstruction, meniscus repair, and patellofemoral stabilization for athletes at every level.</p>
           <ul class="expertise-list">
-            <li>ACL / PCL / Multiligament Reconstruction</li>
-            <li>MPFL Reconstruction</li>
+            <li>ACL Reconstruction</li>
+            <li>PCL Reconstruction</li>
+            <li>Multiligament Knee Reconstruction</li>
+            <li>Patellar Instability</li>
             <li>Meniscus Repair</li>
-            <li>Cartilage Restoration</li>
+            <li>Cartilage Preservation</li>
           </ul>
         </div>
         <span class="expertise-link">
@@ -1685,15 +1731,15 @@ footer {
 
       <a href="shoulder.html" class="expertise-card">
         <div>
-          <div class="expertise-num">03 / SHOULDER</div>
+          <div class="expertise-num">SHOULDER</div>
           <h3>Shoulder</h3>
-          <p>Instability, labral injury, and rotator cuff repair for contact and overhead athletes.</p>
+          <p>Instability, labral tears, rotator cuff tears, and biceps tendon injuries for contact and overhead athletes and for everyday warriors.</p>
           <ul class="expertise-list">
-            <li>Arthroscopic Stabilization / Bankart</li>
-            <li>Latarjet Procedure</li>
+            <li>Arthroscopic Labral Repair</li>
             <li>Rotator Cuff Repair</li>
+            <li>Latarjet Procedure</li>
             <li>SLAP Repair</li>
-            <li>ORIF Clavicle</li>
+            <li>Collarbone Fractures</li>
           </ul>
         </div>
         <span class="expertise-link">
@@ -1704,11 +1750,11 @@ footer {
 
       <a href="elbow.html" class="expertise-card">
         <div>
-          <div class="expertise-num">04 / ELBOW</div>
+          <div class="expertise-num">ELBOW</div>
           <h3>Elbow</h3>
-          <p>Ligament reconstruction and tendon repair for throwing, overhead, and contact athletes.</p>
+          <p>Ligament and tendon injuries in throwing and overhead athletes and everyday warriors.</p>
           <ul class="expertise-list">
-            <li>UCL Reconstruction (Tommy John)</li>
+            <li>UCL Injury (Tommy John)</li>
             <li>Distal Biceps Repair</li>
             <li>Triceps Tendon Repair</li>
             <li>Ulnar Nerve Decompression</li>
@@ -1731,34 +1777,85 @@ footer {
       <div class="section-label">In the Press</div>
       <h2>Featured <em>coverage</em> & commentary.</h2>
     </div>
-    <div class="media-grid">
-      <a href="#" class="media-card">
-        <div class="media-card-date">APR · 2026</div>
-        <div class="media-card-source">Green Bay Press-Gazette</div>
-        <h3>"Packers introduce new head team physician Dr. Michael Ryan ahead of 2026 season"</h3>
-        <span class="media-card-read">Read article →</span>
-      </a>
-      <a href="#" class="media-card">
-        <div class="media-card-date">MAR · 2026</div>
-        <div class="media-card-source">The Athletic</div>
-        <h3>"The science behind the NFL Combine medical evaluation — and why hip exams matter more than ever"</h3>
-        <span class="media-card-read">Read article →</span>
-      </a>
-      <a href="#" class="media-card">
-        <div class="media-card-date">FEB · 2026</div>
-        <div class="media-card-source">Orthopaedics Today</div>
-        <h3>"Hip preservation in the NFL: how anatomic restoration is replacing aggressive debridement"</h3>
-        <span class="media-card-read">Read article →</span>
-      </a>
+    <div class="media-carousel" id="mediaCarousel">
+      <div class="media-track">
+        <a href="https://www.packers.com/news/packers-announce-updates-to-medical-staff-oct-9-2025" target="_blank" rel="noopener" class="media-card">
+          <div class="media-card-date">OCT · 2025</div>
+          <div class="media-card-source">Packers.com</div>
+          <h3>Packers announce updates to their medical staff</h3>
+          <span class="media-card-read">Read article →</span>
+        </a>
+        <a href="https://www.beckersspine.com/orthopedic/green-bay-packers-promotes-new-head-team-physician/" target="_blank" rel="noopener" class="media-card">
+          <div class="media-card-date">OCT · 2025</div>
+          <div class="media-card-source">Becker's Spine Review</div>
+          <h3>Green Bay Packers promote new head team physician</h3>
+          <span class="media-card-read">Read article →</span>
+        </a>
+        <a href="https://www.packersnews.com/story/sports/nfl/packers/2025/10/09/green-bay-packers-announce-changes-to-medical-staff-patrick-mckenzie/86612170007/" target="_blank" rel="noopener" class="media-card">
+          <div class="media-card-date">OCT · 2025</div>
+          <div class="media-card-source">PackersNews</div>
+          <h3>Packers announce changes to their medical staff</h3>
+          <span class="media-card-read">Read article →</span>
+        </a>
+        <a href="https://today.advancement.georgetown.edu/health-magazine/2026/tools-of-the-trade-6/" target="_blank" rel="noopener" class="media-card">
+          <div class="media-card-date">SUMMER · 2026</div>
+          <div class="media-card-source">Georgetown University Advancement</div>
+          <h3>Tools of the Trade</h3>
+          <span class="media-card-read">Read article →</span>
+        </a>
+        <a href="https://www.mensjournal.com/fitness/how-to-do-jefferson-curl-stretch" target="_blank" rel="noopener" class="media-card">
+          <div class="media-card-date">JUN · 2019</div>
+          <div class="media-card-source">Men's Journal</div>
+          <h3>How to do the Jefferson curl stretch</h3>
+          <span class="media-card-read">Read article →</span>
+        </a>
+        <a href="https://www.trussvilletribune.com/2020/05/22/the-silver-lining-of-social-isolation-in-regards-to-athletes/" target="_blank" rel="noopener" class="media-card">
+          <div class="media-card-date">MAY · 2020</div>
+          <div class="media-card-source">Trussville Tribune</div>
+          <h3>The silver lining of social isolation for athletes</h3>
+          <span class="media-card-read">Read article →</span>
+        </a>
+        <a href="https://www.otmj.com/andrews-sports-medicine/" target="_blank" rel="noopener" class="media-card">
+          <div class="media-card-date">OCT · 2019</div>
+          <div class="media-card-source">Over The Mountain Journal</div>
+          <h3>Andrews Sports Medicine</h3>
+          <span class="media-card-read">Read article →</span>
+        </a>
+        <a href="https://www.bicycling.com/racing/a27117645/triathlon-distances/" target="_blank" rel="noopener" class="media-card">
+          <div class="media-card-date">DEC · 2023</div>
+          <div class="media-card-source">Bicycling</div>
+          <h3>Triathlon distances, explained</h3>
+          <span class="media-card-read">Read article →</span>
+        </a>
+        <a href="https://www.gq.com/story/how-to-not-hurt-yourself-in-the-gym" target="_blank" rel="noopener" class="media-card">
+          <div class="media-card-date">JAN · 2018</div>
+          <div class="media-card-source">GQ</div>
+          <h3>How to not hurt yourself in the gym</h3>
+          <span class="media-card-read">Read article →</span>
+        </a>
+        <a href="https://www.birminghammedicalnews.com/article/7472/periacetabular-osteotomy-for-hip-dysplasia-can-prevent-joint-replacement-" target="_blank" rel="noopener" class="media-card">
+          <div class="media-card-date">FEATURE</div>
+          <div class="media-card-source">Birmingham Medical News</div>
+          <h3>Periacetabular osteotomy for hip dysplasia can prevent joint replacement</h3>
+          <span class="media-card-read">Read article →</span>
+        </a>
+      </div>
     </div>
     <div class="logo-strip">
       <div class="logo-strip-label">As featured in</div>
-      <span class="logo-item">The Athletic</span>
-      <span class="logo-item">ESPN</span>
-      <span class="logo-item">Green Bay Press-Gazette</span>
-      <span class="logo-item">Orthopaedics Today</span>
-      <span class="logo-item">JBJS</span>
+      <span class="logo-item">Packers.com</span>
+      <span class="logo-item">Becker's Spine</span>
+      <span class="logo-item">PackersNews</span>
+      <span class="logo-item">Georgetown University</span>
+      <span class="logo-item">Men's Journal</span>
+      <span class="logo-item">GQ</span>
+      <span class="logo-item">Bicycling</span>
+      <span class="logo-item">Over The Mountain Journal</span>
+      <span class="logo-item">Trussville Tribune</span>
+      <span class="logo-item">Birmingham Medical News</span>
       <span class="logo-item">AJSM</span>
+      <span class="logo-item">Arthroscopy</span>
+      <span class="logo-item">OJSM</span>
     </div>
   </div>
 </section>
@@ -1768,13 +1865,12 @@ footer {
   <div class="testimonial-inner">
     <div class="quote-mark">"</div>
     <p class="testimonial-quote">
-      Dr. Ryan listened to me the way a surgeon listens when he's planning an operation — carefully, with a real plan. Six months after my PAO I was back on the trail. A year later I was running again. I don't take that for granted.
+      Dr. Ryan listened to my concerns, explained what my options were, and made me feel important and understood. He was friendly, professional, and cared about my comfort and healthcare. I have the utmost confidence and trust in his abilities. His staff was equally wonderful.
     </p>
     <div class="testimonial-attribution">
-      <div class="testimonial-avatar">KM</div>
+      <div class="testimonial-avatar">SL</div>
       <div class="testimonial-who">
-        <div class="testimonial-name">Kate M.</div>
-        <div class="testimonial-role">HIP DYSPLASIA · PERIACETABULAR OSTEOTOMY</div>
+        <div class="testimonial-name">Shannon L.</div>
       </div>
     </div>
   </div>
@@ -1786,10 +1882,10 @@ footer {
     <div class="coverage-header">
       <div>
         <div class="section-label">Team Coverage</div>
-        <h2>Fifteen years on the <em>sideline</em> — at every level of the game.</h2>
+        <h2>Ten years on the <em>sideline</em> — at every level of the game.</h2>
       </div>
       <p>
-        Dr. Ryan's sports medicine practice has been shaped by years of week-in, week-out team coverage — from Friday night high school football to the NBA G-League, collegiate athletics, and the NFL. The problems change with the level of play; the standard of care does not.
+        Dr. Ryan's sports medicine practice has been shaped by years of week-in, week-out team coverage — from Friday night high school football to the NBA G-League, collegiate athletics including the University of Alabama under Nick Saban and the SoCon Champion Samford Bulldogs, and the NFL. The problems change with the level of play; the standard of care does not.
       </p>
     </div>
 
@@ -1852,40 +1948,142 @@ footer {
         <a href="research.html" class="read-more">View publications & presentations →</a>
       </div>
       <div>
-        <ul class="research-list">
-          <li>
-            <span class="research-year">2025</span>
-            <div>
-              <div class="research-title">Outcomes of periacetabular osteotomy in patients with borderline hip dysplasia: a 5-year follow-up cohort study</div>
-              <div class="research-journal">American Journal of Sports Medicine</div>
-            </div>
-            <span class="research-arrow">→</span>
-          </li>
-          <li>
-            <span class="research-year">2024</span>
-            <div>
-              <div class="research-title">Return-to-play benchmarks after hip arthroscopy in professional football: a multi-center cohort</div>
-              <div class="research-journal">Orthopaedic Journal of Sports Medicine</div>
-            </div>
-            <span class="research-arrow">→</span>
-          </li>
-          <li>
-            <span class="research-year">2024</span>
-            <div>
-              <div class="research-title">Pre-draft medical risk stratification in NFL prospects: a predictive modeling framework</div>
-              <div class="research-journal">Sports Health</div>
-            </div>
-            <span class="research-arrow">→</span>
-          </li>
-          <li>
-            <span class="research-year">2023</span>
-            <div>
-              <div class="research-title">Labral reconstruction versus repair in revision hip arthroscopy: minimum 2-year outcomes</div>
-              <div class="research-journal">Arthroscopy</div>
-            </div>
-            <span class="research-arrow">→</span>
-          </li>
-        </ul>
+        <div class="research-carousel">
+          <div class="research-track">
+            <ul class="research-list">
+              <li>
+                <span class="research-year">2025</span>
+                <div>
+                  <div class="research-title">Clinical Outcomes of Ulnar Collateral Ligament Repair with Internal Brace Versus Ulnar Collateral Ligament Reconstruction in Competitive Athletes</div>
+                  <div class="research-journal">American Journal of Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2024</span>
+                <div>
+                  <div class="research-title">Addressing Extra-Articular Impingement in the Athlete</div>
+                  <div class="research-journal">Operative Techniques in Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2024</span>
+                <div>
+                  <div class="research-title">Rehabilitation-Specific Predictors of Pain Intensity and Physical Activity Levels in Individuals with Acetabular Dysplasia 6 Months after Periacetabular Osteotomy</div>
+                  <div class="research-journal">Scandinavian Journal of Medicine &amp; Science in Sports</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2024</span>
+                <div>
+                  <div class="research-title">Outcomes of Surgical Treatment for Multiligament Knee Injuries in a Cohort Including Competitive Athletes with Long-term Follow-up</div>
+                  <div class="research-journal">Orthopaedic Journal of Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2024</span>
+                <div>
+                  <div class="research-title">The Relationship Between All-Suture and Solid Medial-Row Anchors and Patient-Reported Outcomes for Double-Row Suture Bridge Rotator Cuff Repair</div>
+                  <div class="research-journal">Orthopaedic Journal of Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2024</span>
+                <div>
+                  <div class="research-title">Long-term Outcomes of Multiligament Knee Injuries in American Football Players</div>
+                  <div class="research-journal">American Journal of Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2023</span>
+                <div>
+                  <div class="research-title">Fixation Strength in Arthroscopic Labral Repair of the Hip: A Head-to-Head Comparison of a Biocompatible vs All-Suture Anchor in the Setting of Acetabuloplasty</div>
+                  <div class="research-journal">PLoS ONE</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2023</span>
+                <div>
+                  <div class="research-title">Outcomes of Double-Row Rotator Cuff Repair Using a Novel All-Suture Soft Anchor Medial Row</div>
+                  <div class="research-journal">Orthopaedic Journal of Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+            </ul>
+            <ul class="research-list" aria-hidden="true">
+              <li>
+                <span class="research-year">2025</span>
+                <div>
+                  <div class="research-title">Clinical Outcomes of Ulnar Collateral Ligament Repair with Internal Brace Versus Ulnar Collateral Ligament Reconstruction in Competitive Athletes</div>
+                  <div class="research-journal">American Journal of Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2024</span>
+                <div>
+                  <div class="research-title">Addressing Extra-Articular Impingement in the Athlete</div>
+                  <div class="research-journal">Operative Techniques in Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2024</span>
+                <div>
+                  <div class="research-title">Rehabilitation-Specific Predictors of Pain Intensity and Physical Activity Levels in Individuals with Acetabular Dysplasia 6 Months after Periacetabular Osteotomy</div>
+                  <div class="research-journal">Scandinavian Journal of Medicine &amp; Science in Sports</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2024</span>
+                <div>
+                  <div class="research-title">Outcomes of Surgical Treatment for Multiligament Knee Injuries in a Cohort Including Competitive Athletes with Long-term Follow-up</div>
+                  <div class="research-journal">Orthopaedic Journal of Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2024</span>
+                <div>
+                  <div class="research-title">The Relationship Between All-Suture and Solid Medial-Row Anchors and Patient-Reported Outcomes for Double-Row Suture Bridge Rotator Cuff Repair</div>
+                  <div class="research-journal">Orthopaedic Journal of Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2024</span>
+                <div>
+                  <div class="research-title">Long-term Outcomes of Multiligament Knee Injuries in American Football Players</div>
+                  <div class="research-journal">American Journal of Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2023</span>
+                <div>
+                  <div class="research-title">Fixation Strength in Arthroscopic Labral Repair of the Hip: A Head-to-Head Comparison of a Biocompatible vs All-Suture Anchor in the Setting of Acetabuloplasty</div>
+                  <div class="research-journal">PLoS ONE</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+              <li>
+                <span class="research-year">2023</span>
+                <div>
+                  <div class="research-title">Outcomes of Double-Row Rotator Cuff Repair Using a Novel All-Suture Soft Anchor Medial Row</div>
+                  <div class="research-journal">Orthopaedic Journal of Sports Medicine</div>
+                </div>
+                <span class="research-arrow">→</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1958,9 +2156,9 @@ footer {
     <div class="footer-col">
       <h4>Patients</h4>
       <ul>
-        <li><a href="#">Request Appointment</a></li>
+        <li><a href="contact-locations.html">Request Appointment</a></li>
         <li><a href="#">Patient Forms</a></li>
-        <li><a href="#">MRI Review</a></li>
+        <li><a href="contact-locations.html">MRI Review</a></li>
         <li><a href="#">PT Protocols</a></li>
         <li><a href="#">Out-of-State Patients</a></li>
       </ul>
@@ -1979,5 +2177,33 @@ footer {
   </div>
 </footer>
 
+<script>
+(function () {
+  var carousel = document.getElementById('mediaCarousel');
+  if (!carousel) return;
+  var track = carousel.querySelector('.media-track');
+  var cards = track.children;
+  if (cards.length < 2) return;
+  var idx = 0, timer = null;
+  function stepPx() { return cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left; }
+  function advance() {
+    var s = stepPx();
+    var visible = Math.max(1, Math.round(carousel.clientWidth / s));
+    idx++;
+    if (idx > cards.length - visible) idx = 0;
+    track.style.transform = 'translateX(' + (-idx * s) + 'px)';
+  }
+  function start() { if (!timer) timer = setInterval(advance, 4000); }
+  function stop() { clearInterval(timer); timer = null; }
+  start();
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  var resizeT;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeT);
+    resizeT = setTimeout(function () { idx = 0; track.style.transform = 'translateX(0)'; }, 150);
+  });
+})();
+</script>
 </body>
 </html>
