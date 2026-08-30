@@ -90,10 +90,14 @@ body {
 }
 .logo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
   color: var(--ink);
 }
+.logo-img { height: 46px; width: auto; display: block; flex-shrink: 0; }
+.logo-text { display: flex; flex-direction: column; }
 .logo-mark {
   font-family: 'Fraunces', serif;
   font-size: 1.5rem;
@@ -524,7 +528,7 @@ footer {
         <a href="tel:+19204304888" style="color:inherit;text-decoration:none;">(920) 430-4888</a>
       </span>
       <span style="color: rgba(255,255,255,0.5);">
-        <a href="contact-locations.html" style="color:inherit;text-decoration:none;">Titletown Sports Medicine and Orthopedics · Green Bay, WI</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bellin+Health+Titletown+Sports+Medicine+and+Orthopedics%2C+1970+S+Ridge+Rd%2C+Green+Bay%2C+WI+54304" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Titletown Sports Medicine &amp; Orthopedics · Green Bay, WI</a>
       </span>
     </div>
     <div class="utility-right">
@@ -539,8 +543,11 @@ footer {
 <header class="header">
   <div class="header-inner">
     <a href="/" class="logo">
-      <span class="logo-mark">Michael K. Ryan, MD</span>
-      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+      <img class="logo-img" src="images/MKR%20MD%20Logo.png" alt="Michael K. Ryan, MD">
+      <span class="logo-text">
+        <span class="logo-mark">Michael K. Ryan, MD</span>
+        <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+      </span>
     </a>
     <nav>
       <ul>
@@ -683,8 +690,7 @@ footer {
       <h3>Michael K. Ryan, MD</h3>
       <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
       <p>
-        Titletown Sports Medicine<br>
-        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bellin+Health+Titletown+Sports+Medicine+and+Orthopedics%2C+1970+S+Ridge+Rd%2C+Green+Bay%2C+WI+54304" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Titletown Sports Medicine and Orthopedics<br>1970 S. Ridge Rd, Green Bay, WI 54304</a><br>
         (920) 430-4888
       </p>
     </div>

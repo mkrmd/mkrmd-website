@@ -92,10 +92,14 @@ body {
 }
 .logo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
   color: var(--ink);
 }
+.logo-img { height: 46px; width: auto; display: block; flex-shrink: 0; }
+.logo-text { display: flex; flex-direction: column; }
 .logo-mark {
   font-family: 'Fraunces', serif;
   font-size: 1.5rem;
@@ -1296,6 +1300,47 @@ footer {
   background: var(--paper);
   border-top: 1px solid var(--rule);
 }
+.team-logos {
+  margin-top: 4.5rem;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.team-logos-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.team-logos-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  animation: team-scroll 55s linear infinite;
+}
+.team-logos:hover .team-logos-track { animation-play-state: paused; }
+.team-logos-track img {
+  height: 64px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+.team-logos-track img:hover { opacity: 1; }
+@keyframes team-scroll {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .team-logos { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .team-logos-track { animation: none; }
+}
 .coverage-inner {
   max-width: 1360px;
   margin: 0 auto;
@@ -1475,7 +1520,7 @@ footer {
         <a href="tel:+19204304888" style="color:inherit;text-decoration:none;">(920) 430-4888</a>
       </span>
       <span style="color: rgba(255,255,255,0.5);">
-        <a href="contact-locations.html" style="color:inherit;text-decoration:none;">Titletown Sports Medicine and Orthopedics · Green Bay, WI</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bellin+Health+Titletown+Sports+Medicine+and+Orthopedics%2C+1970+S+Ridge+Rd%2C+Green+Bay%2C+WI+54304" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Titletown Sports Medicine &amp; Orthopedics · Green Bay, WI</a>
       </span>
     </div>
     <div class="utility-right">
@@ -1490,8 +1535,11 @@ footer {
 <header class="header">
   <div class="header-inner">
     <a href="/" class="logo">
-      <span class="logo-mark">Michael K. Ryan, MD</span>
-      <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+      <img class="logo-img" src="images/MKR%20MD%20Logo.png" alt="Michael K. Ryan, MD">
+      <span class="logo-text">
+        <span class="logo-mark">Michael K. Ryan, MD</span>
+        <span class="logo-tag">Hip Preservation · Sports Medicine</span>
+      </span>
     </a>
     <nav>
       <ul>
@@ -1649,9 +1697,6 @@ footer {
           <img src="images/mkrmd-website-Headshot.jpg" alt="Dr. Michael K. Ryan" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
         </div>
       </div>
-      <p class="about-image-caption">
-        Dr. Ryan at Titletown Orthopedics, Green Bay
-      </p>
     </div>
     <div>
       <div class="section-label">About Dr. Ryan</div>
@@ -1932,6 +1977,40 @@ footer {
       </div>
 
     </div>
+
+    <div class="team-logos">
+      <div class="team-logos-label">Teams &amp; programs served</div>
+      <div class="team-logos-track">
+          <img src="images/Packers%20G%20Image.png" alt="Green Bay Packers">
+          <img src="images/uwgb-logo.svg" alt="UW–Green Bay">
+          <img src="images/UWO-Athletics-Logo-300x207.png" alt="UW Oshkosh">
+          <img src="images/SNC%20Logo.jpeg" alt="St. Norbert College">
+          <img src="images/Kimberly%20HS%20Image.png" alt="Kimberly High School">
+          <img src="images/Birmingham%20Squadron%20Logo.png" alt="Birmingham Squadron">
+          <img src="images/UA%20Logo.png" alt="University of Alabama">
+          <img src="images/Samford_W-FullSignature.png" alt="Samford University">
+          <img src="images/Spain%20Park%20HS%20Jaguars.png" alt="Spain Park High School">
+          <img src="images/Barons%20Logo.png" alt="Birmingham Barons">
+          <img src="images/Mortimer%20Jordan%20HS%20Logo.png" alt="Mortimer Jordan High School">
+          <img src="images/Pell%20City%20Logo.jpeg" alt="Pell City High School">
+          <img src="images/Pleasant%20Grove%20HS.png" alt="Pleasant Grove High School">
+          <img src="images/Cordova%20HS%20Logo.jpeg" alt="Cordova High School">
+          <img src="images/Packers%20G%20Image.png" alt="Green Bay Packers">
+          <img src="images/uwgb-logo.svg" alt="UW–Green Bay">
+          <img src="images/UWO-Athletics-Logo-300x207.png" alt="UW Oshkosh">
+          <img src="images/SNC%20Logo.jpeg" alt="St. Norbert College">
+          <img src="images/Kimberly%20HS%20Image.png" alt="Kimberly High School">
+          <img src="images/Birmingham%20Squadron%20Logo.png" alt="Birmingham Squadron">
+          <img src="images/UA%20Logo.png" alt="University of Alabama">
+          <img src="images/Samford_W-FullSignature.png" alt="Samford University">
+          <img src="images/Spain%20Park%20HS%20Jaguars.png" alt="Spain Park High School">
+          <img src="images/Barons%20Logo.png" alt="Birmingham Barons">
+          <img src="images/Mortimer%20Jordan%20HS%20Logo.png" alt="Mortimer Jordan High School">
+          <img src="images/Pell%20City%20Logo.jpeg" alt="Pell City High School">
+          <img src="images/Pleasant%20Grove%20HS.png" alt="Pleasant Grove High School">
+          <img src="images/Cordova%20HS%20Logo.jpeg" alt="Cordova High School">
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2130,8 +2209,7 @@ footer {
       <h3>Michael K. Ryan, MD</h3>
       <p style="color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-top: 0.25rem;">Hip Preservation · Sports Medicine · Orthopaedic Surgery</p>
       <p>
-        Titletown Sports Medicine and Orthopedics<br>
-        1970 S. Ridge Rd, Green Bay, WI 54304<br>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bellin+Health+Titletown+Sports+Medicine+and+Orthopedics%2C+1970+S+Ridge+Rd%2C+Green+Bay%2C+WI+54304" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Titletown Sports Medicine and Orthopedics<br>1970 S. Ridge Rd, Green Bay, WI 54304</a><br>
         (920) 430-4888
       </p>
     </div>
