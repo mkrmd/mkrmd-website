@@ -605,6 +605,13 @@ nav a.active::after { width: 100%; }
 .credential-card.hjd   .credential-icon { max-width: 104px; padding: 0.6rem; }
 .credential-card.gusom .credential-icon { max-width: 122px; padding: 0.6rem 0.8rem; }
 .credential-card.nd    .credential-icon { max-width: 104px; padding: 0.45rem; border-radius: 50%; }
+.board-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
 
 /* ===== AWARDS ===== */
 .awards {
@@ -680,6 +687,23 @@ nav a.active::after { width: 100%; }
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   line-height: 1;
+}
+.award-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  min-height: 56px;
+  margin-bottom: 1.5rem;
+}
+.award-logos img {
+  height: 52px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
 }
 .award-card h3 {
   font-family: 'Fraunces', serif;
@@ -779,6 +803,23 @@ nav a.active::after { width: 100%; }
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   line-height: 1;
+}
+.appointment-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  min-height: 60px;
+  margin-bottom: 1.5rem;
+}
+.appointment-logos img {
+  height: 58px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
 }
 .appointment-card h3 {
   font-family: 'Fraunces', serif;
@@ -1214,11 +1255,9 @@ footer {
         <div class="about-image-frame"></div>
         <img src="images/mkrmd-website-OR%20Headshot.jpg" alt="Dr. Michael K. Ryan">
       </div>
-      <p class="about-image-caption">
-        Dr. Ryan at Titletown Orthopedics, Green Bay
-      </p>
+      <p class="about-image-caption"></p>
       <div class="about-image-grid">
-        <img src="images/dr-michael-k-ryan-andrews-sports-medicine-or-1.jpg" alt="Dr. Ryan in the operating room">
+        <img src="images/MKR%20PAO%20B.W.jpeg" alt="Dr. Michael K. Ryan performing a periacetabular osteotomy (PAO)">
         <img src="images/dr-michael-k-ryan-md-andrews-sports-medicine-bo-scarborough-jersey-2-print.jpg" alt="Dr. Michael K. Ryan, Andrews Sports Medicine">
       </div>
     </div>
@@ -1310,6 +1349,10 @@ footer {
         <div class="credential-icon">B</div>
         <h3>Board Certified</h3>
         <p>American Board of Orthopaedic Surgery, with subspecialty certification in Orthopaedic Sports Medicine</p>
+        <div class="board-badges">
+          <a href="https://mycertifiedorthopaedicsurgeon.org" target="_blank" rel="noopener"><img src="https://www.abos.org/portal/widgets/image_57219_87FB6306-91F5-40FE-8985-BCEDE67C7B6E.svg" alt="ABOS Board Certified — Orthopaedic Surgery" style="height: 150px; width: 100px; border: none; background-color: white; padding: 5px 5px 0 5px; border-radius: 5px;"></a>
+          <a href="https://mycertifiedorthopaedicsurgeon.org" target="_blank" rel="noopener"><img src="https://www.abos.org/portal/widgets/image_57219_FDDC79BD-230A-4000-923E-7D7EE2EBD2E9.svg" alt="ABOS Subspecialty Certification — Orthopaedic Sports Medicine" style="height: 150px; width: 100px; border: none; background-color: white; padding: 5px 5px 0 5px; border-radius: 5px;"></a>
+        </div>
       </div>
       
     </div>
@@ -1328,7 +1371,10 @@ footer {
       
       <div class="award-card">
         <div class="award-year">2022</div>
-        <div class="award-icon">🏆</div>
+        <div class="award-logos">
+          <img src="images/Arthrex%20Hip%20Horizons.jpg" alt="Arthrex Hip Horizons">
+          <img src="images/Arthrex%20Logo.jpg" alt="Arthrex">
+        </div>
         <h3>Arthrex Hip Horizons Think Tank Showdown Champion</h3>
         <p>Treatment of Complex Combined Post-SCFE FAI and Dysplasia in a Young Athlete</p>
         <div class="award-organization">Arthrex Hip Horizons Conference</div>
@@ -1336,7 +1382,9 @@ footer {
       
       <div class="award-card">
         <div class="award-year">2023</div>
-        <div class="award-icon">⭐</div>
+        <div class="award-logos">
+          <img src="images/Ruth%20Jackson%20Ortho%20Soc%20Logo.jpg" alt="Ruth Jackson Orthopaedic Society">
+        </div>
         <h3>Freddie Fu He for She Award Nominee</h3>
         <p>Recognizing leadership and advocacy for women in orthopaedic surgery</p>
         <div class="award-organization">Ruth Jackson Orthopaedic Society</div>
@@ -1344,7 +1392,10 @@ footer {
       
       <div class="award-card">
         <div class="award-year">2017</div>
-        <div class="award-icon">🔬</div>
+        <div class="award-logos">
+          <img src="images/Blind%20Squirrel%20Society%20Logo.jpg" alt="Blind Squirrel Society">
+          <img src="images/asmi%20blue.jpg" alt="American Sports Medicine Institute">
+        </div>
         <h3>Basic Science Award</h3>
         <p>Endoscopic Proximal Hamstring Repair: Surgical Technique and Portal Site Anatomy – A Cadaveric Study</p>
         <div class="award-organization">American Sports Medicine Fellowship Society</div>
@@ -1352,7 +1403,9 @@ footer {
       
       <div class="award-card">
         <div class="award-year">2011</div>
-        <div class="award-icon">🎓</div>
+        <div class="award-logos">
+          <img src="images/GUSOM.Icon.jpg" alt="Georgetown University School of Medicine">
+        </div>
         <h3>John N. Delahay, M.D. Award</h3>
         <p>Excellence in Orthopaedic Surgery during medical school training</p>
         <div class="award-organization">Georgetown University School of Medicine</div>
@@ -1374,7 +1427,9 @@ footer {
       
       <div class="appointment-card">
         <div class="appointment-type">Academic Appointment</div>
-        <div class="appointment-icon">🎓</div>
+        <div class="appointment-logos">
+          <img src="images/UW%20SoM%20Logo.png" alt="University of Wisconsin School of Medicine and Public Health">
+        </div>
         <h3>Honorary Fellow</h3>
         <p>Department of Orthopaedics and Rehabilitation</p>
         <div class="appointment-organization">University of Wisconsin School of Medicine and Public Health</div>
@@ -1383,7 +1438,9 @@ footer {
       
       <div class="appointment-card">
         <div class="appointment-type">Sports Medicine Committee</div>
-        <div class="appointment-icon">⚡</div>
+        <div class="appointment-logos">
+          <img src="images/WIAA%20Logo.png" alt="Wisconsin Interscholastic Athletic Association (WIAA)">
+        </div>
         <h3>Medical Advisory Committee Member</h3>
         <p>Providing medical guidance and policy recommendations for high school athletics across Wisconsin</p>
         <div class="appointment-organization">Wisconsin Interscholastic Athletic Association (WIAA)</div>
@@ -1392,7 +1449,9 @@ footer {
       
       <div class="appointment-card">
         <div class="appointment-type">Medical Advisory Board</div>
-        <div class="appointment-icon">📊</div>
+        <div class="appointment-logos">
+          <img src="images/Springbok%20Logo.png" alt="SpringBok Analytics">
+        </div>
         <h3>Medical Advisory Board Member</h3>
         <p>Contributing sports medicine expertise to analytics platform development and injury prevention research</p>
         <div class="appointment-organization">SpringBok Analytics</div>
@@ -1426,8 +1485,8 @@ footer {
       <div class="philosophy-photo">
         <img src="images/MKR%20Packers%20Field.jpeg" alt="Dr. Ryan on the field with the Green Bay Packers">
       </div>
-      <div class="philosophy-photo philosophy-photo-tbd">
-        <span>Photo coming soon</span>
+      <div class="philosophy-photo">
+        <img src="images/MKR%20GBP%20Practice.jpeg" alt="Dr. Ryan with the Green Bay Packers">
       </div>
     </div>
   </div>
