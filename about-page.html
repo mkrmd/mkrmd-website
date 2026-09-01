@@ -608,9 +608,10 @@ nav a.active::after { width: 100%; }
 .board-badges {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.75rem;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* ===== AWARDS ===== */
@@ -1346,13 +1347,12 @@ footer {
       </div>
       
       <div class="credential-card">
-        <div class="credential-icon">B</div>
+        <div class="board-badges">
+          <a href="https://mycertifiedorthopaedicsurgeon.org" target="_blank" rel="noopener"><img src="https://www.abos.org/portal/widgets/image_57219_87FB6306-91F5-40FE-8985-BCEDE67C7B6E.svg" alt="ABOS Board Certified — Orthopaedic Surgery" style="height: 88px; width: auto; border: none; background-color: white; padding: 4px 4px 0 4px; border-radius: 5px;"></a>
+          <a href="https://mycertifiedorthopaedicsurgeon.org" target="_blank" rel="noopener"><img src="https://www.abos.org/portal/widgets/image_57219_FDDC79BD-230A-4000-923E-7D7EE2EBD2E9.svg" alt="ABOS Subspecialty Certification — Orthopaedic Sports Medicine" style="height: 88px; width: auto; border: none; background-color: white; padding: 4px 4px 0 4px; border-radius: 5px;"></a>
+        </div>
         <h3>Board Certified</h3>
         <p>American Board of Orthopaedic Surgery, with subspecialty certification in Orthopaedic Sports Medicine</p>
-        <div class="board-badges">
-          <a href="https://mycertifiedorthopaedicsurgeon.org" target="_blank" rel="noopener"><img src="https://www.abos.org/portal/widgets/image_57219_87FB6306-91F5-40FE-8985-BCEDE67C7B6E.svg" alt="ABOS Board Certified — Orthopaedic Surgery" style="height: 150px; width: 100px; border: none; background-color: white; padding: 5px 5px 0 5px; border-radius: 5px;"></a>
-          <a href="https://mycertifiedorthopaedicsurgeon.org" target="_blank" rel="noopener"><img src="https://www.abos.org/portal/widgets/image_57219_FDDC79BD-230A-4000-923E-7D7EE2EBD2E9.svg" alt="ABOS Subspecialty Certification — Orthopaedic Sports Medicine" style="height: 150px; width: 100px; border: none; background-color: white; padding: 5px 5px 0 5px; border-radius: 5px;"></a>
-        </div>
       </div>
       
     </div>
@@ -1373,7 +1373,6 @@ footer {
         <div class="award-year">2022</div>
         <div class="award-logos">
           <img src="images/Arthrex%20Hip%20Horizons.jpg" alt="Arthrex Hip Horizons">
-          <img src="images/Arthrex%20Logo.jpg" alt="Arthrex">
         </div>
         <h3>Arthrex Hip Horizons Think Tank Showdown Champion</h3>
         <p>Treatment of Complex Combined Post-SCFE FAI and Dysplasia in a Young Athlete</p>
@@ -1426,7 +1425,6 @@ footer {
     <div class="appointments-grid">
       
       <div class="appointment-card">
-        <div class="appointment-type">Academic Appointment</div>
         <div class="appointment-logos">
           <img src="images/UW%20SoM%20Logo.png" alt="University of Wisconsin School of Medicine and Public Health">
         </div>
@@ -1437,7 +1435,6 @@ footer {
       </div>
       
       <div class="appointment-card">
-        <div class="appointment-type">Sports Medicine Committee</div>
         <div class="appointment-logos">
           <img src="images/WIAA%20Logo.png" alt="Wisconsin Interscholastic Athletic Association (WIAA)">
         </div>
@@ -1448,7 +1445,6 @@ footer {
       </div>
       
       <div class="appointment-card">
-        <div class="appointment-type">Medical Advisory Board</div>
         <div class="appointment-logos">
           <img src="images/Springbok%20Logo.png" alt="SpringBok Analytics">
         </div>
@@ -1459,8 +1455,9 @@ footer {
       </div>
       
       <div class="appointment-card">
-        <div class="appointment-type">Industry Consulting</div>
-        <div class="appointment-icon">🔬</div>
+        <div class="appointment-logos">
+          <img src="images/Arthrex%20Logo.jpg" alt="Arthrex">
+        </div>
         <h3>Education & Innovation Consultant</h3>
         <p>Collaborating on surgical technique development, education programs, and research initiatives</p>
         <div class="appointment-organization">Arthrex, JRF, Allosource, formerly Zimmer Biomet</div>
