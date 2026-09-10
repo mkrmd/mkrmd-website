@@ -384,19 +384,19 @@ nav a.active::after { width: 100%; }
   font-weight: 400;
 }
 .hero-image {
-  position: relative;
-  aspect-ratio: 4/5;
-  background: linear-gradient(135deg, rgba(0,125,196,0.4) 0%, rgba(200,169,81,0.2) 100%), url('or-portrait.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 2px;
-  overflow: hidden;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hero-image::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0,21,47,0.4) 100%);
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
 }
 
 /* ===== WHY PRESERVATION ===== */
@@ -427,10 +427,17 @@ nav a.active::after { width: 100%; }
   max-width: 1360px;
   margin: 0 auto;
   padding: 0 2.5rem;
+}
+.hip-overview-text {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.hip-figures-row {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 4rem;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
 }
 .hip-overview-text p {
   font-size: 1.02rem;
@@ -472,8 +479,8 @@ nav a.active::after { width: 100%; }
   line-height: 1.5;
 }
 .hip-figure-wide {
-  max-width: 920px;
-  margin: 3rem auto 0;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
 }
 .footer-col ul.two-col {
   columns: 2;
@@ -634,8 +641,8 @@ nav a.active::after { width: 100%; }
   background: none;
   border: none;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--ink-soft);
   cursor: pointer;
   transition: all 0.2s;
@@ -759,7 +766,7 @@ nav a.active::after { width: 100%; }
 .timeline-item {
   display: flex;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.6rem;
   position: relative;
 }
 .timeline-item:nth-child(odd) { flex-direction: row; }
@@ -1153,7 +1160,9 @@ footer {
         </div>
       </div>
     </div>
-    <div class="hero-image"></div>
+    <div class="hero-image">
+      <img src="images/Hip%20Anatomy.png" alt="The hip joint — normal bony anatomy">
+    </div>
   </div>
 </section>
 
@@ -1163,7 +1172,25 @@ footer {
     <div class="hip-overview-text">
       <div class="section-label">Understanding the Hip</div>
       <h2>A deep ball-and-socket joint where <em>shape is everything</em>.</h2>
+    </div>
 
+    <div class="hip-figures-row">
+      <figure class="hip-figure">
+        <img src="images/Hip%20Normal.png" alt="Normal hip" loading="lazy">
+        <figcaption>Normal hip</figcaption>
+      </figure>
+      <figure class="hip-figure">
+        <img src="images/Hip%20Dysplastic.png" alt="Dysplastic hip with a shallow socket" loading="lazy">
+        <figcaption>Dysplastic hip (shallow hip socket)</figcaption>
+      </figure>
+    </div>
+
+    <figure class="hip-figure hip-figure-wide">
+      <img src="images/Hip%20FAI.png" alt="Femoroacetabular impingement illustration showing pincer, cam, and combined types" loading="lazy">
+      <figcaption>Femoroacetabular impingement (FAI) — Left: socket overcoverage (pincer); Middle: aspherical ball (cam); Right: combined impingement (both cam and pincer)</figcaption>
+    </figure>
+
+    <div class="hip-overview-text">
       <p>The hip is a ball-and-socket joint. The socket — called the <strong>acetabulum</strong> — is part of the pelvis, shaped like a hemisphere, and forms the weight-bearing surface of the joint. It is lined with smooth cartilage that cushions and lubricates the hip, allowing fluid, painless motion. Around the rim of the socket runs a ring of specialized cartilage called the <strong>labrum</strong>, which deepens the joint, creates a seal that keeps the natural joint fluid in place, and adds stability. Because the labrum is rich in nerve fibers, a tear can be a significant source of pain.</p>
 
       <p>The ball of the joint is the <strong>femoral head</strong> — the rounded top of the thigh bone (femur) — and it, too, is capped in smooth cartilage that glides against the socket. In a healthy hip, the socket covers the ball to just the right extent, and the ball is perfectly round.</p>
@@ -1176,27 +1203,7 @@ footer {
 
       <p>Beyond the joint itself, a range of injuries affect the surrounding muscles, tendons, and ligaments — gluteus and hamstring tendon tears, snapping hip, bursitis, ligamentum teres tears, instability, and growth-plate conditions — each capable of causing pain and limiting function. The full range of hip conditions and the procedures that treat them is listed below.</p>
     </div>
-
-    <div class="hip-figures">
-      <figure class="hip-figure">
-        <img src="images/Hip%20Anatomy.png" alt="Normal bony anatomy of the hip joint" loading="lazy">
-        <figcaption>Normal bony anatomy of the hip joint</figcaption>
-      </figure>
-      <figure class="hip-figure">
-        <img src="images/Hip%20Normal.png" alt="Normal hip" loading="lazy">
-        <figcaption>Normal hip</figcaption>
-      </figure>
-      <figure class="hip-figure">
-        <img src="images/Hip%20Dysplastic.png" alt="Dysplastic hip with a shallow socket" loading="lazy">
-        <figcaption>Dysplastic hip (shallow hip socket)</figcaption>
-      </figure>
-    </div>
   </div>
-
-  <figure class="hip-figure hip-figure-wide">
-    <img src="images/Hip%20FAI.png" alt="Femoroacetabular impingement illustration showing pincer, cam, and combined types" loading="lazy">
-    <figcaption>Femoroacetabular impingement (FAI) — Left: socket overcoverage (pincer); Middle: aspherical ball (cam); Right: combined impingement (both cam and pincer)</figcaption>
-  </figure>
 </section>
 
 <!-- WHY PRESERVATION -->
@@ -1281,13 +1288,13 @@ footer {
       </div>
       
       <div class="condition-card">
-        <h3><a href="snapping-hip-syndrome.html">Snapping Hip Syndrome</a></h3>
-        <p>A snapping or popping from a tendon catching over bone, at the front (internal) or side (external) of the hip.</p>
+        <h3><a href="core-muscle-injury.html">Core Muscle Injury / Sports Hernia</a></h3>
+        <p>A tear or weakness of the lower abdominal and adductor attachments at the pubis, common in cutting and kicking sports.</p>
       </div>
       
       <div class="condition-card">
-        <h3><a href="hamstring-tendon-tears.html">Hamstring Tears</a></h3>
-        <p>Tears of the hamstring tendons where they attach at the pelvis, causing buttock pain and weakness.</p>
+        <h3><a href="snapping-hip-syndrome.html">Snapping Hip Syndrome</a></h3>
+        <p>A snapping or popping from a tendon catching over bone, at the front (internal) or side (external) of the hip.</p>
       </div>
       
       <div class="condition-card">
@@ -1296,8 +1303,8 @@ footer {
       </div>
       
       <div class="condition-card">
-        <h3><a href="core-muscle-injury.html">Core Muscle Injury / Sports Hernia</a></h3>
-        <p>A tear or weakness of the lower abdominal and adductor attachments at the pubis, common in cutting and kicking sports.</p>
+        <h3><a href="hamstring-tendon-tears.html">Hamstring Tears</a></h3>
+        <p>Tears of the hamstring tendons where they attach at the pelvis, causing buttock pain and weakness.</p>
       </div>
       
       <div class="condition-card">
@@ -1345,13 +1352,13 @@ footer {
       </div>
       
       <div class="procedure-card">
-        <h3><a href="labral-reconstruction.html">Labral Reconstruction</a></h3>
-        <p>Rebuilding an irreparable labrum with a tendon graft to restore its seal and function.</p>
+        <h3><a href="cam-resection.html">Cam Resection (Femoroplasty)</a></h3>
+        <p>Reshaping the aspherical femoral head to remove the cam deformity and eliminate impingement.</p>
       </div>
       
       <div class="procedure-card">
-        <h3><a href="cam-resection.html">Cam Resection (Femoroplasty)</a></h3>
-        <p>Reshaping the aspherical femoral head to remove the cam deformity and eliminate impingement.</p>
+        <h3><a href="labral-reconstruction.html">Labral Reconstruction</a></h3>
+        <p>Rebuilding an irreparable labrum with a tendon graft to restore its seal and function.</p>
       </div>
       
       <div class="procedure-card">
@@ -1370,13 +1377,13 @@ footer {
       </div>
       
       <div class="procedure-card">
-        <h3><a href="surgical-dislocation-hip-sdh.html">Surgical Dislocation of the Hip (SDH)</a></h3>
-        <p>A safe open approach giving full access to the joint to correct complex deformities.</p>
+        <h3><a href="core-muscle-repair.html">Core Muscle Repair</a></h3>
+        <p>Repairing the torn lower abdominal and adductor attachments at the pubis to resolve core muscle injury and sports hernia.</p>
       </div>
       
       <div class="procedure-card">
-        <h3><a href="femoral-rotational-osteotomy.html">Femoral Rotational Osteotomy</a></h3>
-        <p>Correcting abnormal thigh-bone rotation to restore normal hip mechanics.</p>
+        <h3><a href="surgical-dislocation-hip-sdh.html">Surgical Dislocation of the Hip (SDH)</a></h3>
+        <p>A safe open approach giving full access to the joint to correct complex deformities.</p>
       </div>
       
       <div class="procedure-card">
@@ -1385,13 +1392,13 @@ footer {
       </div>
       
       <div class="procedure-card">
-        <h3><a href="proximal-hamstring-repair.html">Proximal Hamstring Repair</a></h3>
-        <p>Reattaching torn hamstring tendons at the pelvis to restore strength and function.</p>
+        <h3><a href="femoral-rotational-osteotomy.html">Femoral Rotational Osteotomy</a></h3>
+        <p>Correcting abnormal thigh-bone rotation to restore normal hip mechanics.</p>
       </div>
       
       <div class="procedure-card">
-        <h3><a href="core-muscle-repair.html">Core Muscle Repair</a></h3>
-        <p>Repairing the torn lower abdominal and adductor attachments at the pubis to resolve core muscle injury and sports hernia.</p>
+        <h3><a href="proximal-hamstring-repair.html">Proximal Hamstring Repair</a></h3>
+        <p>Reattaching torn hamstring tendons at the pelvis to restore strength and function.</p>
       </div>
       
     </div>

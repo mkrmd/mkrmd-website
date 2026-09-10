@@ -383,19 +383,19 @@ nav a.active::after { width: 100%; }
   font-weight: 400;
 }
 .hero-image {
-  position: relative;
-  aspect-ratio: 4/5;
-  background: linear-gradient(135deg, rgba(0,125,196,0.4) 0%, rgba(200,169,81,0.2) 100%), url('or-portrait.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 2px;
-  overflow: hidden;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hero-image::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0,21,47,0.4) 100%);
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
 }
 
 /* ===== SHARED SECTION STYLES ===== */
@@ -537,8 +537,8 @@ nav a.active::after { width: 100%; }
   background: none;
   border: none;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--ink-soft);
   cursor: pointer;
   transition: all 0.2s;
@@ -1078,7 +1078,9 @@ footer {
         </div>
       </div>
     </div>
-    <div class="hero-image"></div>
+    <div class="hero-image">
+      <img src="images/Knee%20Anatomy.png" alt="Knee anatomy — bones, ligaments, and menisci">
+    </div>
   </div>
 </section>
 
@@ -1155,35 +1157,35 @@ footer {
     <div id="conditions" class="tab-content active">
       
       <div class="condition-card">
+        <h3>Meniscus Tear</h3>
+        <p>Tears of the C-shaped cushion, common with twisting, causing pain along the joint line and mechanical catching or locking.</p>
+      </div>
+
+      <div class="condition-card">
         <h3>ACL Tear</h3>
         <p>Complete or partial tears of the anterior cruciate ligament, usually during cutting or pivoting, causing instability and giving-way.</p>
       </div>
-      
+
       <div class="condition-card">
         <h3>PCL Tear</h3>
         <p>Injury to the posterior cruciate ligament, often from a direct blow to the shin or forced hyperflexion, frequently part of a larger injury.</p>
       </div>
-      
+
       <div class="condition-card">
         <h3>MCL Tear</h3>
         <p>Injury to the ligament on the inner knee, typically from a blow to the outside of the joint; most heal without surgery.</p>
       </div>
-      
+
       <div class="condition-card">
         <h3>LCL Tear</h3>
         <p>Injury to the ligament on the outer knee, often part of a posterolateral corner injury that may require surgical repair.</p>
       </div>
-      
+
       <div class="condition-card">
         <h3>Other Knee Ligament Injuries</h3>
         <p>Complex, multi-ligament injuries from high-energy trauma, requiring careful evaluation and coordinated reconstruction.</p>
       </div>
-      
-      <div class="condition-card">
-        <h3>Meniscus Tear</h3>
-        <p>Tears of the C-shaped cushion, common with twisting, causing pain along the joint line and mechanical catching or locking.</p>
-      </div>
-      
+
       <div class="condition-card">
         <h3>Articular Cartilage Injury</h3>
         <p>Focal damage to the cartilage surface of the knee, causing pain and swelling and, over time, a risk of arthritis.</p>
@@ -1242,12 +1244,7 @@ footer {
         <h3>Meniscus Transplant</h3>
         <p>Replacing a meniscus-deficient knee with a custom-sized donor graft to relieve pain and protect the joint.</p>
       </div>
-      
-      <div class="procedure-card">
-        <h3>Total Knee Replacement</h3>
-        <p>Resurfacing an arthritic knee with metal and plastic components — the most reliable long-term treatment for advanced arthritis.</p>
-      </div>
-      
+
     </div>
   </div>
 </section>
@@ -1374,7 +1371,6 @@ footer {
         <li><a href="tibial-osteotomy.html">Tibial Osteotomy</a></li>
         <li><a href="cartilage-preservation.html">Cartilage Preservation Surgeries</a></li>
         <li><a href="meniscus-transplant.html">Meniscus Transplant</a></li>
-        <li><a href="total-knee-replacement.html">Total Knee Replacement</a></li>
       </ul>
     </div>
     <div class="footer-col">
