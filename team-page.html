@@ -378,9 +378,11 @@ nav a.active::after { width: 100%; }
 }
 .intro-content {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1fr;
   gap: 5rem;
   align-items: center;
+  max-width: 880px;
+  margin: 0 auto;
 }
 .intro-text h2 {
   font-family: 'Fraunces', serif;
@@ -522,6 +524,28 @@ nav a.active::after { width: 100%; }
   padding: 2.5rem;
   position: relative;
 }
+.member-card-wide {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+.member-card-wide .member-photo {
+  width: 360px;
+  height: auto;
+  flex-shrink: 0;
+}
+.member-card-wide .member-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.member-card-wide .member-bio { margin-bottom: 0.9rem; }
+@media (max-width: 760px) {
+  .member-card-wide { flex-direction: column; }
+  .member-card-wide .member-photo { width: 100%; height: 340px; }
+}
 .member-role {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
@@ -641,6 +665,13 @@ nav a.active::after { width: 100%; }
   color: var(--navy);
   font-size: 24px;
   font-weight: 600;
+}
+.collab-img {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1.5rem;
 }
 .collab-item h4 {
   font-family: 'Fraunces', serif;
@@ -950,20 +981,6 @@ footer {
         <p>Our athletic trainers understand the urgency every athlete feels to return to the field, and that understanding drives everything about our patient experience. The efficiency, the care, the immediate recognition of what matters most — it's what sets this practice apart.</p>
         <p>Even individual sport athletes need a team to win. All team sports require excellence in chemistry, communication, and execution. This is our team, and we execute at a championship level.</p>
       </div>
-      <div class="intro-stats">
-        <div class="stat-item">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Core Team<br>Members</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">25+</div>
-          <div class="stat-label">Years Combined<br>Experience</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Board Certified<br>Specialists</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -974,7 +991,22 @@ footer {
     <div class="members-header">
       <h2>Meet the <em>Team</em></h2>
     </div>
-    
+
+    <div class="intro-stats" style="max-width: 760px; margin: 0 auto 3.5rem;">
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Core Team<br>Members</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">60+</div>
+        <div class="stat-label">Years Combined<br>Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Board Certified<br>Specialists</div>
+      </div>
+    </div>
+
     <div class="members-grid">
       
       <!-- Hannah Harrity -->
@@ -1033,7 +1065,32 @@ footer {
           </div>
         </div>
       </div>
-      
+
+      <!-- Margaret Bauer -->
+      <div class="member-card member-card-wide">
+        <div class="member-photo">
+          <img src="images/M%20Bauer%20Headshot.jpeg" alt="Margaret Bauer, LAT, ATC">
+        </div>
+        <div class="member-info">
+          <div class="member-role">Clinical Athletic Trainer</div>
+          <h3 class="member-name">Margaret Bauer</h3>
+          <div class="member-title">Sports Medicine &middot; Emplify Health by Bellin</div>
+          <p class="member-bio">Margaret Bauer is a certified and licensed athletic trainer with 33 years of experience in athletic training, sports medicine, and orthopedic care. She completed her undergraduate studies at Michigan State University in 1993, where she worked with several men's and women's sports teams. Her responsibilities included serving as the head athletic trainer for women's soccer and assisting with women's field hockey, gymnastics, football, and men's lacrosse. She earned her NATA-BOC certification in 1993.</p>
+          <p class="member-bio">Margaret earned her master's degree from Eastern Michigan University in 1995. As a graduate assistant, she served as the head athletic trainer for women's basketball and assisted with football and women's gymnastics. She also helped teach undergraduate athletic training courses.</p>
+          <p class="member-bio">Throughout her career, Margaret has worked in professional, collegiate, and high school athletics, as well as in outpatient orthopedic practice. For the past eight years, she has provided clinical athletic training services in orthopedic care, supporting orthopedic surgeons, sports medicine physicians, and advanced practice providers. She is currently in her fifth year with Emplify Health by Bellin, where she works with sports medicine orthopedic surgeon Dr. Michael K. Ryan.</p>
+          <p class="member-bio">Margaret's clinical expertise includes injury evaluation, rehabilitation, care coordination, casting and splinting, and operating diagnostic ultrasound and mini C-arm units during procedures. She is also proficient in using the EPIC electronic medical record system. She combines these skills with strong communication and patient education abilities to help individuals understand their injuries, treatment options, and recovery processes.</p>
+          <p class="member-bio">Passionate about athletic training and its role in sports medicine, Margaret is committed to providing knowledgeable, compassionate care. She takes pride in ensuring that patients feel heard and seen as people first&mdash;not simply as injuries. She helps them navigate their care and return to their activities safely and confidently.</p>
+          <p class="member-bio">Margaret is a member of the National Athletic Trainers' Association, the Wisconsin Athletic Trainers' Association, and the Athletic Trainers in Physician Practice Society.</p>
+          <div class="member-credentials">
+            <div class="credentials-list">
+              <span class="credential-badge">LAT</span>
+              <span class="credential-badge">ATC</span>
+              <span class="credential-badge">NATA-BOC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1049,25 +1106,25 @@ footer {
     
     <div class="collab-grid">
       <div class="collab-item">
-        <div class="collab-icon">📋</div>
+        <img class="collab-img" src="images/Icon%20Comprehensive%20Assessment-icon.png" alt="Comprehensive Assessment">
         <h4>Comprehensive Assessment</h4>
         <p>Multi-disciplinary evaluation ensures accurate diagnosis and optimal treatment planning from the start.</p>
       </div>
       
       <div class="collab-item">
-        <div class="collab-icon">⚕️</div>
+        <img class="collab-img" src="images/Icon%20Integrated%20Care-icon.png" alt="Integrated Care">
         <h4>Integrated Care</h4>
         <p>Seamless coordination between surgical, rehabilitation, and training professionals for unified treatment.</p>
       </div>
       
       <div class="collab-item">
-        <div class="collab-icon">🎯</div>
+        <img class="collab-img" src="images/Icon%20Personalized%20Protocols-icon.png" alt="Personalized Protocols">
         <h4>Personalized Protocols</h4>
         <p>Evidence-based treatment plans tailored to each patient's specific sport, position, and performance goals.</p>
       </div>
       
       <div class="collab-item">
-        <div class="collab-icon">🏃</div>
+        <img class="collab-img" src="images/Icon%20Return%20To%20Play-icon.png" alt="Return to Play">
         <h4>Return to Play</h4>
         <p>Systematic progression protocols ensure safe, confident return to full athletic participation.</p>
       </div>

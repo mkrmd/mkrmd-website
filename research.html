@@ -506,10 +506,28 @@ nav a.active::after { width: 100%; }
   padding: 2rem;
   margin-bottom: 1.5rem;
   transition: all 0.2s;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
 }
 .publication:hover {
   border-color: var(--bellin-blue);
   box-shadow: var(--shadow-sm);
+}
+.publication-icon {
+  flex-shrink: 0;
+  width: 66px;
+}
+.publication-icon img {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+.publication-body {
+  flex: 1;
+  min-width: 0;
 }
 .publication-meta {
   display: flex;
@@ -995,381 +1013,507 @@ footer {
     <div class="publications-list">
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Icon%20AJSM.png" alt="American Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2025</span>
         </div>
         <h3>Clinical Outcomes of Ulnar Collateral Ligament Repair with Internal Brace Versus Ulnar Collateral Ligament Reconstruction in Competitive Athletes</h3>
         <div class="publication-journal">American Journal of Sports Medicine</div>
         <div class="publication-authors">Dugas JR, Froom RJ, Mussel EA, Carlson SM, Crawford AE, Tulowitzky GE, Dias T, Wilk KE, Patel AN, Kidwell-Chandler AL, <strong>Ryan MK</strong>, Atkinson AW, Manual AH, Rothermich MA, Ithurburn MP, Emblom BA, Cain EL.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Op%20Tech%20SM%20Icon.jpeg" alt="Operative Techniques in Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2024</span>
         </div>
         <h3>Addressing Extra-Articular Impingement in the Athlete</h3>
         <div class="publication-journal">Operative Techniques in Sports Medicine</div>
         <div class="publication-authors"><strong>Ryan MK</strong>.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Scan%20J%20SM%20Icon.jpeg" alt="Scandinavian Journal of Medicine & Science in Sports"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2024</span>
         </div>
         <h3>Rehabilitation-Specific Predictors of Pain Intensity and Physical Activity Levels in Individuals with Acetabular Dysplasia 6 Months after Periacetabular Osteotomy</h3>
         <div class="publication-journal">Scandinavian Journal of Medicine & Science in Sports</div>
         <div class="publication-authors">Alrashdi NZ, Motl RW, Lein DH, Aguiar EJ, Perumean-Chaney SE, <strong>Ryan MK</strong>, Ithurburn MP.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/OJSM%20Icon.jpg" alt="Orthopaedic Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2024</span>
         </div>
         <h3>Outcomes of Surgical Treatment for Multiligament Knee Injuries in a Cohort Including Competitive Athletes with Long-term Follow-up</h3>
         <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
         <div class="publication-authors">Mussell EA, Crawford AE, Ithurburn MP, Layton BO, Fleisig GS, Rothermich MA, Emblom BA, <strong>Ryan MK</strong>, Dugas JR, Andrews JR, Cain EL.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/OJSM%20Icon.jpg" alt="Orthopaedic Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2024</span>
         </div>
         <h3>The Relationship Between All-Suture and Solid Medial-Row Anchors and Patient-Reported Outcomes for Double-Row Suture Bridge Rotator Cuff Repair</h3>
         <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
         <div class="publication-authors">Feldman JJ, Ostrander B, Ithurburn MP, Fleisig GS, Tatum R, Oschner MG, <strong>Ryan MK</strong>, Rothermich MA, Emblom BA, Dugas JR, Cain EL.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Icon%20AJSM.png" alt="American Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2024</span>
         </div>
         <h3>Long-term Outcomes of Multiligament Knee Injuries in American Football Players</h3>
         <div class="publication-journal">American Journal of Sports Medicine</div>
         <div class="publication-authors">Cain EL, Mussell EA, Crawford AE, Ithurburn MP, Layton BO, Fleisig GS, Rothermich MA, Emblom BA, <strong>Ryan MK</strong>, Dugas JR, Andrews JR.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/PLOS%20Icon.png" alt="PLoS ONE"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2023</span>
         </div>
         <h3>Fixation Strength in Arthroscopic Labral Repair of the Hip: A Head-to-Head Comparison of the Biomechanical Performance of a Biocompatible vs All-Suture Anchor in the Setting of Acetabuloplasty</h3>
         <div class="publication-journal">PLoS ONE</div>
         <div class="publication-authors">Emblom BA, Walters B, Mast L, Beason D, Ruder J, <strong>Ryan MK</strong>, Gould S, Schwartz M.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/OJSM%20Icon.jpg" alt="Orthopaedic Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2023</span>
         </div>
         <h3>Outcomes of Double-Row Rotator Cuff Repair Using a Novel All-Suture Soft Anchor Medial Row</h3>
         <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
         <div class="publication-authors">Loeb AE, Ostrander BS, Ithurburn MP, Fleisig GS, Arceo C, Brockington D, Tatum R, Feldman J, <strong>Ryan MK</strong>, Rothermich MA, Emblom BA, Dugas JR, Cain EL.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/JSES%20Icon.jpg" alt="Journal of Shoulder and Elbow Surgery"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2023</span>
         </div>
         <h3>Clinical Outcomes of Osteochondritis Dissecans Lesions of the Capitellum Treated with Arthroscopy with a Mean Follow-up Period of 8.3 Years</h3>
         <div class="publication-journal">Journal of Shoulder and Elbow Surgery</div>
         <div class="publication-authors">Rothermich MA, Mussell EA, <strong>Ryan MK</strong>, Fleisig GS, Sitton SE, Emblom BA, Dugas JR, Andrews JR, Cain EL.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/JSES%20Icon.jpg" alt="Journal of Shoulder and Elbow Surgery"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2023</span>
         </div>
         <h3>Clinical Outcomes and Return to Play in Softball Players Following SLAP Repair or Biceps Tenodesis</h3>
         <div class="publication-journal">Journal of Shoulder and Elbow Surgery</div>
         <div class="publication-authors">Rothermich MA, <strong>Ryan MK</strong>, Fleisig GS, Layton BO, Mussell EA, Andrews JR, Emblom BA, Cain EL, Dugas JR.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Hip%20Int%20Icon.jpeg" alt="Hip International"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2023</span>
         </div>
         <h3>A History of Eponym Usage in Hip and Pelvis Radiography Part 2: The Adult Hip</h3>
         <div class="publication-journal">Hip International</div>
         <div class="publication-authors">Bi A, <strong>Ryan MK</strong>, Castaneda P, Youm T.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2023</span>
         </div>
         <h3>Demographic and Clinical Correlates of Device-Measured Physical Activity Levels in Individuals with Femoroacetabular Impingement</h3>
         <div class="publication-journal">Archives of Rehabilitation Research and Clinical Translation</div>
         <div class="publication-authors">Alrashdi NZ, Motl RW, Samchok S, Momaya AM, Emblom BA, <strong>Ryan MK</strong>, Ithurburn MP.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Icon%20AJSM.png" alt="American Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2022</span>
         </div>
         <h3>Clinical Outcomes of Ulnar Collateral Ligament Surgery in Non-Throwing Athletes</h3>
         <div class="publication-journal">American Journal of Sports Medicine</div>
         <div class="publication-authors">Rothermich MA, Pharr Z, Mundy A, Fleisig GS, Mussell EA, <strong>Ryan MK</strong>, Bernier H, Ostrander B, Slowik J, Emblom BA, Cain EL, Dugas JR.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Arthros%20MS%20Rehab%20Icon.jpeg" alt="Arthroscopy, Sports Medicine, and Rehabilitation"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2022</span>
         </div>
         <h3>Endoscopic Gluteus Medius Repair Replicates Open, Knotless Repair with Similar Cyclic Loading Properties: A Cadaveric Study</h3>
         <div class="publication-journal">Arthroscopy, Sports Medicine, and Rehabilitation</div>
         <div class="publication-authors">Flynn ME, Beason DP, Bartush KC, <strong>Ryan MK</strong>, Emblom BA.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/OJSM%20Icon.jpg" alt="Orthopaedic Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2021</span>
         </div>
         <h3>In-Line Pullout Strength of 2 Acetabular Fixation Methods for Ligamentum Teres Reconstruction of the Hip</h3>
         <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
         <div class="publication-authors">Lall A, Ankem H, <strong>Ryan MK</strong>, Beason D, Diulus S, Roach R, Rosinsky P, Maldonado D, Emblom BA, Domb B.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/J%20Hip%20Pres%20Icon.png" alt="Journal of Hip Preservation Surgery"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2021</span>
         </div>
         <h3>Mobility-Related Outcomes for Periacetabular Osteotomy in Persons with Acetabular Dysplasia: Setting the Stage for Measurements of Real-World Outcomes</h3>
         <div class="publication-journal">Journal of Hip Preservation Surgery</div>
         <div class="publication-authors">Alrashdi NZ, Aguiar E, <strong>Ryan MK</strong>, Ithurburn MP.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/OJSM%20Icon.jpg" alt="Orthopaedic Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2021</span>
         </div>
         <h3>Early Complications of Ulnar Collateral Ligament Repair with Internal Brace Augmentation</h3>
         <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
         <div class="publication-authors">Rothermich MA, Mussel EA, <strong>Ryan MK</strong>, Fleisig G, Andrews JR, Emblom BA, Cain EL, Dugas JR.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/J%20Investigative%20Med%20Icon.jpeg" alt="Journal of Investigative Medicine High Impact Case Reports"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2021</span>
         </div>
         <h3>Association of Slipped Capital Femoral Epiphysis with Panhypopituitarism Due to Pituitary Macroadenoma: A Case Report</h3>
         <div class="publication-journal">Journal of Investigative Medicine High Impact Case Reports</div>
         <div class="publication-authors">Harris JB, Sunil B, <strong>Ryan MK</strong>, Beauchamp G.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Icon%20AJSM.png" alt="American Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2021</span>
         </div>
         <h3>Outcomes of Open and Endoscopic Repairs of Chronic Partial- and Full-Thickness Proximal Hamstring Tendon Tears: A Multicenter Study with Minimum 2-Year Follow-up</h3>
         <div class="publication-journal">American Journal of Sports Medicine</div>
         <div class="publication-authors">Maldonado DR, Annin S, Lall AC, Krych AJ, Athey AG, Spinner RJ, Hartigan DE, Emblom BA, <strong>Ryan MK</strong>, Domb BG.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Icon%20AJSM.png" alt="American Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2020</span>
         </div>
         <h3>Location of Intra- and Extraarticular Impingement is Different in Patients with Pincer-Type and Mixed-Type Femoroacetabular Impingement Due to Acetabular Retroversion or Protrusio Acetabuli on 3D-CT-Based Impingement Simulation</h3>
         <div class="publication-journal">American Journal of Sports Medicine</div>
         <div class="publication-authors">Lerch TD, Siegfried M, Schmaranzer F, Leibold CS, Zurmühle CA, Hanke MS, <strong>Ryan MK</strong>, Steppacher SD, Siebenrock KA, Tannast M.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Arthroscopy%20Journal%20Icon.jpeg" alt="Arthroscopy"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2020</span>
         </div>
         <h3>Does Traumatic Etiology of Hip Pain Influence Hip Arthroscopy Outcomes?</h3>
         <div class="publication-journal">Arthroscopy</div>
         <div class="publication-authors">Chenard KE, Mai D, Begly JP, <strong>Ryan MK</strong>, Youm T.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Icon%20AJSM.png" alt="American Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2020</span>
         </div>
         <h3>Atypical Hip Pain in Femoroacetabular Impingement: A Comparison of Outcomes Based on Primary Hip Pain Location</h3>
         <div class="publication-journal">American Journal of Sports Medicine</div>
         <div class="publication-authors">Hamula MJ, <strong>Ryan MK</strong>, Baron SL, Bloom DA, Youm T.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Arthroscopy%20Journal%20Icon.jpeg" alt="Arthroscopy"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2019</span>
         </div>
         <h3>Outcome Trends after Hip Arthroscopy for Femoroacetabular Impingement: When Do Patients Improve?</h3>
         <div class="publication-journal">Arthroscopy</div>
         <div class="publication-authors">Wolfson TS, <strong>Ryan MK</strong>, Begly JP, Youm T.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Icon%20AJSM.png" alt="American Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2019</span>
         </div>
         <h3>Femoroacetabular Impingement Patients with Decreased Femoral Version have Different Impingement Locations and Intra- and Extraarticular Anterior Subspine FAI on 3D-CT-Based Impingement Simulation: Implications for Hip Arthroscopy</h3>
         <div class="publication-journal">American Journal of Sports Medicine</div>
         <div class="publication-authors">Lerch TD, Boschung A, Todorski IAS, Steppacher SD, Schmaranzer F, Zheng G, <strong>Ryan MK</strong>, Siebenrock KA, Tannast M.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Icon%20AJSM.png" alt="American Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2019</span>
         </div>
         <h3>Portal Placement and Biomechanical Performance of Endoscopic Proximal Hamstring Repair</h3>
         <div class="publication-journal">American Journal of Sports Medicine</div>
         <div class="publication-authors"><strong>Ryan MK</strong>, Beason DP, Fleisig GS, Emblom BA.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Osteoarthritis%20and%20Cartilage%20Icon.jpg" alt="Osteoarthritis and Cartilage"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2019</span>
         </div>
         <h3>Proof of Concept: Hip Joint Damage Occurs at the Zone of Femoroacetabular Impingement (FAI) in an Experimental FAI Sheep Model</h3>
         <div class="publication-journal">Osteoarthritis and Cartilage</div>
         <div class="publication-authors">Zurmühle C, Schmaranzer F, Wolfer N, Lerch TD, Steppacher S, Nuss K, von Rechenberg B, <strong>Ryan MK</strong>, Tannast M.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Sp%20Med%20Arthros%20Rev%20Icon.webp" alt="Sports Medicine and Arthroscopy Review"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2018</span>
         </div>
         <h3>Traumatic Instability: Treatment Options and Considerations for Recurrent Post Traumatic Instability</h3>
         <div class="publication-journal">Sports Medicine and Arthroscopy Review</div>
         <div class="publication-authors">Cain EL, <strong>Ryan MK</strong>.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Journal%20Ortho%20Res%20Icon.jpeg" alt="Journal of Orthopaedic Research"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2018</span>
         </div>
         <h3>The Vascular Supply of the Femoral Head in Sheep – Implications for the Ovine Femoroacetabular Impingement Model</h3>
         <div class="publication-journal">Journal of Orthopaedic Research</div>
         <div class="publication-authors">Steppacher S, von Rechenberg B, Nuss K, Wolfer N, <strong>Ryan MK</strong>, Tannast M.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Bul%20Hos%20J%20Dis%20Icon.jpg" alt="Bulletin of the Hospital for Joint Disease"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2018</span>
         </div>
         <h3>Beyond the Scope: Indications for Open Surgical Hip Dislocation for Treatment of Femoroacetabular Impingement</h3>
         <div class="publication-journal">Bulletin of the Hospital for Joint Disease</div>
         <div class="publication-authors"><strong>Ryan MK</strong>, Youm T, Vigdorchik J.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Bul%20Hos%20J%20Dis%20Icon.jpg" alt="Bulletin of the Hospital for Joint Disease"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2018</span>
         </div>
         <h3>Meniscal Root Tears Evaluation and Management</h3>
         <div class="publication-journal">Bulletin of the Hospital for Joint Disease</div>
         <div class="publication-authors">Day MS, <strong>Ryan MK</strong>, Strauss EJ.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Arthroscopy%20Journal%20Icon.jpeg" alt="Arthroscopy"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2018</span>
         </div>
         <h3>Independent Risk Factors for Revision Surgery or Conversion to THA after Hip Arthroscopy: An Analysis of 3,957 Patients</h3>
         <div class="publication-journal">Arthroscopy</div>
         <div class="publication-authors">Kester BS, Capogna B, Mahure SA, <strong>Ryan MK</strong>, Mollon B, Rokito AS, Youm T.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/OJSM%20Icon.jpg" alt="Orthopaedic Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2017</span>
         </div>
         <h3>Independent Risk Factors for Poor Outcome after Hip Arthroscopy</h3>
         <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
         <div class="publication-authors">Capogna B, Hamula M, Begly JP, Wolfson T, Looze CA, <strong>Ryan MK</strong>, Youm T.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/OJSM%20Icon.jpg" alt="Orthopaedic Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2017</span>
         </div>
         <h3>Concomitant Lumbar Spine Pathology in Patients Undergoing Hip Arthroscopy: A Matched Cohort Analysis</h3>
         <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
         <div class="publication-authors">Mahure SA, <strong>Ryan MK</strong>, Buckland A, Hamula M, Begly JP, Capogna B, Looze C, Chenard KE, Wolfson T, Youm T.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Minerva%20Ort%20Icon.png" alt="Minerva Ortopedica e Traumatologica"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2017</span>
         </div>
         <h3>Surgical Reasons for Failure of Anterior Cruciate Ligament Reconstruction: An Update</h3>
         <div class="publication-journal">Minerva Ortopedica e Traumatologica</div>
         <div class="publication-authors">Hamula MJ, Badash J, Jejurikar N, <strong>Ryan MK</strong>, Strauss EJ.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Cartilage%20J%20Icon.jpeg" alt="Cartilage"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2017</span>
         </div>
         <h3>Evaluation and Management of Osteochondral Lesions of the Talus</h3>
         <div class="publication-journal">Cartilage</div>
         <div class="publication-authors">Looze CA, Capo J, <strong>Ryan MK</strong>, Begly JP, Chapman C, Swanson D, Singh BC, Strauss EJ.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/J%20Hip%20Pres%20Icon.png" alt="Journal of Hip Preservation Surgery"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2016</span>
         </div>
         <h3>Outcome Trends after Hip Arthroscopy for Femoroacetabular Impingement: When Do Patients Improve?</h3>
         <div class="publication-journal">Journal of Hip Preservation Surgery</div>
         <div class="publication-authors">Youm T, Wolfson T, <strong>Ryan MK</strong>, Looze CA, Capogna B, Begly JP, Hamula M, Chenard K, Mahure S.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Arthroscopy%20Journal%20Icon.jpeg" alt="Arthroscopy"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2016</span>
         </div>
         <h3>Clinical Outcomes of Hip Arthroscopy in Patients Over 60: A Minimum of Two-Year Follow-Up</h3>
         <div class="publication-journal">Arthroscopy</div>
         <div class="publication-authors">Capogna B, <strong>Ryan MK</strong>, Begly JP, Chenard KE, Youm T.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/JBJS%20Rev%20Icon.jpeg" alt="JBJS Reviews"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2016</span>
         </div>
         <h3>Evaluation, Treatment and Outcomes of Meniscal Root Tears: A Critical Analysis Review</h3>
         <div class="publication-journal">JBJS Reviews</div>
         <div class="publication-authors">Strauss EJ, Day MS, <strong>Ryan MK</strong>, Jazrawi L.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/OJSM%20Icon.jpg" alt="Orthopaedic Journal of Sports Medicine"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2016</span>
         </div>
         <h3>Clinical Outcomes Following Arthroscopic Micro Fracture of the Hip</h3>
         <div class="publication-journal">Orthopaedic Journal of Sports Medicine</div>
         <div class="publication-authors">Begly JP, <strong>Ryan MK</strong>, Capogna B, Youm T.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Bul%20Hos%20J%20Dis%20Icon.jpg" alt="Bulletin of the Hospital for Joint Disease"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2015</span>
         </div>
         <h3>Meniscal Allograft Transplantation: A Comprehensive Historical and Current Review</h3>
         <div class="publication-journal">Bulletin of the Hospital for Joint Disease</div>
         <div class="publication-authors">Hannon MG, <strong>Ryan MK</strong>, Strauss EJ.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/Minerva%20Ort%20Icon.png" alt="Minerva Ortopedica e Traumatologica"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2014</span>
         </div>
         <h3>Surgical Reasons for Failure of Anterior Cruciate Ligament Reconstruction</h3>
         <div class="publication-journal">Minerva Ortopedica e Traumatologica</div>
         <div class="publication-authors"><strong>Ryan MK</strong>, Small W, Strauss EJ.</div>
+        </div>
       </div>
       
       <div class="publication">
-        <div class="publication-meta">
+        <div class="publication-icon"><img src="images/AJO%20Icon.jpg" alt="American Journal of Orthopedics"></div>
+        <div class="publication-body">
+          <div class="publication-meta">
           <span class="publication-year">2013</span>
         </div>
         <h3>Both-bone Forearm Fracture with Distal Radioulnar Joint Dislocation</h3>
         <div class="publication-journal">American Journal of Orthopedics</div>
         <div class="publication-authors"><strong>Ryan MK</strong>, MacKay B, Tejwani NT.</div>
+        </div>
       </div>
       
     </div>
