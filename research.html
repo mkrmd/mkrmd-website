@@ -389,8 +389,8 @@ nav a.active::after { width: 100%; }
 }
 .focus-areas {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
 }
 .focus-card {
   background: var(--white);
@@ -426,6 +426,13 @@ nav a.active::after { width: 100%; }
   color: var(--navy);
 }
 .focus-icon svg { width: 28px; height: 28px; }
+.focus-img {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
 .focus-card h3 {
   font-family: 'Fraunces', serif;
   font-size: 1.2rem;
@@ -933,50 +940,35 @@ footer {
     <div class="focus-areas">
       
       <div class="focus-card">
-        <div class="focus-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.07 2.07 0 0 1-2.44-2.44 2.07 2.07 0 0 1-2.44-2.44 2.07 2.07 0 0 1-2.44-2.44A2.5 2.5 0 0 1 2.5 10H12"/>
-          </svg>
-        </div>
+        <img class="focus-img" src="images/Icon%20Hip%20Pelvis-icon.png" alt="Hip Preservation">
         <h3>Hip Preservation</h3>
         <p>Femoroacetabular impingement, hip arthroscopy outcomes, periacetabular osteotomy, and labral reconstruction techniques in young active patients.</p>
       </div>
       
       <div class="focus-card">
-        <div class="focus-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-          </svg>
-        </div>
+        <img class="focus-img" src="images/Icon%20Knee-icon.png" alt="Knee Surgery">
         <h3>Knee Surgery</h3>
         <p>Meniscal allograft transplantation, multiligament knee injuries, ACL reconstruction techniques, and return-to-sport outcomes in athletes.</p>
       </div>
       
       <div class="focus-card">
-        <div class="focus-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="13" r="8"/>
-            <path d="M5 3 2 6l3 3"/>
-            <path d="m22 6-3 3 3 3"/>
-            <path d="M6.38 9a10 10 0 0 1 15.24 0"/>
-          </svg>
-        </div>
+        <img class="focus-img" src="images/Icon%20Shoulder-icon.png" alt="Shoulder & Elbow">
         <h3>Shoulder & Elbow</h3>
         <p>Rotator cuff repair techniques, ulnar collateral ligament surgery, osteochondritis dissecans, and throwing athlete injury patterns.</p>
       </div>
       
       <div class="focus-card">
-        <div class="focus-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-            <line x1="8" y1="21" x2="16" y2="21"/>
-            <line x1="12" y1="17" x2="12" y2="21"/>
-          </svg>
-        </div>
+        <img class="focus-img" src="images/Icon%20Outcomes%20Research-icon.png" alt="Outcomes Research">
         <h3>Outcomes Research</h3>
         <p>Return-to-sport analysis, rehabilitation protocols, and biomechanical studies to optimize patient outcomes across all surgical interventions.</p>
       </div>
-      
+
+      <div class="focus-card">
+        <img class="focus-img" src="images/Icon%20Biomech-icon.png" alt="Biomechanics Research">
+        <h3>Biomechanics Research</h3>
+        <p>Cadaveric and biomechanical testing of fixation constructs, anchor performance, and joint kinematics to inform evidence-based surgical technique.</p>
+      </div>
+
     </div>
   </div>
 </section>
