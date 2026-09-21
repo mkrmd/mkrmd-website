@@ -383,19 +383,19 @@ nav a.active::after { width: 100%; }
   font-weight: 400;
 }
 .hero-image {
-  position: relative;
-  aspect-ratio: 4/5;
-  background: linear-gradient(135deg, rgba(0,125,196,0.4) 0%, rgba(200,169,81,0.2) 100%), url('or-portrait.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 2px;
-  overflow: hidden;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hero-image::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0,21,47,0.4) 100%);
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
 }
 
 /* ===== SHARED SECTION STYLES ===== */
@@ -1060,14 +1060,14 @@ footer {
       <div class="hero-breadcrumb">
         <a href="/">Home</a> / <a href="#expertise">Expertise</a> / Elbow
       </div>
-      <h1>Elbow Surgery & <em>Throwing Injuries</em></h1>
+      <h1>Elbow &amp; <em>Throwing Injuries</em></h1>
       <p class="hero-lede">
-        UCL reconstruction (Tommy John surgery), arthroscopy, and tendon repair — with a focus on restoring stability and function for throwing athletes and anyone with elbow pain, weakness, or nerve symptoms.
+        Expert evaluation of throwing injuries, UCL tears, and the full range of elbow problems — with surgical care for distal biceps and triceps tendon ruptures, and clear, coordinated treatment planning when an injury calls for reconstruction or arthroscopy.
       </p>
       <div class="hero-stats">
         <div class="hero-stat">
-          <span class="hero-stat-number">UCL</span>
-          <span class="hero-stat-label">Tommy John reconstruction & repair</span>
+          <span class="hero-stat-number">Expert</span>
+          <span class="hero-stat-label">Evaluation of UCL, throwing &amp; elbow injuries</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-number">ASMI</span>
@@ -1083,7 +1083,9 @@ footer {
         </div>
       </div>
     </div>
-    <div class="hero-image"></div>
+    <div class="hero-image">
+      <img src="images/Elbow%20Anatomy.png" alt="Elbow anatomy — bones, ligaments, and tendons">
+    </div>
   </div>
 </section>
 
@@ -1099,7 +1101,7 @@ footer {
 
     <p>Several tendons anchor the muscles that move the elbow and forearm. The <strong>distal biceps tendon</strong> attaches the biceps to the radius and can rupture off the bone, causing pain, bruising, and swelling near the elbow. At the base of the humerus, two bony bumps called <strong>epicondyles</strong> anchor the forearm tendons — the medial epicondyle for the flexors, the lateral for the extensors — and when these tendons become inflamed the result is epicondylitis, better known as golfer's elbow and tennis elbow. Nearby, the <strong>ulnar nerve</strong> runs close to the medial epicondyle, and when it becomes irritated or compressed it causes the numbness and tingling of cubital tunnel syndrome.</p>
 
-    <p>Many of these problems can be diagnosed and treated with minimally invasive <strong>elbow arthroscopy</strong>, which can remove loose fragments of cartilage, address damaged surfaces, and repair the soft tissues around the joint. The conditions and procedures below span the full range of elbow care, from tennis elbow to complex ligament reconstruction.</p>
+    <p>Getting the diagnosis right is where elbow care begins — and it is the foundation of Dr. Ryan's practice. Drawing on his training at the American Sports Medicine Institute, he provides expert evaluation of the full range of elbow injuries, from UCL tears and throwing injuries to tendon, nerve, and cartilage problems, and builds a clear treatment plan for each one. <strong>Dr. Ryan's elbow surgical practice focuses on distal biceps and triceps tendon repairs.</strong> He does not perform elbow arthroscopy or UCL reconstruction (Tommy John surgery); when an injury calls for one of those procedures, he provides the evaluation and coordinates care with a trusted specialist so the patient never loses time.</p>
   </div>
 </section>
 
@@ -1107,35 +1109,35 @@ footer {
 <section class="philosophy">
   <div class="philosophy-inner">
     <div>
-      <div class="section-label">Elbow Surgery Philosophy</div>
-      <h2>Restoring the throwing elbow <em>without over-constraining</em> natural motion.</h2>
-      
+      <div class="section-label">Elbow Care Philosophy</div>
+      <h2>The right diagnosis first — <em>then the right plan</em> for every elbow.</h2>
+
       <p class="lead">
-        The elbow endures some of the highest forces in all of sport, especially in overhead throwing. Treatment has to restore stability and strength while preserving the fine, fluid motion the joint depends on.
+        The elbow endures some of the highest forces in all of sport, especially in overhead throwing. An accurate diagnosis and a clear plan matter more than anything — and knowing which path fits each injury is where experience shows.
       </p>
-      
-      <p>Dr. Ryan's approach to elbow surgery is grounded in his training at the American Sports Medicine Institute — the birthplace of the Tommy John procedure — and shaped by caring for throwing athletes at every level. That means tailoring surgical technique, rehabilitation, and return-to-throwing criteria to each patient's sport, position, and goals, whether the aim is a return to the mound or simply a pain-free elbow for daily life.</p>
+
+      <p>Dr. Ryan's approach is grounded in his training at the American Sports Medicine Institute — the birthplace of the Tommy John procedure — and shaped by caring for throwing athletes at every level. That foundation informs how he evaluates elbow injuries and guides each patient's treatment. His own surgical practice focuses on distal biceps and triceps tendon repairs; for injuries that require UCL reconstruction or arthroscopy, he provides the evaluation and coordinates care with a trusted specialist — whether the aim is a return to the mound or simply a pain-free elbow for daily life.</p>
     </div>
     
     <div class="principles-grid">
       <div class="principle-card">
-        <h3>UCL & Tommy John Expertise</h3>
-        <p>Ligament reconstruction and repair techniques are matched to the injury and the athlete — from primary UCL reconstruction to repair with internal brace in appropriate candidates.</p>
+        <h3>UCL & Tommy John Evaluation</h3>
+        <p>Expert assessment of the injured throwing elbow — precise diagnosis of UCL tears, staging of the injury, and a clear plan, with reconstruction coordinated through a trusted specialist when it's needed.</p>
       </div>
-      
+
       <div class="principle-card">
         <h3>Throwing Athlete Focus</h3>
-        <p>Overhead athletes need an elbow that is both stable and fully mobile; techniques are chosen to restore valgus stability without sacrificing the motion required to throw.</p>
+        <p>Overhead athletes need an elbow that is both stable and fully mobile; every evaluation is tailored to the athlete's sport, position, and goals — from the youth pitcher to the professional.</p>
       </div>
-      
+
       <div class="principle-card">
-        <h3>Nerve & Tendon Care</h3>
-        <p>Ulnar nerve symptoms and stubborn tennis or golfer's elbow are addressed with targeted decompression and release when non-operative care falls short.</p>
+        <h3>Tendon Repair Expertise</h3>
+        <p>Distal biceps and triceps tendon ruptures are repaired to restore strength in bending, straightening, and rotating the arm — Dr. Ryan's core elbow surgical focus.</p>
       </div>
-      
+
       <div class="principle-card">
-        <h3>Joint Preservation</h3>
-        <p>Arthroscopic removal of loose bodies and damaged cartilage relieves catching, locking, and pain while preserving the native joint for as long as possible.</p>
+        <h3>Clear Guidance & Coordination</h3>
+        <p>Nerve symptoms, tennis and golfer's elbow, and cartilage problems are diagnosed and managed — with non-operative care first, and seamless referral for any procedure outside Dr. Ryan's surgical focus.</p>
       </div>
     </div>
   </div>
@@ -1146,7 +1148,7 @@ footer {
   <div class="conditions-inner">
     <div class="conditions-header">
       <h2>Conditions <em>&</em> Procedures</h2>
-      <p>From tennis elbow to Tommy John reconstruction, Dr. Ryan offers comprehensive care for the full range of elbow injuries — ligament, tendon, nerve, and cartilage.</p>
+      <p>Dr. Ryan evaluates and manages the full range of elbow injuries — ligament, tendon, nerve, and cartilage. His surgical practice focuses on distal biceps and triceps tendon repairs; for conditions that require arthroscopy or UCL reconstruction, he provides expert evaluation and coordinates care with a trusted specialist.</p>
     </div>
     
     <div class="conditions-tabs">
@@ -1196,30 +1198,20 @@ footer {
     <div id="procedures" class="tab-content">
       
       <div class="procedure-card">
-        <h3>Elbow Arthroscopy</h3>
-        <p>Minimally invasive keyhole surgery used to remove loose bodies, address damaged cartilage, and treat soft-tissue problems in the elbow.</p>
-      </div>
-      
-      <div class="procedure-card">
-        <h3>UCL Reconstruction/Repair (Tommy John Surgery)</h3>
-        <p>Rebuilding or repairing the torn ulnar collateral ligament to restore inner-elbow stability and return throwing athletes to sport.</p>
-      </div>
-      
-      <div class="procedure-card">
         <h3>Distal Biceps Tendon Repair</h3>
         <p>Reattaching a ruptured distal biceps tendon to the forearm bone to restore strength in bending the elbow and rotating the forearm.</p>
       </div>
-      
+
       <div class="procedure-card">
-        <h3>Epicondylitis Release</h3>
-        <p>Surgical release of the inflamed tendon origin for stubborn tennis or golfer's elbow that hasn't responded to non-operative care.</p>
+        <h3>Distal Triceps Tendon Repair</h3>
+        <p>Reattaching a torn triceps tendon at the back of the elbow to restore the power needed to straighten the arm.</p>
       </div>
-      
+
       <div class="procedure-card">
-        <h3>Ulnar Nerve Decompression</h3>
-        <p>Relieving pressure on the ulnar nerve at the elbow to resolve the numbness, tingling, and weakness of cubital tunnel syndrome.</p>
+        <h3>Evaluation & Coordinated Care</h3>
+        <p>For injuries that call for elbow arthroscopy or UCL reconstruction (Tommy John surgery) — procedures Dr. Ryan does not perform — he provides expert diagnosis, a clear plan, and seamless referral to a trusted specialist.</p>
       </div>
-      
+
     </div>
   </div>
 </section>
@@ -1229,65 +1221,56 @@ footer {
   <div class="expect-inner">
     <div class="expect-header">
       <h2>What to <em>Expect</em></h2>
-      <p>From initial injury through return to throwing, here's your pathway back to full elbow function.</p>
+      <p>From an accurate diagnosis through recovery, here's how Dr. Ryan approaches your elbow care.</p>
     </div>
-    
+
     <div class="timeline">
-      
+
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <div class="timeline-phase">Initial Visit</div>
-          <h3>Diagnosis & Imaging</h3>
-          <p>Comprehensive examination including valgus stress testing for the UCL, nerve and tendon assessment, and imaging review. An MRI or MR arthrogram is often used to evaluate ligament and cartilage injury.</p>
+          <h3>Diagnosis & Planning</h3>
+          <p>A comprehensive examination — including valgus stress testing for the UCL, nerve and tendon assessment, and imaging review, often with MRI or MR arthrogram — pinpoints the injury and defines a clear treatment plan.</p>
         </div>
       </div>
-      
+
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <div class="timeline-phase">Surgery Day</div>
-          <h3>Arthroscopic or Open Procedure</h3>
-          <p>Many elbow procedures are outpatient. Arthroscopy and nerve or tendon procedures are typically shorter, while UCL reconstruction is an open procedure requiring more detailed surgical time.</p>
+          <div class="timeline-phase">The Plan</div>
+          <h3>Non-Operative or Surgical Care</h3>
+          <p>Many elbow injuries improve with targeted non-operative care. When surgery is the answer, Dr. Ryan performs distal biceps and triceps tendon repairs; injuries needing arthroscopy or UCL reconstruction are coordinated with a trusted specialist without delay.</p>
         </div>
       </div>
-      
+
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <div class="timeline-phase">Weeks 1-6</div>
           <h3>Protection & Early Motion</h3>
-          <p>A brace or splint protects the repair while gentle, guided range-of-motion work begins. The timing of early motion depends on the specific procedure and the tissue being protected.</p>
+          <p>After a tendon repair, a brace or splint protects the reattachment while gentle, guided range-of-motion work begins — timed to the specific procedure and the tissue being protected.</p>
         </div>
       </div>
-      
+
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <div class="timeline-phase">Months 2-4</div>
+          <div class="timeline-phase">Weeks 6-12</div>
           <h3>Progressive Strengthening</h3>
           <p>Once motion is restored, strengthening advances steadily to rebuild the muscles that support and power the elbow, forearm, and wrist.</p>
         </div>
       </div>
-      
+
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <div class="timeline-phase">Months 4-9</div>
-          <h3>Sport-Specific Training</h3>
-          <p>For throwing athletes, a structured interval throwing program gradually rebuilds arm strength and endurance under close supervision to protect the healing ligament.</p>
+          <div class="timeline-phase">Months 3-5</div>
+          <h3>Return to Activity & Sport</h3>
+          <p>Strength and function are restored for a confident return to work, daily life, and — for athletes — sport, guided by objective progress rather than the calendar alone.</p>
         </div>
       </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="timeline-phase">Months 9-14</div>
-          <h3>Return to Competition</h3>
-          <p>Return to full competition varies by procedure. Tendon, nerve, and arthroscopic recoveries are often quicker, while a return to throwing after Tommy John surgery commonly takes twelve months or more.</p>
-        </div>
-      </div>
-      
+
     </div>
   </div>
 </section>
@@ -1336,11 +1319,8 @@ footer {
     <div class="footer-col">
       <h4>Elbow Surgeries</h4>
       <ul class="two-col">
-        <li><a href="#">Elbow Arthroscopy</a></li>
-        <li><a href="#">UCL Reconstruction (Tommy John)</a></li>
         <li><a href="#">Distal Biceps Tendon Repair</a></li>
-        <li><a href="#">Epicondylitis Release</a></li>
-        <li><a href="#">Ulnar Nerve Decompression</a></li>
+        <li><a href="#">Distal Triceps Tendon Repair</a></li>
       </ul>
     </div>
     <div class="footer-col">

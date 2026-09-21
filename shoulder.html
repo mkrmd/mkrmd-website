@@ -383,19 +383,19 @@ nav a.active::after { width: 100%; }
   font-weight: 400;
 }
 .hero-image {
-  position: relative;
-  aspect-ratio: 4/5;
-  background: linear-gradient(135deg, rgba(0,125,196,0.4) 0%, rgba(200,169,81,0.2) 100%), url('or-portrait.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 2px;
-  overflow: hidden;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hero-image::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0,21,47,0.4) 100%);
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
 }
 
 /* ===== SHARED SECTION STYLES ===== */
@@ -1082,7 +1082,9 @@ footer {
         </div>
       </div>
     </div>
-    <div class="hero-image"></div>
+    <div class="hero-image">
+      <img src="images/Shoulder%20Anatomy.png" alt="Shoulder anatomy — bones, rotator cuff, and joint structures">
+    </div>
   </div>
 </section>
 
