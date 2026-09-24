@@ -1015,6 +1015,46 @@ footer {
   .conditions-tabs { flex-wrap: wrap; gap: 0.5rem; }
   .tab-button { padding: 0.75rem 1rem; font-size: 0.85rem; }
 }
+
+/* ===== VIDEO SECTION ===== */
+.video-section {
+  padding: 5rem 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.video-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  text-align: center;
+}
+.video-inner .section-label { justify-content: center; margin-bottom: 1.25rem; }
+.video-inner h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+}
+.video-inner h2 em { font-style: italic; color: var(--bellin-blue); }
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 560 / 395;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 </style>
 </head>
 <body>
@@ -1193,6 +1233,22 @@ footer {
       <img src="images/Hip%20FAI.png" alt="Femoroacetabular impingement illustration showing pincer, cam, and combined types" loading="lazy">
       <figcaption>Femoroacetabular impingement (FAI) — Left: socket overcoverage (pincer); Middle: aspherical ball (cam); Right: combined impingement (both cam and pincer)</figcaption>
     </figure>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="video-inner">
+    <div class="section-label">Watch</div>
+    <h2>Hip Anatomy Overview</h2>
+    <div class="video-embed">
+      <iframe
+        src="https://cdnapisec.kaltura.com//p/5725732/embedPlaykitJs/uiconf_id/54234132?iframeembed=true&amp;entry_id=1_m2x6cj65"
+        title="Hip preservation & arthroscopy — overview"
+        loading="lazy"
+        allowfullscreen webkitallowfullscreen mozallowfullscreen
+        allow="accelerometer *; autoplay *; encrypted-media *; gyroscope *; picture-in-picture *"></iframe>
+    </div>
   </div>
 </section>
 
