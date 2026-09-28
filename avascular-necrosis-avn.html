@@ -671,6 +671,28 @@ footer {
   .content-section, .cta { padding: 4rem 0; }
   .footer-inner { grid-template-columns: 1fr; }
 }
+
+/* ===== VIDEO EMBED ===== */
+.video-wrap {
+  max-width: 720px;
+  margin: 3rem auto 0;
+}
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 560 / 395;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 </style>
 </head>
 <body>
@@ -830,6 +852,17 @@ footer {
       <p>
         Over time, collapse leads to persistent pain, stiffness and progressive <strong>arthritis</strong> of the hip joint.
       </p>
+    </div>
+
+    <div class="video-wrap">
+      <div class="video-embed">
+        <iframe
+          src="https://cdnapisec.kaltura.com//p/5725732/embedPlaykitJs/uiconf_id/56997993?iframeembed=true&amp;entry_id=1_dngyt9j3"
+          title="Avascular necrosis (AVN) — disease progression"
+          loading="lazy"
+          allowfullscreen webkitallowfullscreen mozallowfullscreen
+          allow="accelerometer *; autoplay *; encrypted-media *; gyroscope *; picture-in-picture *"></iframe>
+      </div>
     </div>
   </div>
 </section>
