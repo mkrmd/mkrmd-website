@@ -466,8 +466,8 @@ nav a.active::after { width: 100%; }
 }
 .types-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 .type-card {
   background: rgba(255,255,255,0.05);
@@ -475,6 +475,10 @@ nav a.active::after { width: 100%; }
   padding: 2.5rem;
   border-radius: 8px;
   transition: all 0.3s ease;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2.5rem;
+  align-items: start;
 }
 .type-card:hover {
   background: rgba(255,255,255,0.08);
@@ -486,8 +490,11 @@ nav a.active::after { width: 100%; }
   font-size: 1.35rem;
   font-weight: 500;
   color: var(--accent-gold);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
+.type-card-body p:last-child,
+.type-card-body ul:last-child { margin-bottom: 0; }
+.type-card-body > *:first-child { margin-top: 0; }
 .type-card p {
   color: rgba(255,255,255,0.9);
   line-height: 1.6;
@@ -647,10 +654,52 @@ footer {
 }
 
 /* ===== RESPONSIVE ===== */
+/* Hero video */
+.hero-image .video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 560 / 395;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000;
+}
+.hero-image .video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Combined FAI types section header (matches content-section headers) */
+.procedure-types .section-header { text-align: center; margin-bottom: 3rem; }
+.procedure-types .section-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 0;
+}
+.procedure-types .section-header h2 em { font-style: italic; color: var(--accent-gold); }
+
+/* Full-width FAI figure at top of the types section */
+.fai-figure {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-lg);
+}
+.fai-figure img { width: 100%; height: auto; display: block; border-radius: 6px; }
+
 @media (max-width: 900px) {
   .hero-content { grid-template-columns: 1fr; gap: 3rem; }
   .content-grid { grid-template-columns: 1fr; gap: 3rem; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
+  .type-card { grid-template-columns: 1fr; gap: 1.25rem; }
+  .type-card h3 { margin-bottom: 0.5rem; }
 }
 @media (max-width: 700px) {
   .utility-bar { display: none; }
@@ -787,40 +836,95 @@ footer {
       </div>
       
       <div class="hero-image">
-        <img src="images/Hip%20FAI.png" alt="Femoroacetabular impingement (FAI) — pincer, cam, and combined types">
+        <div class="video-embed">
+          <iframe
+            src="https://cdnapisec.kaltura.com//p/5725732/embedPlaykitJs/uiconf_id/56997993?iframeembed=true&amp;entry_id=1_yrhw7xi1"
+            title="Hip impingement (FAI) — overview"
+            loading="lazy"
+            allowfullscreen webkitallowfullscreen mozallowfullscreen
+            allow="accelerometer *; autoplay *; encrypted-media *; gyroscope *; picture-in-picture *"></iframe>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PATHOPHYSIOLOGY -->
-<section class="content-section">
+<!-- TYPES OF HIP IMPINGEMENT (combined) -->
+<section class="procedure-types">
   <div class="content-inner">
     <div class="section-header">
       <div class="section-label">Understanding FAI</div>
-      <h2>Types of hip <em>impingement</em></h2>
+      <h2>Types of Hip Impingement</h2>
     </div>
-    
-    <div class="content-grid">
-      <div class="content-text">
-        <p>
-          A hip socket with too much coverage is called a <strong>pincer deformity</strong>, and a ball that is not perfectly round is called a <strong>cam deformity</strong>. These bony abnormalities, which require X-ray for diagnosis, lead to <strong>pincer</strong>, <strong>cam</strong> or <strong>combined hip impingement</strong>, altogether known as <strong>FAI</strong>.
-        </p>
-        <p>
-          Both cam and pincer deformities cause tears of the labrum. The <strong>labrum</strong> is a ring of specialized cartilage that goes all the way around the rim of the socket and provides essential function to the hip joint. The labrum contains many nerve fibers and typically causes pain in the groin when it is torn.
-        </p>
-        <p>
-          The cartilage layer of the hip socket is frequently injured where it meets the labrum at the rim of the socket. The combination of <strong>labral tears</strong> and cartilage damage can result in arthritis over time if left untreated.
-        </p>
+
+    <div class="fai-figure">
+      <img src="images/Hip%20FAI.png" alt="Femoroacetabular impingement (FAI) — pincer, cam, and combined types">
+    </div>
+
+    <div class="types-grid">
+      <div class="type-card">
+        <div class="type-card-head"><h3>Cam Impingement</h3></div>
+        <div class="type-card-body">
+          <p>
+            Cam impingement is the most common type of hip impingement. It occurs on the ball (femoral head) side of the hip joint, and is characterized by a ball that is not perfectly round (aspherical). The femoral head is frequently aspherical in the same location in most patients.
+          </p>
+          <p>
+            The cam deformity is thought to have several different causes, including genetics, acute injury to the growth plate as a child, an adaptive change of the growth plate in response to prolonged, high-impact activity (sports) while the growth plates are open.
+          </p>
+          <ul>
+            <li>Characterized by bump or lack of roundness in front, top portion of ball</li>
+            <li>Like forcing a square peg into a round hole</li>
+            <li>Lifts labrum off rim, separating it from cartilage connection</li>
+            <li>Can result in irreversible cartilage damage over time</li>
+          </ul>
+        </div>
       </div>
-      
-      <div class="symptoms-grid">
-        <div class="symptom-card">
-          <h4>Common Symptoms</h4>
+
+      <div class="type-card">
+        <div class="type-card-head"><h3>Pincer Impingement</h3></div>
+        <div class="type-card-body">
+          <p>
+            Pincer impingement is less common by itself but is seen relatively frequently with cam impingement. Pincer impingement occurs when the socket (acetabulum) covers too much of ball (femoral head), which leads to early contact of the bones during range of motion.
+          </p>
+          <p>
+            When the hip is flexed up (bent), the edge of the ball contacts the overhanging rim and damages and tears the labrum. Repetitive contact causes progressive damage to the labrum and cartilage and can eventually result in arthritis.
+          </p>
+          <ul>
+            <li>Socket covers too much of the ball</li>
+            <li>Early contact of bones during movement</li>
+            <li>Edge of ball contacts overhanging rim</li>
+            <li>Progressive damage to labrum and cartilage</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-card">
+        <div class="type-card-head"><h3>Labral Tear</h3></div>
+        <div class="type-card-body">
+          <p>
+            The hip labrum is a ring of specialized cartilage that goes around the rim of the hip socket. The labrum is an important structure for hip function, stability and health, as it creates a suction-seal, increases the depth of the joint, improves joint mechanics and modulates fluid movement inside the joint.
+          </p>
+          <p>
+            When the hip labrum is torn, it frequently causes pain in the groin or about the hip. Not only does it cause pain, but labral tears also compromise the normal function of the hip joint, potentially leading to additional damage of the cartilage and hip joint.
+          </p>
+          <ul>
+            <li>Can be repaired surgically using special anchors with attached sutures</li>
+            <li>Cause of the labral tear must be addressed during the same surgery</li>
+            <li>Most commonly caused by cam and pincer deformities</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-card">
+        <div class="type-card-head"><h3>Common Symptoms</h3></div>
+        <div class="type-card-body">
           <p>Pain in the groin (front of hip joint), often extending to outside of hip, buttocks, or low back. May feel like pain goes through the hip joint from front to back.</p>
         </div>
-        <div class="symptom-card">
-          <h4>Activity-Related Pain</h4>
+      </div>
+
+      <div class="type-card">
+        <div class="type-card-head"><h3>Activity-Related Pain</h3></div>
+        <div class="type-card-body">
           <p>Worse with deep bending and rotation of the hip. Pivoting, cutting, and jumping often painful. Simple activities like sitting, getting out of car, or putting on socks can be painful.</p>
         </div>
       </div>
@@ -828,64 +932,8 @@ footer {
   </div>
 </section>
 
-<!-- IMPINGEMENT TYPES -->
-<section class="procedure-types">
-  <div class="content-inner">
-    <h2>Types of <em>impingement</em></h2>
-    
-    <div class="types-grid">
-      <div class="type-card">
-        <h3>Labral Tear</h3>
-        <p>
-          The hip labrum is a ring of specialized cartilage that goes around the rim of the hip socket. The labrum is an important structure for hip function, stability and health, as it creates a suction-seal, increases the depth of the joint, improves joint mechanics and modulates fluid movement inside the joint.
-        </p>
-        <p>
-          When the hip labrum is torn, it frequently causes pain in the groin or about the hip. Not only does it cause pain, but labral tears also compromise the normal function of the hip joint, potentially leading to additional damage of the cartilage and hip joint.
-        </p>
-        <ul>
-          <li>Can be repaired surgically using special anchors with attached sutures</li>
-          <li>Cause of the labral tear must be addressed during the same surgery</li>
-          <li>Most commonly caused by cam and pincer deformities</li>
-        </ul>
-      </div>
-      
-      <div class="type-card">
-        <h3>Cam Impingement</h3>
-        <p>
-          Cam impingement is the most common type of hip impingement. It occurs on the ball (femoral head) side of the hip joint, and is characterized by a ball that is not perfectly round (aspherical). The femoral head is frequently aspherical in the same location in most patients.
-        </p>
-        <p>
-          The cam deformity is thought to have several different causes, including genetics, acute injury to the growth plate as a child, an adaptive change of the growth plate in response to prolonged, high-impact activity (sports) while the growth plates are open.
-        </p>
-        <ul>
-          <li>Characterized by bump or lack of roundness in front, top portion of ball</li>
-          <li>Like forcing a square peg into a round hole</li>
-          <li>Lifts labrum off rim, separating it from cartilage connection</li>
-          <li>Can result in irreversible cartilage damage over time</li>
-        </ul>
-      </div>
-      
-      <div class="type-card">
-        <h3>Pincer Impingement</h3>
-        <p>
-          Pincer impingement is less common by itself but is seen relatively frequently with cam impingement. Pincer impingement occurs when the socket (acetabulum) covers too much of ball (femoral head), which leads to early contact of the bones during range of motion.
-        </p>
-        <p>
-          When the hip is flexed up (bent), the edge of the ball contacts the overhanging rim and damages and tears the labrum. Repetitive contact causes progressive damage to the labrum and cartilage and can eventually result in arthritis.
-        </p>
-        <ul>
-          <li>Socket covers too much of the ball</li>
-          <li>Early contact of bones during movement</li>
-          <li>Edge of ball contacts overhanging rim</li>
-          <li>Progressive damage to labrum and cartilage</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- TREATMENT -->
-<section class="content-section">
+<section class="content-section" style="background: var(--paper-warm);">
   <div class="content-inner">
     <div class="section-header">
       <div class="section-label">Treatment Options</div>
