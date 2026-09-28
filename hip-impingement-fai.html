@@ -310,8 +310,8 @@ nav a.active::after { width: 100%; }
 .hero-breadcrumb a:hover { color: var(--navy); }
 .hero-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
   align-items: start;
 }
 .hero-text h1 {
@@ -335,15 +335,13 @@ nav a.active::after { width: 100%; }
   margin-bottom: 1.5rem;
 }
 .hero-image {
-  background: var(--white);
-  border: 1px solid var(--rule);
-  padding: 1.5rem;
   border-radius: 8px;
+  overflow: hidden;
 }
 .hero-image img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 /* ===== CONTENT SECTIONS ===== */
@@ -659,7 +657,7 @@ footer {
   position: relative;
   width: 100%;
   aspect-ratio: 560 / 395;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
   background: #000;
 }
