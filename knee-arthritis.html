@@ -515,6 +515,28 @@ footer {
   .footer-inner { grid-template-columns: 1fr; }
   .footer-col ul.two-col { column-count: 1; }
 }
+
+/* ===== VIDEO EMBED ===== */
+.video-wrap {
+  max-width: 900px;
+  margin: 3.5rem auto 0;
+}
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 560 / 395;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 </style>
 </head>
 <body>
@@ -660,6 +682,17 @@ footer {
         When non-surgical treatments no longer relieve symptoms, a <strong><a href="total-knee-replacement.html" style="color: var(--bellin-blue); text-decoration: none;">total knee replacement</a></strong> (joint replacement) is the most reliable and effective long-term treatment for arthritis of the knee.
       </p>
     </div>
+
+    <div class="video-wrap">
+      <div class="video-embed">
+        <iframe
+          src="https://cdnapisec.kaltura.com//p/5725732/embedPlaykitJs/uiconf_id/56997993?iframeembed=true&amp;entry_id=1_ofv21l1o"
+          title="Knee arthritis — overview"
+          loading="lazy"
+          allowfullscreen webkitallowfullscreen mozallowfullscreen
+          allow="accelerometer *; autoplay *; encrypted-media *; gyroscope *; picture-in-picture *"></iframe>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -698,6 +731,7 @@ footer {
         <li><a href="articular-cartilage-injury.html">Articular Cartilage Injury</a></li>
         <li><a href="patellar-dislocation.html">Patellar (Kneecap) Dislocation</a></li>
         <li><a href="knee-arthritis.html">Knee Arthritis</a></li>
+        <li><a href="quad-patellar-tendon-tears.html">Quad &amp; Patellar Tendon Tears</a></li>
       </ul>
     </div>
     <div class="footer-col">
