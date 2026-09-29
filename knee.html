@@ -579,6 +579,14 @@ nav a.active::after { width: 100%; }
   margin-bottom: 1rem;
   line-height: 1.3;
 }
+.condition-card h3 a, .procedure-card h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.condition-card h3 a:hover, .procedure-card h3 a:hover {
+  color: var(--bellin-blue);
+}
 .condition-card p, .procedure-card p {
   font-size: 0.95rem;
   color: var(--ink-soft);
@@ -1149,47 +1157,47 @@ footer {
     <div id="conditions" class="tab-content active">
       
       <div class="condition-card">
-        <h3>Meniscus Tear</h3>
+        <h3><a href="meniscus-tear.html">Meniscus Tear</a></h3>
         <p>Tears of the C-shaped cushion, common with twisting, causing pain along the joint line and mechanical catching or locking.</p>
       </div>
 
       <div class="condition-card">
-        <h3>ACL Tear</h3>
+        <h3><a href="acl-tear.html">ACL Tear</a></h3>
         <p>Complete or partial tears of the anterior cruciate ligament, usually during cutting or pivoting, causing instability and giving-way.</p>
       </div>
 
       <div class="condition-card">
-        <h3>PCL Tear</h3>
+        <h3><a href="pcl-tear.html">PCL Tear</a></h3>
         <p>Injury to the posterior cruciate ligament, often from a direct blow to the shin or forced hyperflexion, frequently part of a larger injury.</p>
       </div>
 
       <div class="condition-card">
-        <h3>MCL Tear</h3>
+        <h3><a href="mcl-tear.html">MCL Tear</a></h3>
         <p>Injury to the ligament on the inner knee, typically from a blow to the outside of the joint; most heal without surgery.</p>
       </div>
 
       <div class="condition-card">
-        <h3>LCL Tear</h3>
+        <h3><a href="lcl-tear.html">LCL Tear</a></h3>
         <p>Injury to the ligament on the outer knee, often part of a posterolateral corner injury that may require surgical repair.</p>
       </div>
 
       <div class="condition-card">
-        <h3>Other Knee Ligament Injuries</h3>
+        <h3><a href="other-knee-ligament-injuries.html">Other Knee Ligament Injuries</a></h3>
         <p>Complex, multi-ligament injuries from high-energy trauma, requiring careful evaluation and coordinated reconstruction.</p>
       </div>
 
       <div class="condition-card">
-        <h3>Articular Cartilage Injury</h3>
+        <h3><a href="articular-cartilage-injury.html">Articular Cartilage Injury</a></h3>
         <p>Focal damage to the cartilage surface of the knee, causing pain and swelling and, over time, a risk of arthritis.</p>
       </div>
       
       <div class="condition-card">
-        <h3>Patellar (Kneecap) Dislocation</h3>
+        <h3><a href="patellar-dislocation.html">Patellar (Kneecap) Dislocation</a></h3>
         <p>Instability in which the kneecap slips out of its groove, often driven by underlying anatomy and prone to recurrence.</p>
       </div>
       
       <div class="condition-card">
-        <h3>Knee Arthritis</h3>
+        <h3><a href="knee-arthritis.html">Knee Arthritis</a></h3>
         <p>Progressive loss of cartilage — from wear, prior injury, or inflammation — leading to pain, stiffness, and reduced motion.</p>
       </div>
       
@@ -1198,42 +1206,42 @@ footer {
     <div id="procedures" class="tab-content">
       
       <div class="procedure-card">
-        <h3>Knee Arthroscopy</h3>
+        <h3><a href="knee-arthroscopy.html">Knee Arthroscopy</a></h3>
         <p>Minimally invasive keyhole surgery used to diagnose and treat cartilage, meniscus, and ligament problems inside the knee.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>Meniscus Repair &amp; Meniscectomy</h3>
+        <h3><a href="meniscus-repair.html">Meniscus Repair &amp; Meniscectomy</a></h3>
         <p>Preserving the meniscus with a repair when the tear allows, or trimming the damaged portion when it cannot heal.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>ACL Reconstruction</h3>
+        <h3><a href="acl-reconstruction.html">ACL Reconstruction</a></h3>
         <p>Rebuilding a torn ACL with the ideal graft for each patient, using time-tested techniques proven in high-level athletes.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>Other Ligament Repair/Reconstruction</h3>
+        <h3><a href="other-ligament-reconstruction.html">Other Ligament Repair/Reconstruction</a></h3>
         <p>Repair or reconstruction of the PCL, MCL, and LCL, including coordinated management of multi-ligament injuries.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>MPFL Reconstruction</h3>
+        <h3><a href="mpfl-reconstruction.html">MPFL Reconstruction</a></h3>
         <p>Rebuilding the ligament that stabilizes the kneecap to prevent recurrent dislocation, often with an arthroscopy to address joint damage.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>Tibial Osteotomy</h3>
+        <h3><a href="tibial-osteotomy.html">Tibial Osteotomy</a></h3>
         <p>Realigning the bone to correct atypical anatomy that contributes to instability or uneven joint wear.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>Cartilage Preservation Surgeries</h3>
+        <h3><a href="cartilage-preservation.html">Cartilage Preservation Surgeries</a></h3>
         <p>Restoring focal cartilage defects with microfracture, osteochondral transplant, or cell-based techniques to delay arthritis.</p>
       </div>
       
       <div class="procedure-card">
-        <h3>Meniscus Transplant</h3>
+        <h3><a href="meniscus-transplant.html">Meniscus Transplant</a></h3>
         <p>Replacing a meniscus-deficient knee with a custom-sized donor graft to relieve pain and protect the joint.</p>
       </div>
 
@@ -1370,11 +1378,11 @@ footer {
     <div class="footer-col">
       <h4>Patients</h4>
       <ul>
-        <li><a href="#">Request Appointment</a></li>
+        <li><a href="contact-locations.html">Request Appointment</a></li>
         <li><a href="#">Patient Forms</a></li>
-        <li><a href="#">MRI Review</a></li>
+        <li><a href="contact-locations.html">MRI Review</a></li>
         <li><a href="#">PT Protocols</a></li>
-        <li><a href="#">Out-of-State Patients</a></li>
+        <li><a href="out-of-state-international-patients.html">Out-of-State Patients</a></li>
       </ul>
     </div>
   </div>
