@@ -342,6 +342,12 @@ nav a.active::after { width: 100%; }
   border-radius: 8px;
   text-align: center;
 }
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
 
 /* ===== CONTENT SECTIONS ===== */
 .content-section {
@@ -674,25 +680,7 @@ footer {
       </div>
       
       <div class="hero-image">
-        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
-          <!-- Normal Hip -->
-          <text x="75" y="15" text-anchor="middle" font-size="12" font-weight="600" fill="#002454">Normal Hip</text>
-          <ellipse cx="75" cy="100" rx="35" ry="30" fill="none" stroke="#007DC4" stroke-width="2"/>
-          <circle cx="75" cy="100" r="20" fill="#007DC4" opacity="0.2"/>
-          <circle cx="75" cy="100" r="20" fill="none" stroke="#007DC4" stroke-width="2"/>
-          <text x="75" y="170" text-anchor="middle" font-size="10" fill="#2B3D55">Adequate Coverage</text>
-          
-          <!-- Dysplastic Hip -->
-          <text x="225" y="15" text-anchor="middle" font-size="12" font-weight="600" fill="#002454">Dysplastic Hip</text>
-          <path d="M190 100 Q225 80 260 100" fill="none" stroke="#C8A951" stroke-width="2"/>
-          <circle cx="225" cy="105" r="20" fill="#C8A951" opacity="0.2"/>
-          <circle cx="225" cy="105" r="20" fill="none" stroke="#C8A951" stroke-width="2"/>
-          <text x="225" y="170" text-anchor="middle" font-size="10" fill="#2B3D55">Shallow Socket</text>
-          
-          <!-- Arrows showing coverage -->
-          <path d="M60 85 L90 85" stroke="#007DC4" stroke-width="1.5" opacity="0.6"/>
-          <path d="M210 90 L240 90" stroke="#C8A951" stroke-width="1.5" opacity="0.6"/>
-        </svg>
+        <img src="images/Hip%20Dysplastic.png" alt="Dysplastic hip with a shallow, vertical socket">
       </div>
     </div>
   </div>
